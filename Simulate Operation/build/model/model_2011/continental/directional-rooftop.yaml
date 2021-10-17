@@ -1,0 +1,40 @@
+overrides:
+    directional-rooftop-pv:
+        techs:
+            roof_mounted_pv_s_flat:
+                essentials:
+                    name: Roof mounted PV south-facing and flat
+                    parent: pv_on_roof
+                constraints:
+                    resource: file=capacityfactors-rooftop-pv-s-flat.csv
+                    resource_unit: energy_per_cap
+            roof_mounted_pv_n:
+                essentials:
+                    name: Roof mounted PV north-facing
+                    parent: pv_on_roof
+                constraints:
+                    resource: file=capacityfactors-rooftop-pv-n.csv
+                    resource_unit: energy_per_cap
+            roof_mounted_pv_e_w:
+                essentials:
+                    name: Roof mounted PV east-facing and west-facing
+                    parent: pv_on_roof
+                constraints:
+                    resource: file=capacityfactors-rooftop-pv-e-w.csv
+                    resource_unit: energy_per_cap
+        locations:
+            
+            EUR:
+                techs:
+                    roof_mounted_pv:
+                        exists: False
+                    roof_mounted_pv_s_flat:
+                        constraints:
+                            energy_cap_max: 17.464949235062 # (100,000 MW)
+                    roof_mounted_pv_n:
+                        constraints:
+                            energy_cap_max: 9.526812596850093 # (100,000 MW)
+                    roof_mounted_pv_e_w:
+                        constraints:
+                            energy_cap_max: 17.51738078485204 # (100,000 MW)
+            

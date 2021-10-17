@@ -1,0 +1,709 @@
+group_constraints:
+  ALB_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - ALB
+  ALB_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ALB
+    techs:
+    - coal
+    - ccgt
+  ALB_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ALB
+    techs:
+    - nuclear
+  AUT_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - AUT
+  AUT_fossil:
+    demand_share_equals:
+      electricity: 0.17459056172762022
+    locs:
+    - AUT
+    techs:
+    - coal
+    - ccgt
+  AUT_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - AUT
+    techs:
+    - nuclear
+  BEL_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - BEL
+  BEL_fossil:
+    demand_share_equals:
+      electricity: 0.2979888335730439
+    locs:
+    - BEL
+    techs:
+    - coal
+    - ccgt
+  BEL_nuclear:
+    demand_share_equals:
+      electricity: 0.4446168278201919
+    locs:
+    - BEL
+    techs:
+    - nuclear
+  BGR_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - BGR
+  BGR_fossil:
+    demand_share_equals:
+      electricity: 0.46382727712989374
+    locs:
+    - BGR
+    techs:
+    - coal
+    - ccgt
+  BGR_nuclear:
+    demand_share_equals:
+      electricity: 0.3571784678241607
+    locs:
+    - BGR
+    techs:
+    - nuclear
+  BIH_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - BIH
+  BIH_fossil:
+    demand_share_equals:
+      electricity: 0.6645703299698551
+    locs:
+    - BIH
+    techs:
+    - coal
+    - ccgt
+  BIH_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - BIH
+    techs:
+    - nuclear
+  CHE_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - CHE
+  CHE_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - CHE
+    techs:
+    - coal
+    - ccgt
+  CHE_nuclear:
+    demand_share_equals:
+      electricity: 0.34993369671895874
+    locs:
+    - CHE
+    techs:
+    - nuclear
+  CYP_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - CYP
+  CYP_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - CYP
+    techs:
+    - coal
+    - ccgt
+  CYP_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - CYP
+    techs:
+    - nuclear
+  CZE_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - CZE
+  CZE_fossil:
+    demand_share_equals:
+      electricity: 0.5177816297876044
+    locs:
+    - CZE
+    techs:
+    - coal
+    - ccgt
+  CZE_nuclear:
+    demand_share_equals:
+      electricity: 0.3368028089181808
+    locs:
+    - CZE
+    techs:
+    - nuclear
+  DEU_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - DEU
+  DEU_fossil:
+    demand_share_equals:
+      electricity: 0.4817960840879345
+    locs:
+    - DEU
+    techs:
+    - coal
+    - ccgt
+  DEU_nuclear:
+    demand_share_equals:
+      electricity: 0.1250367283703288
+    locs:
+    - DEU
+    techs:
+    - nuclear
+  DNK_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - DNK
+  DNK_fossil:
+    demand_share_equals:
+      electricity: 0.26858400751193573
+    locs:
+    - DNK
+    techs:
+    - coal
+    - ccgt
+  DNK_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - DNK
+    techs:
+    - nuclear
+  ESP_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - ESP
+  ESP_fossil:
+    demand_share_equals:
+      electricity: 0.34929174682949443
+    locs:
+    - ESP
+    techs:
+    - coal
+    - ccgt
+  ESP_nuclear:
+    demand_share_equals:
+      electricity: 0.21267899527041617
+    locs:
+    - ESP
+    techs:
+    - nuclear
+  EST_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - EST
+  EST_fossil:
+    demand_share_equals:
+      electricity: 0.005956318088749452
+    locs:
+    - EST
+    techs:
+    - coal
+    - ccgt
+  EST_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - EST
+    techs:
+    - nuclear
+  FIN_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - FIN
+  FIN_fossil:
+    demand_share_equals:
+      electricity: 0.1371238958926095
+    locs:
+    - FIN
+    techs:
+    - coal
+    - ccgt
+  FIN_nuclear:
+    demand_share_equals:
+      electricity: 0.33924753974437666
+    locs:
+    - FIN
+    techs:
+    - nuclear
+  FRA_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - FRA
+  FRA_fossil:
+    demand_share_equals:
+      electricity: 0.07479338607030696
+    locs:
+    - FRA
+    techs:
+    - coal
+    - ccgt
+  FRA_nuclear:
+    demand_share_equals:
+      electricity: 0.7164786962188532
+    locs:
+    - FRA
+    techs:
+    - nuclear
+  GBR_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - GBR
+  GBR_fossil:
+    demand_share_equals:
+      electricity: 0.4663950222281085
+    locs:
+    - GBR
+    techs:
+    - coal
+    - ccgt
+  GBR_nuclear:
+    demand_share_equals:
+      electricity: 0.1975151738553605
+    locs:
+    - GBR
+    techs:
+    - nuclear
+  GRC_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - GRC
+  GRC_fossil:
+    demand_share_equals:
+      electricity: 0.5933917808140174
+    locs:
+    - GRC
+    techs:
+    - coal
+    - ccgt
+  GRC_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - GRC
+    techs:
+    - nuclear
+  HRV_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - HRV
+  HRV_fossil:
+    demand_share_equals:
+      electricity: 0.33024924011386414
+    locs:
+    - HRV
+    techs:
+    - coal
+    - ccgt
+  HRV_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - HRV
+    techs:
+    - nuclear
+  HUN_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - HUN
+  HUN_fossil:
+    demand_share_equals:
+      electricity: 0.3724561689001693
+    locs:
+    - HUN
+    techs:
+    - coal
+    - ccgt
+  HUN_nuclear:
+    demand_share_equals:
+      electricity: 0.4940839271403916
+    locs:
+    - HUN
+    techs:
+    - nuclear
+  IRL_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - IRL
+  IRL_fossil:
+    demand_share_equals:
+      electricity: 0.5986511227842644
+    locs:
+    - IRL
+    techs:
+    - coal
+    - ccgt
+  IRL_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - IRL
+    techs:
+    - nuclear
+  ITA_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - ITA
+  ITA_fossil:
+    demand_share_equals:
+      electricity: 0.5504104736285186
+    locs:
+    - ITA
+    techs:
+    - coal
+    - ccgt
+  ITA_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ITA
+    techs:
+    - nuclear
+  LTU_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - LTU
+  LTU_fossil:
+    demand_share_equals:
+      electricity: 0.2864718767694631
+    locs:
+    - LTU
+    techs:
+    - coal
+    - ccgt
+  LTU_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - LTU
+    techs:
+    - nuclear
+  LUX_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - LUX
+  LUX_fossil:
+    demand_share_equals:
+      electricity: 0.3229896625553368
+    locs:
+    - LUX
+    techs:
+    - coal
+    - ccgt
+  LUX_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - LUX
+    techs:
+    - nuclear
+  LVA_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - LVA
+  LVA_fossil:
+    demand_share_equals:
+      electricity: 0.430650842825759
+    locs:
+    - LVA
+    techs:
+    - coal
+    - ccgt
+  LVA_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - LVA
+    techs:
+    - nuclear
+  MKD_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - MKD
+  MKD_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - MKD
+    techs:
+    - coal
+    - ccgt
+  MKD_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - MKD
+    techs:
+    - nuclear
+  MNE_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - MNE
+  MNE_fossil:
+    demand_share_equals:
+      electricity: 0.42832272535662047
+    locs:
+    - MNE
+    techs:
+    - coal
+    - ccgt
+  MNE_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - MNE
+    techs:
+    - nuclear
+  NLD_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - NLD
+  NLD_fossil:
+    demand_share_equals:
+      electricity: 0.7488528422502573
+    locs:
+    - NLD
+    techs:
+    - coal
+    - ccgt
+  NLD_nuclear:
+    demand_share_equals:
+      electricity: 0.032639257931585466
+    locs:
+    - NLD
+    techs:
+    - nuclear
+  NOR_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - NOR
+  NOR_fossil:
+    demand_share_equals:
+      electricity: 0.016822227140901043
+    locs:
+    - NOR
+    techs:
+    - coal
+    - ccgt
+  NOR_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - NOR
+    techs:
+    - nuclear
+  POL_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - POL
+  POL_fossil:
+    demand_share_equals:
+      electricity: 0.8276328221509907
+    locs:
+    - POL
+    techs:
+    - coal
+    - ccgt
+  POL_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - POL
+    techs:
+    - nuclear
+  PRT_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - PRT
+  PRT_fossil:
+    demand_share_equals:
+      electricity: 0.4689194685763185
+    locs:
+    - PRT
+    techs:
+    - coal
+    - ccgt
+  PRT_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - PRT
+    techs:
+    - nuclear
+  ROU_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - ROU
+  ROU_fossil:
+    demand_share_equals:
+      electricity: 0.39711270968122947
+    locs:
+    - ROU
+    techs:
+    - coal
+    - ccgt
+  ROU_nuclear:
+    demand_share_equals:
+      electricity: 0.18308452959854313
+    locs:
+    - ROU
+    techs:
+    - nuclear
+  SRB_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - SRB
+  SRB_fossil:
+    demand_share_equals:
+      electricity: 0.7061848460135003
+    locs:
+    - SRB
+    techs:
+    - coal
+    - ccgt
+  SRB_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - SRB
+    techs:
+    - nuclear
+  SVK_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - SVK
+  SVK_fossil:
+    demand_share_equals:
+      electricity: 0.18089197965261594
+    locs:
+    - SVK
+    techs:
+    - coal
+    - ccgt
+  SVK_nuclear:
+    demand_share_equals:
+      electricity: 0.5531312088203179
+    locs:
+    - SVK
+    techs:
+    - nuclear
+  SVN_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - SVN
+  SVN_fossil:
+    demand_share_equals:
+      electricity: 0.3185942140207014
+    locs:
+    - SVN
+    techs:
+    - coal
+    - ccgt
+  SVN_nuclear:
+    demand_share_equals:
+      electricity: 0.3697210027014484
+    locs:
+    - SVN
+    techs:
+    - nuclear
+  SWE_autarky:
+    demand_share_min:
+      electricity: 0.95
+    locs:
+    - SWE
+  SWE_fossil:
+    demand_share_equals:
+      electricity: 0.00466677498195826
+    locs:
+    - SWE
+    techs:
+    - coal
+    - ccgt
+  SWE_nuclear:
+    demand_share_equals:
+      electricity: 0.37771426729349505
+    locs:
+    - SWE
+    techs:
+    - nuclear
+import:
+- ../interest-rate.yaml
+- ../renewable-techs.yaml
+- ../storage-techs.yaml
+- ../link-techs.yaml
+- ../demand-techs.yaml
+- locations.yaml
+- directional-rooftop.yaml
+- link-all-neighbours.yaml
+model:
+  calliope_version: 0.6.5
+  name: Example model
+  subset_time:
+  - '2016-01-01'
+  - '2016-12-31'
+  time:
+    function: resample
+    function_options:
+      resolution: 8h
+  timeseries_data_path: .
+run:
+  mode: plan
+  objective_options:
+    cost_class:
+      monetary: 1
+    sense: minimize
+  solver: gurobi
+  solver_io: python

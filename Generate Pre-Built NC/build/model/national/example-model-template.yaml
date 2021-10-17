@@ -1,0 +1,34 @@
+import:
+    - '../interest-rate.yaml'
+    - '../renewable-techs.yaml'
+    - '../storage-techs.yaml'
+    - '../link-techs.yaml'
+    - '../demand-techs.yaml'
+    - 'locations.yaml'
+    - 'directional-rooftop.yaml'
+    - 'link-all-neighbours.yaml'
+model:
+    name: 'Example model'
+    calliope_version: 0.6.5
+    timeseries_data_path: '.'
+    subset_time: ['2016-01-01', '2016-12-31']
+    time:
+      function: resample
+      function_options: {'resolution':'4h'}
+run:
+    solver: gurobi
+    solver_options:
+      Threads: 99
+      Method: 2
+      Crossover: 0
+      FeasibilityTol: 1e-3
+      OptimalityTol: 1e-4
+      BarConvTol: 1e-4
+
+
+    solver_io: python
+    mode: plan
+    objective_options: {
+        'cost_class': {'monetary': 1},
+        'sense': 'minimize'
+    }

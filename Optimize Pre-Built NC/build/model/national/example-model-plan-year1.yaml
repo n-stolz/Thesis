@@ -1,0 +1,1731 @@
+group_constraints:
+  ALB_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - ALB
+  ALB_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ALB
+    techs:
+    - coal
+    - ccgt
+  ALB_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ALB
+    techs:
+    - nuclear
+  ALB_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - ALB
+    techs:
+    - open_field_pv
+  ALB_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - ALB
+    techs:
+    - roof_mounted_pv
+  ALB_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - ALB
+    techs:
+    - wind_offshore
+  ALB_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - ALB
+    techs:
+    - wind_onshore_competing
+  ALB_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - ALB
+    techs:
+    - wind_onshore_monopoly
+  AUT_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - AUT
+  AUT_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - AUT
+    techs:
+    - coal
+    - ccgt
+  AUT_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - AUT
+    techs:
+    - nuclear
+  AUT_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - AUT
+    techs:
+    - open_field_pv
+  AUT_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - AUT
+    techs:
+    - roof_mounted_pv
+  AUT_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - AUT
+    techs:
+    - wind_offshore
+  AUT_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - AUT
+    techs:
+    - wind_onshore_competing
+  AUT_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - AUT
+    techs:
+    - wind_onshore_monopoly
+  BEL_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - BEL
+  BEL_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - BEL
+    techs:
+    - coal
+    - ccgt
+  BEL_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - BEL
+    techs:
+    - nuclear
+  BEL_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - BEL
+    techs:
+    - open_field_pv
+  BEL_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - BEL
+    techs:
+    - roof_mounted_pv
+  BEL_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - BEL
+    techs:
+    - wind_offshore
+  BEL_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - BEL
+    techs:
+    - wind_onshore_competing
+  BEL_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - BEL
+    techs:
+    - wind_onshore_monopoly
+  BGR_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - BGR
+  BGR_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - BGR
+    techs:
+    - coal
+    - ccgt
+  BGR_nuclear:
+    demand_share_equals:
+      electricity: 0.3571784678241607
+    locs:
+    - BGR
+    techs:
+    - nuclear
+  BGR_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - BGR
+    techs:
+    - open_field_pv
+  BGR_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - BGR
+    techs:
+    - roof_mounted_pv
+  BGR_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - BGR
+    techs:
+    - wind_offshore
+  BGR_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - BGR
+    techs:
+    - wind_onshore_competing
+  BGR_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - BGR
+    techs:
+    - wind_onshore_monopoly
+  BIH_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - BIH
+  BIH_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - BIH
+    techs:
+    - coal
+    - ccgt
+  BIH_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - BIH
+    techs:
+    - nuclear
+  BIH_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - BIH
+    techs:
+    - open_field_pv
+  BIH_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - BIH
+    techs:
+    - roof_mounted_pv
+  BIH_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - BIH
+    techs:
+    - wind_offshore
+  BIH_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - BIH
+    techs:
+    - wind_onshore_competing
+  BIH_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - BIH
+    techs:
+    - wind_onshore_monopoly
+  CHE_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - CHE
+  CHE_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - CHE
+    techs:
+    - coal
+    - ccgt
+  CHE_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - CHE
+    techs:
+    - nuclear
+  CHE_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - CHE
+    techs:
+    - open_field_pv
+  CHE_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - CHE
+    techs:
+    - roof_mounted_pv
+  CHE_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - CHE
+    techs:
+    - wind_offshore
+  CHE_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - CHE
+    techs:
+    - wind_onshore_competing
+  CHE_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - CHE
+    techs:
+    - wind_onshore_monopoly
+  CYP_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - CYP
+  CYP_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - CYP
+    techs:
+    - coal
+    - ccgt
+  CYP_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - CYP
+    techs:
+    - nuclear
+  CYP_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - CYP
+    techs:
+    - open_field_pv
+  CYP_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - CYP
+    techs:
+    - roof_mounted_pv
+  CYP_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - CYP
+    techs:
+    - wind_offshore
+  CYP_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - CYP
+    techs:
+    - wind_onshore_competing
+  CYP_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - CYP
+    techs:
+    - wind_onshore_monopoly
+  CZE_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - CZE
+  CZE_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - CZE
+    techs:
+    - coal
+    - ccgt
+  CZE_nuclear:
+    demand_share_equals:
+      electricity: 0.3368028089181808
+    locs:
+    - CZE
+    techs:
+    - nuclear
+  CZE_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - CZE
+    techs:
+    - open_field_pv
+  CZE_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - CZE
+    techs:
+    - roof_mounted_pv
+  CZE_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - CZE
+    techs:
+    - wind_offshore
+  CZE_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - CZE
+    techs:
+    - wind_onshore_competing
+  CZE_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - CZE
+    techs:
+    - wind_onshore_monopoly
+  DEU_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - DEU
+  DEU_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - DEU
+    techs:
+    - coal
+    - ccgt
+  DEU_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - DEU
+    techs:
+    - nuclear
+  DEU_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - DEU
+    techs:
+    - open_field_pv
+  DEU_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - DEU
+    techs:
+    - roof_mounted_pv
+  DEU_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - DEU
+    techs:
+    - wind_offshore
+  DEU_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - DEU
+    techs:
+    - wind_onshore_competing
+  DEU_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - DEU
+    techs:
+    - wind_onshore_monopoly
+  DNK_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - DNK
+  DNK_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - DNK
+    techs:
+    - coal
+    - ccgt
+  DNK_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - DNK
+    techs:
+    - nuclear
+  DNK_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - DNK
+    techs:
+    - open_field_pv
+  DNK_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - DNK
+    techs:
+    - roof_mounted_pv
+  DNK_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - DNK
+    techs:
+    - wind_offshore
+  DNK_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - DNK
+    techs:
+    - wind_onshore_competing
+  DNK_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - DNK
+    techs:
+    - wind_onshore_monopoly
+  ESP_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - ESP
+  ESP_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ESP
+    techs:
+    - coal
+    - ccgt
+  ESP_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ESP
+    techs:
+    - nuclear
+  ESP_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - ESP
+    techs:
+    - open_field_pv
+  ESP_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - ESP
+    techs:
+    - roof_mounted_pv
+  ESP_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - ESP
+    techs:
+    - wind_offshore
+  ESP_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - ESP
+    techs:
+    - wind_onshore_competing
+  ESP_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - ESP
+    techs:
+    - wind_onshore_monopoly
+  EST_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - EST
+  EST_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - EST
+    techs:
+    - coal
+    - ccgt
+  EST_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - EST
+    techs:
+    - nuclear
+  EST_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - EST
+    techs:
+    - open_field_pv
+  EST_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - EST
+    techs:
+    - roof_mounted_pv
+  EST_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - EST
+    techs:
+    - wind_offshore
+  EST_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - EST
+    techs:
+    - wind_onshore_competing
+  EST_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - EST
+    techs:
+    - wind_onshore_monopoly
+  FIN_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - FIN
+  FIN_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - FIN
+    techs:
+    - coal
+    - ccgt
+  FIN_nuclear:
+    demand_share_equals:
+      electricity: 0.33924753974437666
+    locs:
+    - FIN
+    techs:
+    - nuclear
+  FIN_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - FIN
+    techs:
+    - open_field_pv
+  FIN_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - FIN
+    techs:
+    - roof_mounted_pv
+  FIN_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - FIN
+    techs:
+    - wind_offshore
+  FIN_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - FIN
+    techs:
+    - wind_onshore_competing
+  FIN_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - FIN
+    techs:
+    - wind_onshore_monopoly
+  FRA_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - FRA
+  FRA_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - FRA
+    techs:
+    - coal
+    - ccgt
+  FRA_nuclear:
+    demand_share_equals:
+      electricity: 0.7164786962188532
+    locs:
+    - FRA
+    techs:
+    - nuclear
+  FRA_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - FRA
+    techs:
+    - open_field_pv
+  FRA_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - FRA
+    techs:
+    - roof_mounted_pv
+  FRA_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - FRA
+    techs:
+    - wind_offshore
+  FRA_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - FRA
+    techs:
+    - wind_onshore_competing
+  FRA_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - FRA
+    techs:
+    - wind_onshore_monopoly
+  GBR_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - GBR
+  GBR_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - GBR
+    techs:
+    - coal
+    - ccgt
+  GBR_nuclear:
+    demand_share_equals:
+      electricity: 0.1975151738553605
+    locs:
+    - GBR
+    techs:
+    - nuclear
+  GBR_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - GBR
+    techs:
+    - open_field_pv
+  GBR_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - GBR
+    techs:
+    - roof_mounted_pv
+  GBR_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - GBR
+    techs:
+    - wind_offshore
+  GBR_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - GBR
+    techs:
+    - wind_onshore_competing
+  GBR_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - GBR
+    techs:
+    - wind_onshore_monopoly
+  GRC_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - GRC
+  GRC_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - GRC
+    techs:
+    - coal
+    - ccgt
+  GRC_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - GRC
+    techs:
+    - nuclear
+  GRC_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - GRC
+    techs:
+    - open_field_pv
+  GRC_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - GRC
+    techs:
+    - roof_mounted_pv
+  GRC_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - GRC
+    techs:
+    - wind_offshore
+  GRC_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - GRC
+    techs:
+    - wind_onshore_competing
+  GRC_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - GRC
+    techs:
+    - wind_onshore_monopoly
+  HRV_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - HRV
+  HRV_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - HRV
+    techs:
+    - coal
+    - ccgt
+  HRV_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - HRV
+    techs:
+    - nuclear
+  HRV_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - HRV
+    techs:
+    - open_field_pv
+  HRV_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - HRV
+    techs:
+    - roof_mounted_pv
+  HRV_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - HRV
+    techs:
+    - wind_offshore
+  HRV_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - HRV
+    techs:
+    - wind_onshore_competing
+  HRV_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - HRV
+    techs:
+    - wind_onshore_monopoly
+  HUN_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - HUN
+  HUN_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - HUN
+    techs:
+    - coal
+    - ccgt
+  HUN_nuclear:
+    demand_share_equals:
+      electricity: 0.4940839271403916
+    locs:
+    - HUN
+    techs:
+    - nuclear
+  HUN_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - HUN
+    techs:
+    - open_field_pv
+  HUN_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - HUN
+    techs:
+    - roof_mounted_pv
+  HUN_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - HUN
+    techs:
+    - wind_offshore
+  HUN_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - HUN
+    techs:
+    - wind_onshore_competing
+  HUN_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - HUN
+    techs:
+    - wind_onshore_monopoly
+  IRL_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - IRL
+  IRL_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - IRL
+    techs:
+    - coal
+    - ccgt
+  IRL_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - IRL
+    techs:
+    - nuclear
+  IRL_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - IRL
+    techs:
+    - open_field_pv
+  IRL_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - IRL
+    techs:
+    - roof_mounted_pv
+  IRL_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - IRL
+    techs:
+    - wind_offshore
+  IRL_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - IRL
+    techs:
+    - wind_onshore_competing
+  IRL_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - IRL
+    techs:
+    - wind_onshore_monopoly
+  ITA_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - ITA
+  ITA_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ITA
+    techs:
+    - coal
+    - ccgt
+  ITA_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ITA
+    techs:
+    - nuclear
+  ITA_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - ITA
+    techs:
+    - open_field_pv
+  ITA_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - ITA
+    techs:
+    - roof_mounted_pv
+  ITA_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - ITA
+    techs:
+    - wind_offshore
+  ITA_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - ITA
+    techs:
+    - wind_onshore_competing
+  ITA_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - ITA
+    techs:
+    - wind_onshore_monopoly
+  LTU_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - LTU
+  LTU_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - LTU
+    techs:
+    - coal
+    - ccgt
+  LTU_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - LTU
+    techs:
+    - nuclear
+  LTU_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - LTU
+    techs:
+    - open_field_pv
+  LTU_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - LTU
+    techs:
+    - roof_mounted_pv
+  LTU_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - LTU
+    techs:
+    - wind_offshore
+  LTU_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - LTU
+    techs:
+    - wind_onshore_competing
+  LTU_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - LTU
+    techs:
+    - wind_onshore_monopoly
+  LUX_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - LUX
+  LUX_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - LUX
+    techs:
+    - coal
+    - ccgt
+  LUX_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - LUX
+    techs:
+    - nuclear
+  LUX_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - LUX
+    techs:
+    - open_field_pv
+  LUX_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - LUX
+    techs:
+    - roof_mounted_pv
+  LUX_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - LUX
+    techs:
+    - wind_offshore
+  LUX_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - LUX
+    techs:
+    - wind_onshore_competing
+  LUX_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - LUX
+    techs:
+    - wind_onshore_monopoly
+  LVA_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - LVA
+  LVA_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - LVA
+    techs:
+    - coal
+    - ccgt
+  LVA_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - LVA
+    techs:
+    - nuclear
+  LVA_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - LVA
+    techs:
+    - open_field_pv
+  LVA_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - LVA
+    techs:
+    - roof_mounted_pv
+  LVA_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - LVA
+    techs:
+    - wind_offshore
+  LVA_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - LVA
+    techs:
+    - wind_onshore_competing
+  LVA_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - LVA
+    techs:
+    - wind_onshore_monopoly
+  MKD_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - MKD
+  MKD_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - MKD
+    techs:
+    - coal
+    - ccgt
+  MKD_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - MKD
+    techs:
+    - nuclear
+  MKD_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - MKD
+    techs:
+    - open_field_pv
+  MKD_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - MKD
+    techs:
+    - roof_mounted_pv
+  MKD_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - MKD
+    techs:
+    - wind_offshore
+  MKD_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - MKD
+    techs:
+    - wind_onshore_competing
+  MKD_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - MKD
+    techs:
+    - wind_onshore_monopoly
+  MNE_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - MNE
+  MNE_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - MNE
+    techs:
+    - coal
+    - ccgt
+  MNE_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - MNE
+    techs:
+    - nuclear
+  MNE_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - MNE
+    techs:
+    - open_field_pv
+  MNE_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - MNE
+    techs:
+    - roof_mounted_pv
+  MNE_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - MNE
+    techs:
+    - wind_offshore
+  MNE_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - MNE
+    techs:
+    - wind_onshore_competing
+  MNE_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - MNE
+    techs:
+    - wind_onshore_monopoly
+  NLD_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - NLD
+  NLD_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - NLD
+    techs:
+    - coal
+    - ccgt
+  NLD_nuclear:
+    demand_share_equals:
+      electricity: 0.032639257931585466
+    locs:
+    - NLD
+    techs:
+    - nuclear
+  NLD_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - NLD
+    techs:
+    - open_field_pv
+  NLD_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - NLD
+    techs:
+    - roof_mounted_pv
+  NLD_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - NLD
+    techs:
+    - wind_offshore
+  NLD_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - NLD
+    techs:
+    - wind_onshore_competing
+  NLD_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - NLD
+    techs:
+    - wind_onshore_monopoly
+  NOR_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - NOR
+  NOR_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - NOR
+    techs:
+    - coal
+    - ccgt
+  NOR_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - NOR
+    techs:
+    - nuclear
+  NOR_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - NOR
+    techs:
+    - open_field_pv
+  NOR_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - NOR
+    techs:
+    - roof_mounted_pv
+  NOR_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - NOR
+    techs:
+    - wind_offshore
+  NOR_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - NOR
+    techs:
+    - wind_onshore_competing
+  NOR_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - NOR
+    techs:
+    - wind_onshore_monopoly
+  POL_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - POL
+  POL_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - POL
+    techs:
+    - coal
+    - ccgt
+  POL_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - POL
+    techs:
+    - nuclear
+  POL_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - POL
+    techs:
+    - open_field_pv
+  POL_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - POL
+    techs:
+    - roof_mounted_pv
+  POL_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - POL
+    techs:
+    - wind_offshore
+  POL_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - POL
+    techs:
+    - wind_onshore_competing
+  POL_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - POL
+    techs:
+    - wind_onshore_monopoly
+  PRT_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - PRT
+  PRT_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - PRT
+    techs:
+    - coal
+    - ccgt
+  PRT_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - PRT
+    techs:
+    - nuclear
+  PRT_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - PRT
+    techs:
+    - open_field_pv
+  PRT_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - PRT
+    techs:
+    - roof_mounted_pv
+  PRT_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - PRT
+    techs:
+    - wind_offshore
+  PRT_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - PRT
+    techs:
+    - wind_onshore_competing
+  PRT_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - PRT
+    techs:
+    - wind_onshore_monopoly
+  ROU_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - ROU
+  ROU_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - ROU
+    techs:
+    - coal
+    - ccgt
+  ROU_nuclear:
+    demand_share_equals:
+      electricity: 0.18308452959854313
+    locs:
+    - ROU
+    techs:
+    - nuclear
+  ROU_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - ROU
+    techs:
+    - open_field_pv
+  ROU_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - ROU
+    techs:
+    - roof_mounted_pv
+  ROU_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - ROU
+    techs:
+    - wind_offshore
+  ROU_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - ROU
+    techs:
+    - wind_onshore_competing
+  ROU_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - ROU
+    techs:
+    - wind_onshore_monopoly
+  SRB_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - SRB
+  SRB_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - SRB
+    techs:
+    - coal
+    - ccgt
+  SRB_nuclear:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - SRB
+    techs:
+    - nuclear
+  SRB_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - SRB
+    techs:
+    - open_field_pv
+  SRB_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - SRB
+    techs:
+    - roof_mounted_pv
+  SRB_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - SRB
+    techs:
+    - wind_offshore
+  SRB_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - SRB
+    techs:
+    - wind_onshore_competing
+  SRB_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - SRB
+    techs:
+    - wind_onshore_monopoly
+  SVK_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - SVK
+  SVK_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - SVK
+    techs:
+    - coal
+    - ccgt
+  SVK_nuclear:
+    demand_share_equals:
+      electricity: 0.5531312088203179
+    locs:
+    - SVK
+    techs:
+    - nuclear
+  SVK_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - SVK
+    techs:
+    - open_field_pv
+  SVK_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - SVK
+    techs:
+    - roof_mounted_pv
+  SVK_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - SVK
+    techs:
+    - wind_offshore
+  SVK_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - SVK
+    techs:
+    - wind_onshore_competing
+  SVK_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - SVK
+    techs:
+    - wind_onshore_monopoly
+  SVN_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - SVN
+  SVN_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - SVN
+    techs:
+    - coal
+    - ccgt
+  SVN_nuclear:
+    demand_share_equals:
+      electricity: 0.3697210027014484
+    locs:
+    - SVN
+    techs:
+    - nuclear
+  SVN_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - SVN
+    techs:
+    - open_field_pv
+  SVN_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - SVN
+    techs:
+    - roof_mounted_pv
+  SVN_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - SVN
+    techs:
+    - wind_offshore
+  SVN_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - SVN
+    techs:
+    - wind_onshore_competing
+  SVN_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - SVN
+    techs:
+    - wind_onshore_monopoly
+  SWE_autarky:
+    demand_share_min:
+      electricity: 0.0
+    locs:
+    - SWE
+  SWE_fossil:
+    demand_share_equals:
+      electricity: 0.0
+    locs:
+    - SWE
+    techs:
+    - coal
+    - ccgt
+  SWE_nuclear:
+    demand_share_equals:
+      electricity: 0.37771426729349505
+    locs:
+    - SWE
+    techs:
+    - nuclear
+  SWE_open_field_pv:
+    energy_cap_min: 0.0
+    locs:
+    - SWE
+    techs:
+    - open_field_pv
+  SWE_roof_mounted_pv:
+    energy_cap_min: 0.0
+    locs:
+    - SWE
+    techs:
+    - roof_mounted_pv
+  SWE_wind_offshore:
+    energy_cap_min: 0.0
+    locs:
+    - SWE
+    techs:
+    - wind_offshore
+  SWE_wind_onshore_competing:
+    energy_cap_min: 0.0
+    locs:
+    - SWE
+    techs:
+    - wind_onshore_competing
+  SWE_wind_onshore_monopoly:
+    energy_cap_min: 0.0
+    locs:
+    - SWE
+    techs:
+    - wind_onshore_monopoly
+import:
+- ../interest-rate.yaml
+- ../renewable-techs.yaml
+- ../storage-techs.yaml
+- ../link-techs.yaml
+- ../demand-techs.yaml
+- locations.yaml
+- directional-rooftop.yaml
+- link-all-neighbours.yaml
+model:
+  calliope_version: 0.6.5
+  name: Example model
+  subset_time:
+  - '2016-01-01'
+  - '2016-12-31'
+  time:
+    function: resample
+    function_options:
+      resolution: 8h
+  timeseries_data_path: .
+run:
+  mode: plan
+  objective_options:
+    cost_class:
+      monetary: 1
+    sense: minimize
+  solver: gurobi
+  solver_io: python
+  solver_options:
+    Threads: 99

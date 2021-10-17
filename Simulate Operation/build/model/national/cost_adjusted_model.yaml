@@ -1,0 +1,676 @@
+import:
+- ../interest-rate.yaml
+- ../renewable-techs.yaml
+- ../storage-techs.yaml
+- ../link-techs.yaml
+- ../demand-techs.yaml
+- locations.yaml
+- directional-rooftop.yaml
+- link-all-neighbours.yaml
+model:
+  calliope_version: 0.6.5
+  name: Example model
+  subset_time:
+  - '2016-01-01'
+  - '2016-01-02'
+  timeseries_data_path: .
+overrides:
+  cost_adjustments:
+    locations:
+      ALB:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+      AUT:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+      BEL:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+      BGR:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      BIH:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      CHE:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+      CYP:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+      CZE:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+      DEU:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+      DNK:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+      ESP:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      EST:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+      FIN:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+      FRA:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      GBR:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      GRC:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+      HRV:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+      HUN:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      IRL:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      ITA:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      LTU:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      LUX:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+      LVA:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      MKD:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+      MNE:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+      NLD:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+      NOR:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      POL:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      PRT:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+      ROU:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+      SRB:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+      SVK:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+      SVN:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+      SWE:
+        tech_groups:
+          wind_onshore:
+            costs:
+              monetary:
+                om_prod: 0.010099998
+        techs:
+          open_field_pv:
+            costs:
+              monetary:
+                om_prod: -0.0032333359999999994
+          roof_mounted_pv:
+            costs:
+              monetary:
+                om_prod: -0.009900003000000001
+          wind_offshore:
+            costs:
+              monetary:
+                om_prod: 0.003433331000000001
+run:
+  mode: plan
+  objective_options:
+    cost_class:
+      monetary: 1
+    sense: minimize
+  solver: gurobi
+  solver_io: python
+scenarios:
+  operate:
+  - cost_adjustments

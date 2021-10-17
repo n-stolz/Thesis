@@ -1,0 +1,13 @@
+output/
+build/model/*/example-model-plan*.yaml
+build/data/eez.geojson
+build/model/regional/capacityfactors-rooftop-pv-e-w.csv
+build/model/regional/capacityfactors-rooftop-pv-e-w.csv
+build/model/regional/capacityfactors-rooftop-pv.csv
+build/model/regional/capacityfactors-wind-onshore.csv
+build/model/regional/electricity-demand.csv
+build/data/administrative-borders-gadm.gpkg
+build/data/hydro-electricity-with-water-inflow.nc
+build/data/regional/units.geojson
+build/data/hydro-electricity-with-energy-inflow.nc
+output*

@@ -1,0 +1,53 @@
+locations:
+    
+    EUR: # Europe
+        coordinates: {lat: 52.468760522902365, lon: 12.965143077595215}
+        available_area: 151.674257368223 # (10,000 km2) usable by onshore wind or open field pv
+        techs:
+            demand_elec:
+            battery:
+            hydrogen:
+            open_field_pv:
+            wind_onshore_competing:
+            wind_onshore_monopoly:
+                constraints:
+                    energy_cap_max: 126.80849397117422 # (100,000 MW)
+            roof_mounted_pv:
+                constraints:
+                    energy_cap_max: 44.514385771743136 # (100,000 MW)
+            wind_offshore:
+                constraints:
+                    energy_cap_max: 120.18952313620422 # (100,000 MW)
+            hydro_run_of_river:
+                constraints:
+                    energy_cap_max: 0.34611313849333886 # (100,000 MW)
+            hydro_reservoir:
+                constraints:
+                    energy_cap_max: 1.04815058259912 # (100,000 MW)
+                    storage_cap_max: 1009.7492855940822 # (100,000 MWh)
+            pumped_hydro:
+                constraints:
+                    energy_cap_max: 0.5462833155166785 # (100,000 MW)
+                    storage_cap_max: 113.57763382076132 # (100,000 MWh)
+            biofuel:
+                constraints:
+                    resource: 1.227853881278539 # (100,000 MW)
+                    storage_cap_equals: 5378.0 # (100,000 MWh) (0.5x annual yield) # ASSUME < 1 for numerical range
+    
+overrides:
+    freeze-hydro-capacities:
+        locations:
+            
+            EUR.techs: # Europe
+                hydro_run_of_river:
+                    constraints:
+                        energy_cap_equals: 0.34611313849333886 # (100,000 MW)
+                hydro_reservoir:
+                    constraints:
+                        energy_cap_equals: 1.04815058259912 # (100,000 MW)
+                        storage_cap_equals: 1009.7492855940822 # (100,000 MWh)
+                pumped_hydro:
+                    constraints:
+                        energy_cap_equals: 0.5462833155166785 # (100,000 MW)
+                        storage_cap_equals: 113.57763382076132 # (100,000 MWh)
+            
