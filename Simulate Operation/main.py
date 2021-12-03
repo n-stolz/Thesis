@@ -2,8 +2,7 @@ import os.path
 import logging
 from initialization import configuration
 from initialization import model_specifications
-#from global_variables import global_variables
-from euro_calliope_specifications import euro_calliope_specifications
+
 from model_pipeline import pipeline
 import shutil
 from random import seed
@@ -48,6 +47,8 @@ def run_models():
     #seed(123)
     today = datetime.datetime.now()
     date_time = today.strftime("%m-%d-%Y, %H:%M")
+
+    # TODO agree on (shared?) repository for
     if os.path.isdir('/home/niklas/European Incentive Model'):
         #output_path = ('/home/niklas/Operation_Mode/output_{}'.format(date_time))
         scenario_path=('/home/niklas/Operation_Mode/test_scenario')
@@ -129,7 +130,7 @@ if __name__ == '__main__':
     years=int(sys.argv[1])
 
 
-    euro_calliope_specs=euro_calliope_specifications()
+
 
     run_models()
 

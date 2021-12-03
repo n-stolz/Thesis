@@ -4,7 +4,6 @@ import xarray as xr
 import pandas as pd
 import yaml
 import calliope
-from euro_calliope_specifications import euro_calliope_specifications
 import math
 import numpy as np
 
@@ -110,53 +109,15 @@ class pipeline:
 
 
     def __init__(self):
-        self.max_incentive={} #max incentive in Cents/kWh
 
-        self.lcoe_percentage=0.15
 
-        self.capacity_factors={}
+
         self.model_dict={'plan':{}}
-        self.ranking={}
 
-        self.national_score_dict={}
-        self.european_score_dict={}
-
-        self.standard_deviations_national={}
-        self.standard_deviations_national_daily={}
-        self.standard_deviations_national_weekly = {}
-        self.standard_deviations_national_monthly = {}
-        self.standard_deviations_national_seasonally = {}
-
-        self.sd_baseline_europe={}
-        self.sd_baseline_national={}
-
-        self.standard_deviations_europe_daily={}
-        self.standard_deviations_europe_weekly={}
-        self.standard_deviations_europe_monthly={}
-        self.standard_deviations_europe_seasonally={}
-
-        self.national_score={}
-        self.national_score_daily={}
-        self.national_score_weekly = {}
-        self.national_score_monthly = {}
-        self.national_score_seasonally = {}
-
-        self.score_weight = {'hourly': 1, 'daily': 1,
-                   'weekly': 1,
-                   'monthly': 1,
-                   'seasonally': 0}
-
-
-        self.shoreless_countries=[]
-
-        self.standard_deviations_europe = {}
-        self.VRE_om_prod = {}
-        self.national_score={}
-        self.european_score={}
+        #After running scenario baseline_run will be set to True to solve baseline with no incentives
         self.baseline_run=False
-        self.euro_calliope_specifications=euro_calliope_specifications()
+
         self.output_path=""
         self.ts_year=2016
-        self.nuclear_scaling_factor=0
-        self.incentive_dict={}
+
         #self.renewables_share=self.get_wind_pv_shares(config, year)
