@@ -10,6 +10,8 @@ import numpy as np
 
 
 class pipeline:
+
+    # gets wind and pv capacity of previous time step. CAUTION: name says shares, but it actually returns capacity -> TODO: Change name of function and variable to ..._cap
     def get_wind_pv_shares(self, config,year):
         if year!=1:
             prev_model = self.model_dict['year {}'.format(year - 1)]
@@ -32,6 +34,7 @@ class pipeline:
 
         return renewables_share
 
+    #returns residual load on national an european level
     def get_production_timeseries(self,year):
         if self.baseline_run==False:
             carrier_prod = pd.read_csv(os.path.join(self.output_path,'adjusted_costs/model_csv_year_{}/results_carrier_prod.csv'.format(year - 1)))
@@ -42,12 +45,14 @@ class pipeline:
             carrier_con = pd.read_csv(os.path.join(self.output_path,'baseline_model/model_csv_year_{}/results_carrier_con.csv'.format(year - 1)))
             time_steps = pd.read_csv(os.path.join(self.output_path,'baseline_model/model_csv_year_{}/inputs_timestep_resolution.csv'.format(year - 1)))
         electricity_net = pd.DataFrame()
+
+        #Generation timeseries from wind and solar power
         carrier_prod=carrier_prod[carrier_prod['techs'].isin(['roof_mounted_pv', 'open_field_pv', 'wind_onshore_competing',
                                                               'wind_onshore_monopoly','wind_offshore'])]
-
+        #Demand timeseries without electricity that goes to storage and is transmited
         carrier_con = carrier_con[carrier_con['techs'].isin(['demand_elec'])]
 
-
+        #generation-demand
         electricity_net = carrier_prod.groupby(['locs', 'techs', 'timesteps']).sum().add(
             carrier_con.groupby(['locs', 'techs', 'timesteps']).sum(), fill_value=0).reset_index()
         electricity_net = electricity_net.fillna(0)
@@ -61,23 +66,24 @@ class pipeline:
 
         return time_steps
 
+    # get sd of residual load on multiple temporal horizons if one unit of a technology is added
     def get_national_sd(self, name, group, time_range,year):
 
+        #Add name of country as key
         self.standard_deviations_national[name] = {}
         self.standard_deviations_national_daily[name]={}
         self.standard_deviations_national_weekly[name]={}
         self.standard_deviations_national_monthly[name]={}
         self.standard_deviations_national_seasonally[name]={}
 
-
+        #resample national residual load on daily, weekly, monthly and quaterly level
         country = group.reset_index()
         country_daily = country.set_index('timesteps').resample('D').sum()
         country_weekly = country.set_index('timesteps').resample('W').sum()
         country_monthly = country.set_index('timesteps').resample('M').sum()
         country_seasonally= country.set_index('timesteps').resample('Q').sum()
 
-
-
+        # This was used in a previous version. Not needed atm. TODO: remove if not needed in the future
         self.sd_baseline_national[name] = {'hourly': country.reset_index()['residual'].std(),
                                   'daily': country_daily.reset_index()['residual'].std(),
                                   'weekly': country_weekly.reset_index()['residual'].std(),
@@ -85,29 +91,27 @@ class pipeline:
                                   'seasonally': country_seasonally.reset_index()['residual'].std()}
         print(self.sd_baseline_national)
 
+
+        #loop through generation technologies
         for key in self.capacity_factors[year-1].keys():
-            #Here seems to be the issue
+
+            #get capacity factor of specific tech during the timerange of interest and bring to right formate
             cf = self.capacity_factors[year-1][key][['time', name]]
-
-            #norm with mean cf to make comparison between technologies fair
-
-
             cf = cf[cf['time'].isin(time_range)]
             cf['time']=cf['time'].astype('datetime64[ns]')
 
 
-            #print(cf)
+            #resample capacity factors on daily, weekly, monthly and quaterly level
             cf_daily=cf.set_index('time').resample('D').mean()
             cf_weekly=cf.set_index('time').resample('W').mean()
             cf_monthly=cf.set_index('time').resample('M').mean()
             cf_seasonally=cf.set_index('time').resample('Q').mean()
 
-
+            #make a list of shoreless countries to ignore them for offshore wind scores
             if (cf[name] == 0).all() and key=='wind_offshore':
                 self.shoreless_countries.append(name)
 
-            #cf_daily[name]=cf_daily[cf_daily.columns[0]]
-            #print(cf_daily.reset_index()[name])
+           #add capacity factor time series to residual load time series and take sd
             self.standard_deviations_national[name][key] = (cf.reset_index()[name] + country.reset_index()['residual']).std()
             self.standard_deviations_national_daily[name][key] = (cf_daily.reset_index()[name] + country_daily.reset_index()['residual']).std()
             self.standard_deviations_national_weekly[name][key] = (
@@ -118,34 +122,40 @@ class pipeline:
                         cf_seasonally.reset_index()[name] + country_seasonally.reset_index()['residual']).std()
 
     def get_european_sd(self, name,time_range,year):
+        # Add name of country as key
         self.standard_deviations_europe[name]={}
         self.standard_deviations_europe_daily[name]={}
         self.standard_deviations_europe_weekly[name]={}
         self.standard_deviations_europe_monthly[name]={}
         self.standard_deviations_europe_seasonally[name]={}
 
-        #self.residual_load_europe['residual']=self.residual_load_europe['residual']/self.residual_load_europe['residual'].abs().mean()
-
+        # resample national residual load on daily, weekly, monthly and quaterly level
         europe_sd_daily=self.residual_load_europe.set_index('timesteps')['residual'].resample('D').sum()
         europe_sd_weekly = self.residual_load_europe.set_index('timesteps')['residual'].resample('W').sum()
         europe_sd_monthly = self.residual_load_europe.set_index('timesteps')['residual'].resample('M').sum()
         europe_sd_seasonally = self.residual_load_europe.set_index('timesteps')['residual'].resample('Q').sum()
 
+        # This was used in a previous version. Not needed atm. TODO: remove if not needed in the future
         self.sd_baseline_europe={'hourly': self.residual_load_europe.reset_index()['residual'].std(),'daily': europe_sd_daily.reset_index()['residual'].std(), 'weekly':europe_sd_weekly.reset_index()['residual'].std(),'monthly':europe_sd_monthly.reset_index()['residual'].std(),
                                  'seasonally':europe_sd_seasonally.reset_index()['residual'].std()}
         print(self.sd_baseline_europe)
+
+        # loop through generation technologies
         for key in self.capacity_factors[year-1].keys():
+            # get capacity factor of specific tech during the timerange of interest and bring to right formate
             cf = self.capacity_factors[year-1][key][['time', name]]
             cf = cf[cf['time'].isin(time_range)]
-
             cf['time'] = cf['time'].astype('datetime64[ns]')
+
+            # resample capacity factors on daily, weekly, monthly and quaterly level
             cf_daily=cf.set_index('time').resample('D').mean()
             cf_weekly=cf.set_index('time').resample('W').mean()
             cf_monthly=cf.set_index('time').resample('M').mean()
             cf_seasonally=cf.set_index('time').resample('Q').mean()
 
-
+            # How big is the capacity that is (hypothetically) added to get new residual load. Quite unnessecary.
             capacity=1
+            # add capacity factor time series to residual load time series and take sd
             self.standard_deviations_europe[name][key] = (capacity*cf.reset_index()[name] +self.residual_load_europe.reset_index()['residual']).std()
             self.standard_deviations_europe_daily[name][key] = (capacity*cf_daily.reset_index()[name] + europe_sd_daily.reset_index()['residual']).std()
             self.standard_deviations_europe_weekly[name][key] = (
@@ -158,21 +168,27 @@ class pipeline:
 
 
     def get_national_score(self):
-        sd_list=[self.standard_deviations_national,self.standard_deviations_national_daily,self.standard_deviations_national_weekly,self.standard_deviations_national_monthly,self.standard_deviations_national_seasonally]
+       #dictionary of national residual loads' sd. TODO: rename to sd_dict
         sd_list = {'hourly':self.standard_deviations_national, 'daily':self.standard_deviations_national_daily,
                    'weekly': self.standard_deviations_national_weekly, 'monthly':self.standard_deviations_national_monthly,
                    'seasonally':self.standard_deviations_national_seasonally}
 
         self.national_score = {}
 
+        #iterate through dict to get score for all time horizons
         for key in sd_list:
             standard_deviations_df=pd.DataFrame.from_dict(sd_list[key])
+
+            #add time horizon (hourly, daily, weekly...) to dict
             self.national_score_dict[key]={}
 
             for country in standard_deviations_df:
+                #add country to dict
                 self.national_score_dict[key][country]={}
                 if country not in self.national_score.keys():
                     self.national_score[country]={}
+
+                #get smallest and largest sd throughout all countries and VRE techs
                 sd_max=standard_deviations_df[country].max()
                 sd_min=standard_deviations_df[country].min()
                 for i in standard_deviations_df[country].index:
@@ -180,17 +196,8 @@ class pipeline:
                     sd=standard_deviations_df[country][i]
 
                     if sd_max!=sd_min and not math.isnan(sd):
-                        # if sd > self.sd_baseline_national[country][key]:
-                        #     try:
-                        #         self.national_score[country][i] += 0
-                        #         self.national_score_dict[key][country][i] = 0
-                        #         print(country, key, i)
-                        #     except:
-                        #         self.national_score[country][i] = 0
-                        #         self.national_score_dict[key][country][i] = 0
-                        #         print(country, key, i)
-                        #
-                        # else:
+
+                        #add scores of multiple time horizons. Goes to "except" if self.national_score[country][i] is not defined yet -> first iteration
                         try:
                             self.national_score[country][i]+=self.score_weight[key]*(1-(sd-sd_min)/(sd_max-sd_min))
                             self.national_score_dict[key][country][i]=(1-(sd-sd_min)/(sd_max-sd_min))
@@ -198,6 +205,7 @@ class pipeline:
                             self.national_score[country][i] = self.score_weight[key]*(1 - (sd - sd_min) / (sd_max - sd_min))
                             self.national_score_dict[key][country][i] =(1 - (sd - sd_min) / (sd_max - sd_min))
 
+                    # if sd is nan the or sd_min=sd_max the score is 0. Both should not happen if the time range is larger than a quarter of a year
                     else:
                         try:
                             self.national_score[country][i]+=0
@@ -207,6 +215,7 @@ class pipeline:
                             self.national_score[country][i] = 0
                             self.national_score_dict[key][country][i]=0
 
+                    # if a country has no shore, wind_offshore always receives a score of 0
                     if country in self.shoreless_countries and i=='wind_offshore':
                         self.national_score[country][i] = 0
                         self.national_score_dict[key][country][i] = 0
@@ -218,42 +227,36 @@ class pipeline:
 
 
     def get_european_score(self):
-        sd_list = [self.standard_deviations_europe, self.standard_deviations_europe_daily,
-                   self.standard_deviations_europe_weekly, self.standard_deviations_europe_monthly,
-                   self.standard_deviations_europe_seasonally]
+        #dictionary of national residual loads' sd. TODO: rename to sd_dict
         sd_list = {'hourly': self.standard_deviations_europe, 'daily': self.standard_deviations_europe_daily,
                    'weekly': self.standard_deviations_europe_weekly,
                    'monthly': self.standard_deviations_europe_monthly,
                    'seasonally': self.standard_deviations_europe_seasonally}
         self.european_score={}
+        # iterate through dict to get score for all time horizons
         for key in sd_list:
             standard_deviations_df = pd.DataFrame.from_dict(sd_list[key])
+            # add time horizon (hourly, daily, weekly...) to dict
             self.european_score_dict[key] = {}
 
             #sd_max = np.nanmax(standard_deviations_df.to_numpy())
             #sd_min = np.nanmin(standard_deviations_df.to_numpy())
 
             for country in standard_deviations_df:
+                # add country to dict
                 self.european_score_dict[key][country] = {}
                 if country not in self.european_score.keys():
                     self.european_score[country]={}
 
 
                 for i in standard_deviations_df[country].index:
+                    # get smallest and largest sd throughout all countries and VRE techs
                     sd_max = np.nanmax(standard_deviations_df.loc[i].to_numpy())
                     sd_min = np.nanmin(standard_deviations_df.loc[i].to_numpy())
 
                     sd=standard_deviations_df[country][i]
                     if sd_max!=sd_min and not math.isnan(sd):
-                        # if sd > self.sd_baseline_europe[key]:
-                        #     try:
-                        #         self.european_score[country][i] = + 0
-                        #         self.european_score_dict[key][country][i] = 0
-                        #     except:
-                        #         self.european_score[country][i] =  0
-                        #         self.european_score_dict[key][country][i] = 0
-                        #
-                        # else:
+                        # add scores of multiple time horizons. Goes to "except" if self.national_score[country][i] is not defined yet -> first iteration
                         try:
                             self.european_score[country][i]+=self.score_weight[key]*(1-(sd-sd_min)/(sd_max-sd_min))
                             self.european_score_dict[key][country][i]=(1-(sd-sd_min)/(sd_max-sd_min))
@@ -261,7 +264,7 @@ class pipeline:
                             self.european_score[country][i] = self.score_weight[key]*(1 - (sd - sd_min) / (sd_max - sd_min))
                             self.european_score_dict[key][country][i] = (1 - (sd - sd_min) / (sd_max - sd_min))
 
-
+                    # if sd is nan the or sd_min=sd_max the score is 0. Both should not happen if the time range is larger than a quarter of a year
                     else:
                         print(key)
                         try:
@@ -271,6 +274,7 @@ class pipeline:
                             self.european_score[country][i] = 0
                             self.european_score_dict[key][country][i]=0
 
+                    # if a country has no shore, wind_offshore always receives a score of 0
                     if country in self.shoreless_countries and i=='wind_offshore':
                         self.european_score[country][i] = 0
                         self.european_score_dict[key][country][i] = 0
@@ -287,6 +291,8 @@ class pipeline:
 
             self.incentive_dict[country]={}
             for tech in self.national_score[country].keys():
+
+                # insert updated om_prod costs to backend. wind_onshore is separate, since it consists of wind_onshore_competing and wind_onshore_monopoly
                 if tech=='wind_onshore':
                     self.energy_model.backend.update_param('cost_om_prod',
                                                            {('monetary', country + '::' + tech+'_competing'): self.cost_calculator(
@@ -296,40 +302,28 @@ class pipeline:
                 else:
                     self.energy_model.backend.update_param('cost_om_prod',{('monetary', country + '::' + tech): self.cost_calculator(
                                                                country, tech)})
-                # if tech != 'wind_onshore':
-                #     example_model['overrides']['cost_adjustments']['locations'][country]['techs'][tech] = {
-                #         'costs': {'monetary': {'om_prod': self.cost_calculator(country, tech)}}}
-                #     # example_model['overrides']['locations'][country]['techs']={tech:{'costs':{'monetary'}}['monetary']['om_prod']['costs']['om_prod']=cost_calculator()
-                # else:
-                #     example_model['overrides']['cost_adjustments']['locations'][country]['techs'][
-                #         'wind_onshore_competing'] = {'costs': {'monetary': {'om_prod': self.cost_calculator(country, tech)}}}
-                #     example_model['overrides']['cost_adjustments']['locations'][country]['techs'][
-                #         'wind_onshore_monopoly'] = {'costs': {'monetary': {'om_prod': self.cost_calculator(country, tech)}}}
+
         pd.DataFrame.from_dict(self.incentive_dict).to_csv(os.path.join(self.output_path,'incentives_step_{}'.format(year)))
 
     def cost_calculator(self, country, tech):
-        #next block uncomment for random incentives
-        #import random
-        #shuffled=list(self.european_score.values())
-        #random.shuffle(shuffled)
-        #self.european_score=dict(zip(self.european_score,shuffled))
-        #shuffled=list(self.national_score.values())
-        #random.shuffle(shuffled)
-        #self.national_score=dict(zip(self.national_score,shuffled))
+        # x is composite score of national and european score
+        x = (self.european_score[country][tech]+self.national_score[country][tech])
 
-        x = (self.european_score[country][tech]+self.european_score[country][tech])
-
-        #-10 to 10
+        #linearly: -10 to 10
         x=2*x-10
 
-        #logistic funciton 0-10
+        #logistic funciton: 0-10
         #x=10/(1+math.exp(-1.65*(x-5)))
+
         incentive= self.max_incentive[tech]*(5/sum(self.score_weight.values()))*(x/10)
         #incentive= 0.003*(5/sum(self.score_weight.values()))*(x/10)
+
+        #if incentive is nan, return original om_prod -> should not happen
         if math.isnan(x) or math.isnan(self.VRE_om_prod[tech]+x):
             print(tech,country)
             self.incentive_dict[country][tech]= np.nan
             return self.VRE_om_prod[tech]
+        #if x is not nan, return om_prod - incentive payment
         else:
             self.incentive_dict[country][tech]=incentive
             return (float(self.VRE_om_prod[tech] - incentive))
@@ -424,14 +418,17 @@ class pipeline:
     def energy_autarky(self,year, fossil_share,energy_prod_model):
 
         if year==2:
+            #get LCOE from first modelling step to calculate incentive payments
             self.max_incentive=self.get_LCOE()
 
         for i in fossil_share.index:
             try:
+                # defines level of autarky countries need to have. Must be changed to run levels with other autarky levels
                 self.energy_model.backend.update_param('group_demand_share_min',{('electricity','{}_autarky'.format(i)):0.0})
             except:
                 print('not in Backend')
-            #print(self.energy_model.inputs['group_demand_share_min'])
+
+            # Adjust nuclear share if for Germany, Belgium, Spain and Switzerland  -  Phaseout 2030 -> after 2nd modelling step. TODO: Maybe discuss if nuclear is supposed to be handeled this way
             if i in ['DEU','BEL','ESP','CHE']:
                 if self.nuclear_scaling_factor<=1 and self.nuclear_scaling_factor>=0:
                     self.energy_model.backend.update_param('group_demand_share_equals',{('electricity','{}_nuclear'.format(i)):self.nuclear_scaling_factor*float(energy_prod_model['nuclear'][i])})
@@ -439,21 +436,27 @@ class pipeline:
                 else:
                     self.energy_model.backend.update_param('group_demand_share_equals',{('electricity','{}_nuclear'.format(i)): float(0)})
             else:
+                #for all other countries initial nuclear share will be used
                 self.energy_model.backend.update_param('group_demand_share_equals',
                                                        {('electricity', '{}_nuclear'.format(i)): float(energy_prod_model['nuclear'][i])})
 
+            #Update fossil fuel share
             self.energy_model.backend.update_param('group_demand_share_equals',
                                                   {('electricity', '{}_fossil'.format(i)): float(fossil_share[i])})
 
+        #use energy capacity of wind and solar PV as minimum for next modelling step
         for i in self.renewables_share.index:
             self.energy_model.backend.update_param('group_energy_cap_min',
                                                    {(self.renewables_share['country'][i] + '_' + self.renewables_share['tech'][i]): float(self.renewables_share['share'][i])})
 
-       #adjust technology costs
+       #adjust technology costs only if we are not in the baseline run
         if self.baseline_run==False:
-            print('THIS ACUTALLY WORKS')
+
+
             grouped = self.residual_load_country[['locs', 'timesteps', 'residual']].groupby('locs')
             time_range = self.time_steps['timesteps'].to_list()
+
+            #name is the country name, group is the residual load dataframe of this country
             for name, group in grouped:
 
                 self.get_national_sd(name, group, time_range,year)
@@ -462,6 +465,7 @@ class pipeline:
             self.get_national_score()
             self.get_european_score()
 
+            #safe standard deviations to csv
             pd.DataFrame.from_dict(self.standard_deviations_national).to_csv(os.path.join(self.output_path,'sd_national_hourly_step_{}'.format(year)))
             pd.DataFrame.from_dict(self.standard_deviations_national_daily).to_csv(
                 os.path.join(self.output_path, 'sd_national_daily_step_{}'.format(year)))
@@ -492,28 +496,11 @@ class pipeline:
 
 
     def run_planning_model(self,year, fossil_share,energy_prod_model):
+
         capacity_factors=self.euro_calliope_specifications.get_capacity_factors()
         self.capacity_factors[year]=capacity_factors
 
-        if year <= 1:
-            # self.energy_model = calliope.Model(
-            #      'build/model/national/example-model-plan-year{}.yaml'.format(year))
-            # self.energy_model.run()
-            # self.energy_model.to_netcdf('build/model/model_{}.nc'.format(self.ts_year))
-            # exit()
-            print('Not loading yaml, but using .nc file')
-        else:
-            if self.baseline_run==False:
-                print('not building')
-                #self.energy_model = calliope.Model(
-                #'build/model/national/example-model-plan-year{}.yaml'.format(year),
-                #scenario='adjust')
-
-               # self.adjust_capacity_shares(year, fossil_share,energy_prod_model)
-            else:
-                #self.energy_model = calliope.Model(
-                 #   'build/model/national/example-model-plan-year{}.yaml'.format(year))
-                print('not building in baseline')
+        # Rerun model if it is not the first modelling step
         if year>1:
             #self.energy_model = calliope.read_netcdf('build/model/model_{}.nc'.format(self.ts_year))
             #self.energy_model.run()
@@ -525,17 +512,27 @@ class pipeline:
             dict_european_score=pd.DataFrame.from_dict(self.european_score_dict)
             dict_european_score.to_csv(os.path.join(self.output_path,'european_score_year_{}'.format(year)))
 
+            #rerun model
             model_rerun=self.energy_model.backend.rerun()
             self.model_dict['year {}'.format(year)] = model_rerun
+
+        # if it is the first modeling step and we are in the baseline run (no incentives). Energy system with zero fossil fuel share is modelled in one step
         elif self.baseline_run==True:
             self.energy_model = calliope.read_netcdf('build/model/model_4h_00_autarky_scenario.nc')
+            #run model from netcdf to access the backend
             self.energy_model.run(force_rerun=True)
+
+            #adjust backend
             self.energy_autarky(year, fossil_share, energy_prod_model)
+
+            #rerun model with the correct backend
             model_rerun=self.energy_model.backend.rerun()
             self.model_dict['year {}'.format(year)] = model_rerun
+
+        # if we model the incentive model we don't need to do any adjustment to the netcdf model in the first step (since we already insert correct values in the building of the netcdf)
         else:
             print('RUNNING')
-            self.energy_model=calliope.read_netcdf('build/model/model_4h_00_autarky_scenario.nc')#_4h.nc')
+            self.energy_model=calliope.read_netcdf('build/model/model_4h_00_autarky_scenario.nc')
             self.energy_model.run(force_rerun=True)
             self.model_dict['year {}'.format(year)] = self.energy_model
         #self.energy_model.to_netcdf('build/model/model_{}.nc'.format(year))

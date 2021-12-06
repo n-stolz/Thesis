@@ -80,6 +80,7 @@ def run_models():
                 model.renewables_share = model.get_wind_pv_shares(config, year)
                 if year>1:
 
+                    #get residual loads on national and european level
                     model.time_steps=model.get_production_timeseries(year)
 
                 if year==1:
@@ -88,10 +89,7 @@ def run_models():
 
 
                 model.run_planning_model(year,euro_calliope_specifications.fossil_share,config.energy_prod_model)
-                #energy_cap=get_energy_cap()
-                #transmission_cap=get_transmission_cap()
-                #storage_cap=get_storage_cap()
-                #resource_cap=get_resource_cap()
+
                 model.save_model(year)
     pd.DataFrame.from_dict(year_sequence).to_csv(
         os.path.join(model.output_path, 'demand_year_sequence.csv'))
