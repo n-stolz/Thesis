@@ -1,0 +1,50 @@
+techs:
+    battery: # based on [@Schmidt:2019]
+        essentials:
+            name: 'Battery storage'
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_cap_max: inf
+            storage_cap_max: inf
+            energy_eff: 0.9273  # 0.86 round trip efficiency
+            storage_loss: 0  # No loss over time assumed
+            lifetime: 10
+        costs:
+            monetary:
+                storage_cap: 10.123820000000002 # (10,000 EUR2015/MWh), 802 $2015
+                energy_cap: 8.558536000000002 # (10,000 EUR2015/MW), 678 $2015
+                om_annual: 0.126224 # (10,000 EUR2015/MW/year), 10 $2015
+                om_prod: 3.780000000000001e-05 # (10,000 EUR2015/MWh), 3 $2015
+    pumped_hydro: # based on [@Schmidt:2019]
+        essentials:
+            name: 'Pumped hydro power storage'
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_cap_max: inf
+            storage_cap_max: inf
+            energy_eff: 0.8832 # 0.78 round-trip
+            lifetime: 55
+        costs:
+            monetary:
+                storage_cap: 7.357566 # (10,000 EUR2015/MWh), 80 $2015
+                energy_cap: 103.833246 # (10,000 EUR2015/MW), 1129 $2015
+                om_annual: 0.7357260000000001 # (10,000 EUR2015/MW/year), 8 $2015
+                om_prod: 0.00010200000000000001 # (10,000 EUR2015/MWh), 1 $2015, rounded to 1€ for numeric range
+    hydrogen: # based on [@Schmidt:2019]
+        essentials:
+            name: Hydrogen power storage
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_cap_max: inf
+            storage_cap_max: inf
+            energy_eff: 0.6325  # 0.40 round-trip
+            lifetime: 15
+        costs:
+            monetary:
+                storage_cap: 0.9223830000000001  # (10,000 EUR2015/MWh), 31 $2015
+                energy_cap: 161.18147100000002  # (10,000 EUR2015/MW), 5417 $2015
+                om_annual: 1.368708 # (10,000 EUR2015/MW/year), 46 $2015
+                om_prod: 0
