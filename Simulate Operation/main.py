@@ -12,13 +12,7 @@ import sys
 import datetime
 import time
 
-def get_random_year():
-    years = [2016]
-    selection = choice(years)
-    years.remove(selection)
-    #ONLY FOR DEBUGGING!
-    #selection=2016
-    return selection
+
 
 def copy_year_to_model(demand_year):
     print('Demand and CF time series from: ', demand_year)
@@ -76,6 +70,8 @@ def run_models():
                 specs.years = 1
             else:
                 specs.years=years
+
+            # loop through all years that should be included in analysis
             for year in [2010,2011,2012,2013,2014,2015]:
                 print('run_models thinks we are in year:',year)
                 if baseline==False:
@@ -94,29 +90,19 @@ def run_models():
                         #demand_year=get_random_year()
                         model.ts_year=year
                         year_sequence['adjusted_costs:']['step {}'.format(year)] = model.ts_year
+                    #copy from year of interest to correct repository
                     copy_year_to_model(model.ts_year)
                     logging.info('running model run no: %s; demand and cf timeseries of year %s', year,model.ts_year)
 
-                    #euro_calliope_specifications.fossil_share=config.energy_prod_model[['coal','ccgt']].sum(axis=1)-year*(1/specs.years)*config.energy_prod_model[['coal','ccgt']].sum(axis=1)
-
-                    #model.nuclear_scaling_factor = 1-3*year*(1/specs.years)
 
 
-                    #model.renewables_share = model.get_wind_pv_shares(config, year)
-                    #if year>1:
-
-                        #model.time_steps=model.get_production_timeseries(year)
-
-
+                    #create the operation YAML file
                     model.create_yaml_operate(year, config.energy_prod_model)
 
 
 
                     model.run_planning_model(year)
-                    #energy_cap=get_energy_cap()
-                    #transmission_cap=get_transmission_cap()
-                    #storage_cap=get_storage_cap()
-                    #resource_cap=get_resource_cap()
+                    
                     model.save_model(year)
     pd.DataFrame.from_dict(year_sequence).to_csv(
         os.path.join(model.output_path, 'demand_year_sequence.csv'))

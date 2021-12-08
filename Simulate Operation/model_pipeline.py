@@ -10,6 +10,7 @@ import numpy as np
 
 class pipeline:
 
+    #Adjust Yaml file for model and include the correct energy caps
     def create_yaml_operate(self,year,energy_prod_model):
 
         example_model = open('build/model/national/example-model-template.yaml')
@@ -30,6 +31,8 @@ class pipeline:
 
         locations = open('build/model/national/locations_template.yaml')
         locations=yaml.load(locations, Loader=yaml.FullLoader)
+
+        #read energy cap from optimized model
         if self.baseline_run==True:
             energy_cap=pd.read_csv(os.path.join(self.model_path,'baseline','model_csv_year_1', 'results_energy_cap.csv'))
         else:
@@ -45,6 +48,7 @@ class pipeline:
                     locations['locations'][loc]['techs'][tech]['constraints']= {'energy_cap_equals':float(
                         energy_cap['energy_cap'][i])}
 
+        #read storage cap from optimized model
         if self.baseline_run == True:
             storage_cap = pd.read_csv(
                 os.path.join(self.model_path, 'baseline', 'model_csv_year_1', 'results_storage_cap.csv'))
@@ -65,6 +69,7 @@ class pipeline:
         link = open('build/model/national/link-all-neighbours_template.yaml')
         link=yaml.load(link, Loader=yaml.FullLoader)
 
+        #insert transmission techs
         for i in energy_cap.index:
             loc=energy_cap['locs'][i]
             tech=energy_cap['techs'][i]
