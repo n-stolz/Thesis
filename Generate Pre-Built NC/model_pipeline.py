@@ -56,11 +56,23 @@ class pipeline:
                                                               'locs': [i]}
 
 
-            #Add share of nuclear power in year 0
-            example_model['group_constraints'][i + '_nuclear'] = {
-                        'demand_share_equals': {'electricity': float(energy_prod_model['nuclear'][i])}, 'locs': [i],
-                        'techs': ['nuclear']}
+            #Add share of nuclear power after step 1
+            if i in ['DEU','BEL','ESP','CHE']:
 
+                if self.nuclear_scaling_factor<=1 and self.nuclear_scaling_factor>=0:
+                    example_model['group_constraints'][i + '_nuclear'] = {
+                        'demand_share_equals': {'electricity': self.nuclear_scaling_factor*float(energy_prod_model['nuclear'][i])}, 'locs': [i],
+                        'techs': ['nuclear']}
+                else:
+                    example_model['group_constraints'][i + '_nuclear'] = {
+                        'demand_share_equals': {
+                            'electricity': float(0)},
+                        'locs': [i],
+                        'techs': ['nuclear']}
+            else:
+                example_model['group_constraints'][i + '_nuclear'] = {
+                    'demand_share_equals': {'electricity': float(energy_prod_model['nuclear'][i])}, 'locs': [i],
+                    'techs': ['nuclear']}
 
             #Add fossil fuel share in year 0
             example_model['group_constraints'][i + '_fossil'] = {
