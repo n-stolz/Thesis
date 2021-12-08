@@ -15,7 +15,7 @@ The reason this step is separate from the optimization is that this step cannot 
 **Usage**: "python main.py arg1 arg2 arg3 arg4 arg5" 
 where: 
 
- Markup : * arg1 - number of modelling steps. This is usually six steps for timer intervals of five years
+* arg1 - number of modelling steps. This is usually six steps for timer intervals of five years
 * arg2 - start date (e.g. 01-01)
 * arg3 - end date (e.g. 12-31)
 * arg4 - threads that can be used by Gurobi
