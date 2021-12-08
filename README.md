@@ -10,8 +10,7 @@ The repository consists of four files:
 ### Generate Pre-Built NC
 
 This repository builts a YAML file according to calliope specifications, reads it and saves the read model as .nc file.
-The reason this step is separate from the optimization is that this step cannot be parallelized (to my knowlegde) and took a lot of computation time on only 
-4 cores.
+The reason this step is separate from the optimization is that this step cannot be parallelized (to my knowlegde) and took a lot of computation time.
 **Usage**: "python main.py arg1 arg2 arg3 arg4 arg5" 
 where: 
 
