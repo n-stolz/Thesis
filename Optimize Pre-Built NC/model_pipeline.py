@@ -328,6 +328,7 @@ class pipeline:
             self.incentive_dict[country][tech]=incentive
             return (float(self.VRE_om_prod[tech] - incentive))
 
+    # In current version this function is not used, since YAML file is created in Generate Pre-Built NC folder
     def create_yaml_plan(self,fossil_share,year,energy_prod_model):
         print('create_yaml_plan thinks we are in year:', year)
         example_model = open('build/model/national/example-model-template.yaml')
@@ -379,19 +380,7 @@ class pipeline:
 
             except:
                 self.VRE_om_prod[tech] = renewable_techs['tech_groups'][tech]['costs']['monetary']['om_prod']
-        #     # print(tech, renewable_techs['tech_groups'][tech]['costs']['monetary']['om_prod'])
-        #
-        #     grouped = self.residual_load_country[['locs', 'timesteps', 'residual']].groupby('locs')
-        #     time_range = self.time_steps['timesteps'].to_list()
-        #     for name, group in grouped:
-        #
-        #         self.get_national_sd(name, group, time_range,year)
-        #         self.get_european_sd(name, time_range,year)
-        #     self.get_national_score()
-        #     self.get_european_score()
-        #
-        #     if self.baseline_run==False:
-        #         example_model = self.adjust_costs(example_model,year)
+
 
         with open('build/model/national/example-model-plan-year{}.yaml'.format(year),
                   'w') as outfile:
