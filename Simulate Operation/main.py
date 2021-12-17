@@ -54,7 +54,7 @@ def run_models():
         scenario_path=('/home/niklas/Operation_Mode/test_scenario')
     else:
         #output_path = ('/cluster/scratch/nstolz/six_scenarios_sd_discrete/output_25per_incentive_00_autarky')
-        scenario_path=('/cluster/scratch/nstolz/test')
+        scenario_path=('/cluster/scratch/nstolz/Operation_files')
 
     scenario_list=os.listdir(scenario_path)
     print(scenario_list)
@@ -68,7 +68,7 @@ def run_models():
 
             model.baseline_run=baseline
             model.model_path=os.path.join(scenario_path,scenario)
-            model.output_path = os.path.join(model.model_path,'Operation')
+            model.output_path = os.path.join(model.model_path,'Planning_mode_all_years')
 
 
 
@@ -76,7 +76,7 @@ def run_models():
                 specs.years = 1
             else:
                 specs.years=years
-            for year in [2010,2011,2012,2013,2014,2015]:
+            for year in [2010,2011,2012,2013,2014,2015,2017,2018]:
                 print('run_models thinks we are in year:',year)
                 if baseline==False:
                     path=os.path.join(model.output_path,'adjusted_costs/model_csv_year_{}'.format(year))
@@ -94,7 +94,7 @@ def run_models():
                         #demand_year=get_random_year()
                         model.ts_year=year
                         year_sequence['adjusted_costs:']['step {}'.format(year)] = model.ts_year
-                    copy_year_to_model(model.ts_year)
+                    #copy_year_to_model(model.ts_year)
                     logging.info('running model run no: %s; demand and cf timeseries of year %s', year,model.ts_year)
 
                     #euro_calliope_specifications.fossil_share=config.energy_prod_model[['coal','ccgt']].sum(axis=1)-year*(1/specs.years)*config.energy_prod_model[['coal','ccgt']].sum(axis=1)

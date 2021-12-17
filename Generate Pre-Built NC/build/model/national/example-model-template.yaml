@@ -12,9 +12,9 @@ model:
     calliope_version: 0.6.5
     timeseries_data_path: '.'
     subset_time: ['2016-01-01', '2016-12-31']
-    time:
-      function: resample
-      function_options: {'resolution':'4h'}
+ #   time:
+ #     function: resample
+ #     function_options: {'resolution':'2h'}
 run:
     solver: gurobi
     solver_options:

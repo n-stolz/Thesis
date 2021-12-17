@@ -12,7 +12,7 @@ class pipeline:
 
     def create_yaml_operate(self,year,energy_prod_model):
 
-        example_model = open('build/model/national/example-model-template.yaml')
+        example_model = open('build/model/national/example-model-plan.yaml')
         example_model = yaml.load(example_model, Loader=yaml.FullLoader)
 
         example_model['run']['ensure_feasibility'] = True
@@ -91,6 +91,7 @@ class pipeline:
 
             self.energy_model = calliope.Model(
                  'build/model/national/example-model-plan-year{}.yaml'.format(year))
+            self.energy_model.save_commented_model_yaml('/cluster/scratch/nstolz/model.yaml')
             self.energy_model.run()
             # self.energy_model.to_netcdf('build/model/model_{}.nc'.format(self.ts_year))
             # exit()

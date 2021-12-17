@@ -1820,7 +1820,7 @@ overrides:
             energy_cap_min: 0.041589999999999995
         wind_onshore_monopoly:
           constraints:
-            energy_cap_min: 0.4029958333333333
+            energy_cap_min: 0.40299583333333333
       DNK.techs:
         biofuel:
           constraints:

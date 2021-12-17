@@ -128,7 +128,7 @@ class pipeline:
             print(self.ts_year)
 
             ## TODO Bryn+Niklas: agree on naming convention
-            self.energy_model.to_netcdf('build/model/model_4h_00_autarky_lean_code.nc')
+            self.energy_model.to_netcdf('build/model/paper_1h.nc')
             exit()
             #print('Not loading yaml, but using .nc file')
 

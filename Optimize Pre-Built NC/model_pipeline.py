@@ -521,7 +521,7 @@ class pipeline:
         # if we model the incentive model we don't need to do any adjustment to the netcdf model in the first step (since we already insert correct values in the building of the netcdf)
         else:
             print('RUNNING')
-            self.energy_model=calliope.read_netcdf('build/model/model_4h_00_autarky_scenario.nc')
+            self.energy_model=calliope.read_netcdf('build/model/paper_1h.nc')
             self.energy_model.run(force_rerun=True)
             self.model_dict['year {}'.format(year)] = self.energy_model
         #self.energy_model.to_netcdf('build/model/model_{}.nc'.format(year))
@@ -539,7 +539,7 @@ class pipeline:
     def __init__(self):
         self.max_incentive={} #max incentive in Cents/kWh
 
-        self.lcoe_percentage=0.5
+        self.lcoe_percentage=0.3
 
         self.capacity_factors={}
         self.model_dict={'plan':{}}
