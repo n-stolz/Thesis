@@ -507,7 +507,7 @@ class pipeline:
 
         # if it is the first modeling step and we are in the baseline run (no incentives). Energy system with zero fossil fuel share is modelled in one step
         elif self.baseline_run==True:
-            self.energy_model = calliope.read_netcdf('build/model/model_4h_00_autarky_scenario.nc')
+            self.energy_model = calliope.read_netcdf('build/model/paper_1h.nc')
             #run model from netcdf to access the backend
             self.energy_model.run(force_rerun=True)
 

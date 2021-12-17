@@ -56,7 +56,7 @@ group_constraints:
     - AUT
   AUT_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.14549213477301684
     locs:
     - AUT
     techs:
@@ -106,7 +106,7 @@ group_constraints:
     - BEL
   BEL_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.24832402797753658
     locs:
     - BEL
     techs:
@@ -114,7 +114,7 @@ group_constraints:
     - ccgt
   BEL_nuclear:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.22230841391009595
     locs:
     - BEL
     techs:
@@ -156,7 +156,7 @@ group_constraints:
     - BGR
   BGR_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.38652273094157813
     locs:
     - BGR
     techs:
@@ -206,7 +206,7 @@ group_constraints:
     - BIH
   BIH_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.5538086083082125
     locs:
     - BIH
     techs:
@@ -264,7 +264,7 @@ group_constraints:
     - ccgt
   CHE_nuclear:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.17496684835947937
     locs:
     - CHE
     techs:
@@ -356,7 +356,7 @@ group_constraints:
     - CZE
   CZE_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.4314846914896704
     locs:
     - CZE
     techs:
@@ -406,7 +406,7 @@ group_constraints:
     - DEU
   DEU_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.40149673673994546
     locs:
     - DEU
     techs:
@@ -414,7 +414,7 @@ group_constraints:
     - ccgt
   DEU_nuclear:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.0625183641851644
     locs:
     - DEU
     techs:
@@ -456,7 +456,7 @@ group_constraints:
     - DNK
   DNK_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.22382000625994644
     locs:
     - DNK
     techs:
@@ -506,7 +506,7 @@ group_constraints:
     - ESP
   ESP_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.29107645569124535
     locs:
     - ESP
     techs:
@@ -514,7 +514,7 @@ group_constraints:
     - ccgt
   ESP_nuclear:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.10633949763520809
     locs:
     - ESP
     techs:
@@ -556,7 +556,7 @@ group_constraints:
     - EST
   EST_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.00496359840729121
     locs:
     - EST
     techs:
@@ -606,7 +606,7 @@ group_constraints:
     - FIN
   FIN_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.11426991324384125
     locs:
     - FIN
     techs:
@@ -656,7 +656,7 @@ group_constraints:
     - FRA
   FRA_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.0623278217252558
     locs:
     - FRA
     techs:
@@ -706,7 +706,7 @@ group_constraints:
     - GBR
   GBR_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.38866251852342376
     locs:
     - GBR
     techs:
@@ -756,7 +756,7 @@ group_constraints:
     - GRC
   GRC_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.49449315067834787
     locs:
     - GRC
     techs:
@@ -806,7 +806,7 @@ group_constraints:
     - HRV
   HRV_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.27520770009488676
     locs:
     - HRV
     techs:
@@ -856,7 +856,7 @@ group_constraints:
     - HUN
   HUN_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.3103801407501411
     locs:
     - HUN
     techs:
@@ -906,7 +906,7 @@ group_constraints:
     - IRL
   IRL_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.49887593565355365
     locs:
     - IRL
     techs:
@@ -956,7 +956,7 @@ group_constraints:
     - ITA
   ITA_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.45867539469043217
     locs:
     - ITA
     techs:
@@ -1006,7 +1006,7 @@ group_constraints:
     - LTU
   LTU_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.2387265639745526
     locs:
     - LTU
     techs:
@@ -1056,7 +1056,7 @@ group_constraints:
     - LUX
   LUX_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.2691580521294473
     locs:
     - LUX
     techs:
@@ -1106,7 +1106,7 @@ group_constraints:
     - LVA
   LVA_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.35887570235479915
     locs:
     - LVA
     techs:
@@ -1206,7 +1206,7 @@ group_constraints:
     - MNE
   MNE_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.3569356044638504
     locs:
     - MNE
     techs:
@@ -1256,7 +1256,7 @@ group_constraints:
     - NLD
   NLD_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.6240440352085477
     locs:
     - NLD
     techs:
@@ -1306,7 +1306,7 @@ group_constraints:
     - NOR
   NOR_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.014018522617417536
     locs:
     - NOR
     techs:
@@ -1356,7 +1356,7 @@ group_constraints:
     - POL
   POL_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.6896940184591589
     locs:
     - POL
     techs:
@@ -1406,7 +1406,7 @@ group_constraints:
     - PRT
   PRT_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.39076622381359877
     locs:
     - PRT
     techs:
@@ -1456,7 +1456,7 @@ group_constraints:
     - ROU
   ROU_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.33092725806769124
     locs:
     - ROU
     techs:
@@ -1506,7 +1506,7 @@ group_constraints:
     - SRB
   SRB_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.5884873716779169
     locs:
     - SRB
     techs:
@@ -1556,7 +1556,7 @@ group_constraints:
     - SVK
   SVK_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.15074331637717994
     locs:
     - SVK
     techs:
@@ -1606,7 +1606,7 @@ group_constraints:
     - SVN
   SVN_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.2654951783505845
     locs:
     - SVN
     techs:
@@ -1656,7 +1656,7 @@ group_constraints:
     - SWE
   SWE_fossil:
     demand_share_equals:
-      electricity: 0.0
+      electricity: 0.003888979151631883
     locs:
     - SWE
     techs:
