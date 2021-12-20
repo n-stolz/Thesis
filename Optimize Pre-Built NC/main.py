@@ -74,8 +74,10 @@ def run_models():
                 logging.info('running model run no: %s; demand and cf timeseries of year %s', year,model.ts_year)
                 print(year)
                 euro_calliope_specifications.fossil_share=config.energy_prod_model[['coal','ccgt']].sum(axis=1)-year*(1/specs.years)*config.energy_prod_model[['coal','ccgt']].sum(axis=1)
-                model.nuclear_scaling_factor = 1-3*year*(1/specs.years)
 
+                model.nuclear_scaling_factor_2025 = 1-6*year*(1/specs.years)
+                model.nuclear_scaling_factor_2030 = 1-3*year*(1/specs.years)
+                model.nuclear_scaling_factor_2035 = 1-2*year*(1/specs.years)
 
                 model.renewables_share = model.get_wind_pv_shares(config, year)
                 if year>1:
@@ -83,8 +85,8 @@ def run_models():
                     #get residual loads on national and european level
                     model.time_steps=model.get_production_timeseries(year)
 
-                if year==1:
-                    model.create_yaml_plan(euro_calliope_specifications.fossil_share, year, config.energy_prod_model)
+                #if year==1:
+                #    model.create_yaml_plan(euro_calliope_specifications.fossil_share, year, config.energy_prod_model)
 
 
 

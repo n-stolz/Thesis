@@ -329,62 +329,62 @@ class pipeline:
             return (float(self.VRE_om_prod[tech] - incentive))
 
     # In current version this function is not used, since YAML file is created in Generate Pre-Built NC folder
-    def create_yaml_plan(self,fossil_share,year,energy_prod_model):
-        print('create_yaml_plan thinks we are in year:', year)
-        example_model = open('build/model/national/example-model-template.yaml')
-        example_model = yaml.load(example_model, Loader=yaml.FullLoader)
-        example_model['group_constraints'] = {}
-        example_model['run']['solver']='gurobi'
-        example_model['run']['solver_io']='python'
-        example_model['run']['solver_options']={'Threads':int(sys.argv[4])}
-        start_date=sys.argv[2]
-        end_date=sys.argv[3]
-        example_model['model']['subset_time']=['{}-'.format(self.ts_year)+start_date,'{}-'.format(self.ts_year)+end_date]
-        for i in fossil_share.index:
-            if year==1:
-                example_model['group_constraints'][i + '_autarky'] = {'demand_share_min': {'electricity': 0.0},
-                                                              'locs': [i]}
+#    def create_yaml_plan(self,fossil_share,year,energy_prod_model):
+#        print('create_yaml_plan thinks we are in year:', year)
+#        example_model = open('build/model/national/example-model-template.yaml')
+#        example_model = yaml.load(example_model, Loader=yaml.FullLoader)
+#        example_model['group_constraints'] = {}
+#        example_model['run']['solver']='gurobi'
+#        example_model['run']['solver_io']='python'
+#        example_model['run']['solver_options']={'Threads':int(sys.argv[4])}
+#        start_date=sys.argv[2]
+#        end_date=sys.argv[3]
+#        example_model['model']['subset_time']=['{}-'.format(self.ts_year)+start_date,'{}-'.format(self.ts_year)+end_date]
+#        for i in fossil_share.index:
+#            if year==1:
+#                example_model['group_constraints'][i + '_autarky'] = {'demand_share_min': {'electricity': 0.0},
+#                                                              'locs': [i]}
 
-            if i in ['DEU','BEL','ESP','CHE']:
+            #if i in ['DEU','BEL','ESP','CHE']:
 
-                if self.nuclear_scaling_factor<=1 and self.nuclear_scaling_factor>=0:
-                    example_model['group_constraints'][i + '_nuclear'] = {
-                        'demand_share_equals': {'electricity': self.nuclear_scaling_factor*float(energy_prod_model['nuclear'][i])}, 'locs': [i],
-                        'techs': ['nuclear']}
-                else:
-                    example_model['group_constraints'][i + '_nuclear'] = {
-                        'demand_share_equals': {
-                            'electricity': float(0)},
-                        'locs': [i],
-                        'techs': ['nuclear']}
-            else:
-                example_model['group_constraints'][i + '_nuclear'] = {
-                    'demand_share_equals': {'electricity': float(energy_prod_model['nuclear'][i])}, 'locs': [i],
-                    'techs': ['nuclear']}
+            #    if self.nuclear_scaling_factor<=1 and self.nuclear_scaling_factor>=0:
+            #        example_model['group_constraints'][i + '_nuclear'] = {
+            #            'demand_share_equals': {'electricity': self.nuclear_scaling_factor*float(energy_prod_model['nuclear'][i])}, 'locs': [i],
+            #            'techs': ['nuclear']}
+            #    else:
+            #        example_model['group_constraints'][i + '_nuclear'] = {
+            #            'demand_share_equals': {
+            #                'electricity': float(0)},
+            #            'locs': [i],
+            #            'techs': ['nuclear']}
+            #else:
+            #    example_model['group_constraints'][i + '_nuclear'] = {
+            #        'demand_share_equals': {'electricity': float(energy_prod_model['nuclear'][i])}, 'locs': [i],
+            #        'techs': ['nuclear']}
 
-            example_model['group_constraints'][i + '_fossil'] = {
-                'demand_share_equals': {'electricity': float(fossil_share[i])}, 'locs': [i], 'techs': ['coal', 'ccgt']}
+            #example_model['group_constraints'][i + '_fossil'] = {
+            #    'demand_share_equals': {'electricity': float(fossil_share[i])}, 'locs': [i], 'techs': ['coal', 'ccgt']}
 
-        for i in self.renewables_share.index:
-            example_model['group_constraints'][
-                self.renewables_share['country'][i] + '_' + self.renewables_share['tech'][i]] = {
-                    'energy_cap_min': float(0),
-                    'locs': [str(self.renewables_share['country'][i])], 'techs': [str(self.renewables_share['tech'][i])]}
-
-
-        renewable_techs = open('build/model/renewable-techs.yaml')
-        renewable_techs = yaml.load(renewable_techs, Loader=yaml.FullLoader)
-        for tech in ['wind_offshore', 'wind_onshore', 'open_field_pv', 'roof_mounted_pv']:
-            try:
-                self.VRE_om_prod[tech] = renewable_techs['techs'][tech]['costs']['monetary']['om_prod']
-
-            except:
-                self.VRE_om_prod[tech] = renewable_techs['tech_groups'][tech]['costs']['monetary']['om_prod']
+        #for i in self.renewables_share.index:
+        #    example_model['group_constraints'][
+        #        self.renewables_share['country'][i] + '_' + self.renewables_share['tech'][i]] = {
+        #            'energy_cap_min': float(0),
+        #            'locs': [str(self.renewables_share['country'][i])], 'techs': [str(self.renewables_share['tech'][i])]}
 
 
-        with open('build/model/national/example-model-plan-year{}.yaml'.format(year),
-                  'w') as outfile:
-            yaml.dump(example_model, outfile)  # , default_flow_style=False)
+        #renewable_techs = open('build/model/renewable-techs.yaml')
+        #renewable_techs = yaml.load(renewable_techs, Loader=yaml.FullLoader)
+        #for tech in ['wind_offshore', 'wind_onshore', 'open_field_pv', 'roof_mounted_pv']:
+    #        try:
+    #            self.VRE_om_prod[tech] = renewable_techs['techs'][tech]['costs']['monetary']['om_prod']
+#
+#            except:
+#                self.VRE_om_prod[tech] = renewable_techs['tech_groups'][tech]['costs']['monetary']['om_prod']
+
+
+#        with open('build/model/national/example-model-plan-year{}.yaml'.format(year),
+#                  'w') as outfile:
+#            yaml.dump(example_model, outfile)  # , default_flow_style=False)
 
     def get_LCOE(self):
         technologies=["open_field_pv","wind_onshore_monopoly","wind_offshore","wind_onshore_competing","roof_mounted_pv"]
@@ -418,12 +418,27 @@ class pipeline:
                 print('not in Backend')
 
             # Adjust nuclear share if for Germany, Belgium, Spain and Switzerland  -  Phaseout 2030 -> after 2nd modelling step. TODO: Maybe discuss if nuclear is supposed to be handeled this way
-            if i in ['DEU','BEL','ESP','CHE']:
-                if self.nuclear_scaling_factor<=1 and self.nuclear_scaling_factor>=0:
-                    self.energy_model.backend.update_param('group_demand_share_equals',{('electricity','{}_nuclear'.format(i)):self.nuclear_scaling_factor*float(energy_prod_model['nuclear'][i])})
+            if i in ['BEL']:
+                if self.nuclear_scaling_factor_2025<=1 and self.nuclear_scaling_factor_2025>=0:
+                    self.energy_model.backend.update_param('group_demand_share_equals',{('electricity','{}_nuclear'.format(i)):self.nuclear_scaling_factor_2025*float(energy_prod_model['nuclear'][i])})
 
                 else:
                     self.energy_model.backend.update_param('group_demand_share_equals',{('electricity','{}_nuclear'.format(i)): float(0)})
+
+            elif i in ['DEU']:
+
+                if self.nuclear_scaling_factor_2030<=1 and self.nuclear_scaling_factor_2030>=0:
+                    self.energy_model.backend.update_param('group_demand_share_equals',{('electricity','{}_nuclear'.format(i)):self.nuclear_scaling_factor_2030*float(energy_prod_model['nuclear'][i])})
+                else:
+                    self.energy_model.backend.update_param('group_demand_share_equals',{('electricity','{}_nuclear'.format(i)): float(0)})
+
+            elif i in ['ESP','CHE']:
+
+                if self.nuclear_scaling_factor_2035<=1 and self.nuclear_scaling_factor_2035>=0:
+                    self.energy_model.backend.update_param('group_demand_share_equals',{('electricity','{}_nuclear'.format(i)):self.nuclear_scaling_factor_2035*float(energy_prod_model['nuclear'][i])})
+                else:
+                    self.energy_model.backend.update_param('group_demand_share_equals',{('electricity','{}_nuclear'.format(i)): float(0)})
+
             else:
                 #for all other countries initial nuclear share will be used
                 self.energy_model.backend.update_param('group_demand_share_equals',
@@ -521,7 +536,7 @@ class pipeline:
         # if we model the incentive model we don't need to do any adjustment to the netcdf model in the first step (since we already insert correct values in the building of the netcdf)
         else:
             print('RUNNING')
-            self.energy_model=calliope.read_netcdf('build/model/paper_1h.nc')
+            self.energy_model=calliope.read_netcdf('build/model/model_4h_00_autarky_lean_code.nc')
             self.energy_model.run(force_rerun=True)
             self.model_dict['year {}'.format(year)] = self.energy_model
         #self.energy_model.to_netcdf('build/model/model_{}.nc'.format(year))
@@ -584,6 +599,11 @@ class pipeline:
         self.euro_calliope_specifications=euro_calliope_specifications()
         self.output_path=""
         self.ts_year=2016
-        self.nuclear_scaling_factor=0
+
+
+        self.nuclear_scaling_factor_2025 = 0
+        self.nuclear_scaling_factor_2030 = 0
+        self.nuclear_scaling_factor_2035 = 0
+
         self.incentive_dict={}
         #self.renewables_share=self.get_wind_pv_shares(config, year)
