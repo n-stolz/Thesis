@@ -48,7 +48,7 @@ def run_models():
     if os.path.isdir('/home/niklas/European Incentive Model'):
         output_path = ('/home/niklas/European Incentive Model/output_{}'.format(date_time))
     else:
-        output_path = ('/cluster/scratch/nstolz/paper_1h_30per')
+        output_path = ('/cluster/scratch/nstolz/same_capacity_30per_equal_storage')
 
     model = pipeline()
     for baseline in [False, True]:
@@ -76,8 +76,8 @@ def run_models():
                 euro_calliope_specifications.fossil_share=config.energy_prod_model[['coal','ccgt']].sum(axis=1)-year*(1/specs.years)*config.energy_prod_model[['coal','ccgt']].sum(axis=1)
                 model.nuclear_scaling_factor = 1-3*year*(1/specs.years)
 
-
-                model.renewables_share = model.get_wind_pv_shares(config, year)
+                if baseline==False:
+                    model.renewables_share = model.get_wind_pv_shares(config, year)
                 if year>1:
 
                     #get residual loads on national and european level

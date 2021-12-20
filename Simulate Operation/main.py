@@ -54,7 +54,7 @@ def run_models():
         scenario_path=('/home/niklas/Operation_Mode/test_scenario')
     else:
         #output_path = ('/cluster/scratch/nstolz/six_scenarios_sd_discrete/output_25per_incentive_00_autarky')
-        scenario_path=('/cluster/scratch/nstolz/Operation_files')
+        scenario_path=('/cluster/scratch/nstolz/Operation_files4')
 
     scenario_list=os.listdir(scenario_path)
     print(scenario_list)

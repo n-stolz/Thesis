@@ -110,6 +110,16 @@ class pipeline:
             for tech in energy_prod:
                 locations['overrides']['vre_initial']['locations']['{}.techs'.format(country)][tech]={'constraints':{'energy_cap_min':float(energy_prod.loc[country, tech])}}
                 #print('country:', country,' tech: ',tech, 'share: ', energy_prod.loc[country, tech])
+
+
+        locations['overrides']['scenario_cap']={'group_constraints':{}}
+        locations['overrides']['scenario_cap']['group_constraints']['vre_group']={'techs':['wind_onshore_monopoly','wind_onshore_competing','wind_offshore','roof_mounted_pv','open_field_pv'],'energy_cap_equals':5}
+        locations['overrides']['scenario_cap']['group_constraints']['biofuel_group']={'techs':['biofuel'],
+        'energy_cap_equals':5}
+        locations['overrides']['scenario_cap']['group_constraints']['storage_group']={'techs':['hydrogen','battery'],
+        'energy_cap_equals':5}
+
+
         with open('build/model/national/locations.yaml'.format(year),
                   'w') as outfile:
             yaml.dump(locations, outfile)  # , default_flow_style=False)
@@ -128,7 +138,15 @@ class pipeline:
             print(self.ts_year)
 
             ## TODO Bryn+Niklas: agree on naming convention
-            self.energy_model.to_netcdf('build/model/paper_1h.nc')
+            self.energy_model.to_netcdf('build/model/experiment_scenario.nc')
+
+            self.energy_model = calliope.Model(
+                'build/model/national/example-model-plan-year{}.yaml'.format(year),scenario='vre_initial,freeze-hydro-capacities,scenario_cap')
+            #self.energy_model.run()
+            print(self.ts_year)
+
+            ## TODO Bryn+Niklas: agree on naming convention
+            self.energy_model.to_netcdf('build/model/experiment_baseline.nc')
             exit()
             #print('Not loading yaml, but using .nc file')
 

@@ -1702,6 +1702,25 @@ overrides:
           constraints:
             energy_cap_equals: 0.00092
             storage_cap_equals: 1.8430666666666664
+  scenario_cap:
+    group_constraints:
+      biofuel_group:
+        energy_cap_equals: 5
+        techs:
+        - biofuel
+      storage_group:
+        energy_cap_equals: 5
+        techs:
+        - hydrogen
+        - battery
+      vre_group:
+        energy_cap_equals: 5
+        techs:
+        - wind_onshore_monopoly
+        - wind_onshore_competing
+        - wind_offshore
+        - roof_mounted_pv
+        - open_field_pv
   vre_initial:
     locations:
       ALB.techs:

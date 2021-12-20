@@ -7,11 +7,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.01921010433517204
-          storage_cap_equals: 0.08064912779604931
+          energy_cap_equals: 0.008837777651634824
+          storage_cap_equals: 0.039817002445788625
       biofuel:
         constraints:
-          energy_cap_equals: 0.000527216495314213
+          energy_cap_equals: 0.000487116894367071
           storage_cap_equals: 13.750000000000002
       ccgt:
         constraints:
@@ -29,30 +29,30 @@ locations:
           energy_cap_equals: 0.00362316
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0012325841503202635
-          storage_cap_equals: 0.12023151237253675
+          energy_cap_equals: 0.0012097442762457446
+          storage_cap_equals: 0.1164723825531028
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.05644679832385275
+          energy_cap_equals: 0.042006561645047714
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.00047580418447278137
+          energy_cap_equals: 0.0005351574444111191
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.00033796715075564267
+          energy_cap_equals: 0.0005308877103505019
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.001462678647670514
+          energy_cap_equals: 0.0011335345250161556
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.0009852534083720657
+          energy_cap_equals: 0.0016032144997635194
   AUT:
     available_area: 0.9987509705670179
     coordinates:
@@ -61,11 +61,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.008088479611927003
-          storage_cap_equals: 0.034768369820441423
+          energy_cap_equals: 0.00847616531698352
+          storage_cap_equals: 0.032387024156677435
       biofuel:
         constraints:
-          energy_cap_equals: 0.006196057249022273
+          energy_cap_equals: 0.0061662609101434855
           storage_cap_equals: 170.25
       ccgt:
         constraints:
@@ -83,30 +83,30 @@ locations:
           energy_cap_equals: 0.044136168682581085
       hydrogen:
         constraints:
-          energy_cap_equals: 0.002090752062632103
-          storage_cap_equals: 0.2086642915819372
+          energy_cap_equals: 0.002133397453791655
+          storage_cap_equals: 0.20225994157857088
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.014126856112900843
+          energy_cap_equals: 0.014097702838552113
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.035893
           storage_cap_equals: 7.0101744186046515
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006405471371438776
+          energy_cap_equals: 0.0006989717888772648
       wind_offshore:
         constraints:
           energy_cap_equals: 0.0
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.001893136751653746
+          energy_cap_equals: 0.002133037545204869
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.031204631259948545
+          energy_cap_equals: 0.031225031467120083
   BEL:
     available_area: 0.5074491256605834
     coordinates:
@@ -115,11 +115,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.011531907703761564
-          storage_cap_equals: 0.04960084610703515
+          energy_cap_equals: 0.009877841804016088
+          storage_cap_equals: 0.05256273015384278
       biofuel:
         constraints:
-          energy_cap_equals: 0.012270817888926087
+          energy_cap_equals: 0.008624110929588102
           storage_cap_equals: 89.43750000000001
       ccgt:
         constraints:
@@ -137,30 +137,30 @@ locations:
           energy_cap_equals: 0.0005901533974257918
       hydrogen:
         constraints:
-          energy_cap_equals: 0.02242104054888996
-          storage_cap_equals: 2.3865691552922783
+          energy_cap_equals: 0.03903496869559911
+          storage_cap_equals: 3.758699178207178
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.12012133037809795
+          energy_cap_equals: 0.033028865256028835
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.01308
           storage_cap_equals: 0.05710000000000001
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006391476005663634
+          energy_cap_equals: 0.0006842109737912715
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.007916697159691009
+          energy_cap_equals: 0.00792219527521576
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0017286481204851233
+          energy_cap_equals: 0.0014360151877534314
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.013844885847581144
+          energy_cap_equals: 0.01384620314971019
   BGR:
     available_area: 4.2601354248434316
     coordinates:
@@ -169,11 +169,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.009311333540014914
-          storage_cap_equals: 0.03977681947348721
+          energy_cap_equals: 0.007952463812799848
+          storage_cap_equals: 0.0332576998243944
       biofuel:
         constraints:
-          energy_cap_equals: 0.0007812442266267468
+          energy_cap_equals: 0.0007736994927301114
           storage_cap_equals: 99.25
       ccgt:
         constraints:
@@ -191,30 +191,30 @@ locations:
           energy_cap_equals: 0.00022400000000000002
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0012737742204772245
-          storage_cap_equals: 0.1270161922379482
+          energy_cap_equals: 0.001249369724080709
+          storage_cap_equals: 0.12328197945401415
       nuclear:
         constraints:
-          energy_cap_equals: 0.015989684299460842
+          energy_cap_equals: 0.01579399630338656
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.09676496382142312
+          energy_cap_equals: 0.07260754464250252
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.01399
           storage_cap_equals: 0.4113000000000001
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006518098625135268
+          energy_cap_equals: 0.0007227434565516242
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0006100054980254428
+          energy_cap_equals: 0.0006654043644633073
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.007764398310915094
+          energy_cap_equals: 0.006398159378486456
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.007017866232520653
+          energy_cap_equals: 0.007015033536611259
   BIH:
     available_area: 0.7125125204622745
     coordinates:
@@ -223,11 +223,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.0067102589862745405
-          storage_cap_equals: 0.028826463004530192
+          energy_cap_equals: 0.008026213963064776
+          storage_cap_equals: 0.031050202851113626
       biofuel:
         constraints:
-          energy_cap_equals: 0.0008086830807020695
+          energy_cap_equals: 0.0008076286249226687
           storage_cap_equals: 26.999999999999996
       ccgt:
         constraints:
@@ -245,30 +245,30 @@ locations:
           energy_cap_equals: 0.00096
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0014712630000394266
-          storage_cap_equals: 0.14796045107533348
+          energy_cap_equals: 0.0015180962523154335
+          storage_cap_equals: 0.15153057451693366
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.011417890669860738
+          energy_cap_equals: 0.010852205960487945
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0043
           storage_cap_equals: 3.4e-05
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0005239469539110963
+          energy_cap_equals: 0.0006662250279094985
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0002210636105007
+          energy_cap_equals: 0.00022986170912919906
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0019665699643224483
+          energy_cap_equals: 0.0017953763972940922
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.001921703662722818
+          energy_cap_equals: 0.0022079268797687845
   CHE:
     available_area: 0.14838868635818364
     coordinates:
@@ -277,11 +277,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.008640385660626092
-          storage_cap_equals: 0.037098965367181096
+          energy_cap_equals: 0.008908405520221725
+          storage_cap_equals: 0.03333556956150651
       biofuel:
         constraints:
-          energy_cap_equals: 0.0010903228271876523
+          energy_cap_equals: 0.0011407427899468511
           storage_cap_equals: 90.5
       ccgt:
         constraints:
@@ -299,30 +299,30 @@ locations:
           energy_cap_equals: 0.04084279800000002
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0018196846741508747
-          storage_cap_equals: 0.19125218748412065
+          energy_cap_equals: 0.0019749470070714067
+          storage_cap_equals: 0.1857249395353874
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.1589291605066293
+          energy_cap_equals: 0.10930393146153357
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0408265
           storage_cap_equals: 2.8728171197916668
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006039808661343823
+          energy_cap_equals: 0.0007362714706639977
       wind_offshore:
         constraints:
           energy_cap_equals: 0.0
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0008873253052940981
+          energy_cap_equals: 0.0007164134081117972
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.0006963993853097428
+          energy_cap_equals: 0.0009213616948279267
   CYP:
     available_area: 0.19404790101721886
     coordinates:
@@ -331,11 +331,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.004988446041806585
-          storage_cap_equals: 0.02106040491890976
+          energy_cap_equals: 0.004459251884053796
+          storage_cap_equals: 0.01647006851025737
       biofuel:
         constraints:
-          energy_cap_equals: 0.00028211726768447454
+          energy_cap_equals: 0.0002158299960586965
           storage_cap_equals: 3.6874999999999987
       ccgt:
         constraints:
@@ -353,30 +353,30 @@ locations:
           energy_cap_equals: 0.0
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0009271464721689773
-          storage_cap_equals: 0.07713151146351757
+          energy_cap_equals: 0.0008482020202798418
+          storage_cap_equals: 0.07261853750247665
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0025465980266420316
+          energy_cap_equals: 0.0030854300739241412
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0004685698892229621
+          energy_cap_equals: 0.0005754774087798104
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0003434623494849297
+          energy_cap_equals: 0.00048274199766502743
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.06485996893615402
+          energy_cap_equals: 0.04868636497810639
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.028431315908846105
+          energy_cap_equals: 0.051869779890820304
   CZE:
     available_area: 2.631707464129105
     coordinates:
@@ -385,11 +385,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.007951449997389688
-          storage_cap_equals: 0.03420421197719399
+          energy_cap_equals: 0.008211910568116744
+          storage_cap_equals: 0.03402592704942255
       biofuel:
         constraints:
-          energy_cap_equals: 0.005005416258124728
+          energy_cap_equals: 0.005018959221663275
           storage_cap_equals: 167.12499999999997
       ccgt:
         constraints:
@@ -407,30 +407,30 @@ locations:
           energy_cap_equals: 0.00040226382271496005
       hydrogen:
         constraints:
-          energy_cap_equals: 0.00245140354430088
-          storage_cap_equals: 0.24618095914114735
+          energy_cap_equals: 0.002555687489816459
+          storage_cap_equals: 0.24414192677833985
       nuclear:
         constraints:
-          energy_cap_equals: 0.029318860244912787
+          energy_cap_equals: 0.028638027685632807
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.02058626080059092
+          energy_cap_equals: 0.020498766734633737
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.011725095516678392
           storage_cap_equals: 0.05618274935075062
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006422842406431697
+          energy_cap_equals: 0.0006659992782121188
       wind_offshore:
         constraints:
           energy_cap_equals: 0.0
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.004990636424182972
+          energy_cap_equals: 0.00500466769630954
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.003212066720773343
+          energy_cap_equals: 0.004140706822736373
   DEU:
     available_area: 10.279198279818893
     coordinates:
@@ -439,11 +439,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.011690406584621062
-          storage_cap_equals: 0.05024390427329406
+          energy_cap_equals: 0.012379228749666876
+          storage_cap_equals: 0.06668949272929023
       biofuel:
         constraints:
-          energy_cap_equals: 0.07838774548341514
+          energy_cap_equals: 0.07716386893505588
           storage_cap_equals: 759.6249999999999
       ccgt:
         constraints:
@@ -461,30 +461,30 @@ locations:
           energy_cap_equals: 0.035928955499999915
       hydrogen:
         constraints:
-          energy_cap_equals: 0.004073396225704104
-          storage_cap_equals: 0.3911371355934606
+          energy_cap_equals: 0.005143288289392839
+          storage_cap_equals: 0.4751967572015979
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.40878315962036654
+          energy_cap_equals: 0.4083314388203216
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0658972
           storage_cap_equals: 0.3965473727642276
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006163864875484144
+          energy_cap_equals: 0.0006379291195526318
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.04160001298769167
+          energy_cap_equals: 0.04197014547020217
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0029679962750848916
+          energy_cap_equals: 0.0033338496451481296
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.40320557288697495
+          energy_cap_equals: 0.41309829648273944
   DNK:
     available_area: 1.5027190629962832
     coordinates:
@@ -493,11 +493,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.0716484752214622
-          storage_cap_equals: 0.30891152334284416
+          energy_cap_equals: 0.10763713836590352
+          storage_cap_equals: 0.6781110652991327
       biofuel:
         constraints:
-          energy_cap_equals: 0.013601284948634395
+          energy_cap_equals: 0.01357638688476312
           storage_cap_equals: 76.81249999999999
       ccgt:
         constraints:
@@ -515,30 +515,30 @@ locations:
           energy_cap_equals: 0.0
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0071554973590304705
-          storage_cap_equals: 0.660829248694659
+          energy_cap_equals: 0.00950885409908282
+          storage_cap_equals: 0.8231764426704666
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.01003355323424568
+          energy_cap_equals: 0.009997226112090888
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0005268866964789387
+          energy_cap_equals: 0.000595345441532667
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.017000817424490222
+          energy_cap_equals: 0.01700853529015767
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 1.1754625819689966
+          energy_cap_equals: 1.196849912062418
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.3245833193610769
+          energy_cap_equals: 0.41372434901719507
   ESP:
     available_area: 22.36702421623543
     coordinates:
@@ -547,11 +547,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.043753247252264336
-          storage_cap_equals: 0.18846485980367175
+          energy_cap_equals: 0.05286662095172199
+          storage_cap_equals: 0.30872010568947483
       biofuel:
         constraints:
-          energy_cap_equals: 0.0016072252133496716
+          energy_cap_equals: 0.0016050510367720207
           storage_cap_equals: 296.93749999999994
       ccgt:
         constraints:
@@ -569,30 +569,30 @@ locations:
           energy_cap_equals: 0.001470082474999999
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0027897967606288236
-          storage_cap_equals: 0.2414567202769373
+          energy_cap_equals: 0.0024573647750705157
+          storage_cap_equals: 0.20961213510713608
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.3020280057361755
+          energy_cap_equals: 0.1953796573122992
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.07823272
           storage_cap_equals: 40.22348641534721
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0007832464752362856
+          energy_cap_equals: 0.0007650176712093497
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0007067080781350452
+          energy_cap_equals: 0.0009214598857840504
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0033310431725105585
+          energy_cap_equals: 0.002142821961517134
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.22965070874163016
+          energy_cap_equals: 0.2299745269608664
   EST:
     available_area: 1.190728978987411
     coordinates:
@@ -601,11 +601,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.004899289063835767
-          storage_cap_equals: 0.020486754552655667
+          energy_cap_equals: 0.006018327462988235
+          storage_cap_equals: 0.019431481051088485
       biofuel:
         constraints:
-          energy_cap_equals: 0.0016664408065416546
+          energy_cap_equals: 0.0016619861017679646
           storage_cap_equals: 65.0625
       ccgt:
         constraints:
@@ -623,30 +623,30 @@ locations:
           energy_cap_equals: 0.0
       hydrogen:
         constraints:
-          energy_cap_equals: 0.001758188858955122
-          storage_cap_equals: 0.1777887287182659
+          energy_cap_equals: 0.0019166773820972934
+          storage_cap_equals: 0.18442215060798708
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0012942787930033846
+          energy_cap_equals: 0.0012216851440872206
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.00040960271298094746
+          energy_cap_equals: 0.0003937657066029524
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0005042928725393914
+          energy_cap_equals: 0.0006471560124858832
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.014789650392116657
+          energy_cap_equals: 0.014827188947091313
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.010941801978205934
+          energy_cap_equals: 0.012944542016602556
   FIN:
     available_area: 6.420297807474808
     coordinates:
@@ -655,11 +655,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.007665338759150031
-          storage_cap_equals: 0.033087289096388306
+          energy_cap_equals: 0.007649053796857534
+          storage_cap_equals: 0.033793930120756585
       biofuel:
         constraints:
-          energy_cap_equals: 0.019867869096865373
+          energy_cap_equals: 0.020002639388292557
           storage_cap_equals: 287.625
       ccgt:
         constraints:
@@ -677,30 +677,30 @@ locations:
           energy_cap_equals: 0.012999500000000002
       hydrogen:
         constraints:
-          energy_cap_equals: 0.002050430515614886
-          storage_cap_equals: 0.1825677302672062
+          energy_cap_equals: 0.0021533726398827945
+          storage_cap_equals: 0.19295093221033932
       nuclear:
         constraints:
-          energy_cap_equals: 0.03265389768193648
+          energy_cap_equals: 0.03261260539315331
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0010739356680589355
+          energy_cap_equals: 0.0010355734308179
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.00044468115359842716
+          energy_cap_equals: 0.0005446290454047837
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0005175234894137066
+          energy_cap_equals: 0.0005552113758839292
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.002555543915820843
+          energy_cap_equals: 0.0028870963890410143
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.020122449569445425
+          energy_cap_equals: 0.02014325901265579
   FRA:
     available_area: 18.99441266896203
     coordinates:
@@ -709,11 +709,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.010434922411569509
-          storage_cap_equals: 0.044846268962663284
+          energy_cap_equals: 0.01135811094022027
+          storage_cap_equals: 0.04610031835089702
       biofuel:
         constraints:
-          energy_cap_equals: 0.05578752385018209
+          energy_cap_equals: 0.04755432726610402
           storage_cap_equals: 699.3749999999999
       ccgt:
         constraints:
@@ -731,30 +731,30 @@ locations:
           energy_cap_equals: 0.06319332562490508
       hydrogen:
         constraints:
-          energy_cap_equals: 0.004819637075241373
-          storage_cap_equals: 0.4811970554228464
+          energy_cap_equals: 0.007962601648362877
+          storage_cap_equals: 0.698171521569538
       nuclear:
         constraints:
-          energy_cap_equals: 0.4283835771849103
+          energy_cap_equals: 0.4191530348984775
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.09439574226737417
+          energy_cap_equals: 0.09440476218530502
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.05064
           storage_cap_equals: 0.827455516089109
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006612334833167139
+          energy_cap_equals: 0.0006890532862631407
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0008469835099838008
+          energy_cap_equals: 0.0009507377907898018
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0036803396513673727
+          energy_cap_equals: 0.0034624497785028558
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.168164376412391
+          energy_cap_equals: 0.1658437377801656
   GBR:
     available_area: 7.805882257017494
     coordinates:
@@ -763,11 +763,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.019821007191081215
-          storage_cap_equals: 0.08626998838645053
+          energy_cap_equals: 0.020609506847748947
+          storage_cap_equals: 0.13012697182982194
       biofuel:
         constraints:
-          energy_cap_equals: 0.040635323726216525
+          energy_cap_equals: 0.04201945681895651
           storage_cap_equals: 208.18750000000003
       ccgt:
         constraints:
@@ -785,30 +785,30 @@ locations:
           energy_cap_equals: 0.008484750000000003
       hydrogen:
         constraints:
-          energy_cap_equals: 0.09888194254933744
-          storage_cap_equals: 8.769716465470218
+          energy_cap_equals: 0.11334604140614687
+          storage_cap_equals: 8.701098136629831
       nuclear:
         constraints:
-          energy_cap_equals: 0.07574981688848631
+          energy_cap_equals: 0.07572183493247718
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0782531266745599
+          energy_cap_equals: 0.0782867193645022
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.029050000000000006
           storage_cap_equals: 0.2543
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0005867227009193426
+          energy_cap_equals: 0.0007047931872242699
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.09381738654472473
+          energy_cap_equals: 0.09386491186917922
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.002475048996330434
+          energy_cap_equals: 0.002522065945005807
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.12992495002455404
+          energy_cap_equals: 0.12997832137552834
   GRC:
     available_area: 2.6721547710619866
     coordinates:
@@ -817,11 +817,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.008150634107315861
-          storage_cap_equals: 0.034459529325046735
+          energy_cap_equals: 0.007075717388695418
+          storage_cap_equals: 0.026724444703678518
       biofuel:
         constraints:
-          energy_cap_equals: 0.0005490847661467852
+          energy_cap_equals: 0.0005157650121552021
           storage_cap_equals: 36.5
       ccgt:
         constraints:
@@ -839,30 +839,30 @@ locations:
           energy_cap_equals: 0.00110315
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0012769756847264533
-          storage_cap_equals: 0.11296160108359415
+          energy_cap_equals: 0.0012172938395298707
+          storage_cap_equals: 0.10742922108723027
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0245464997336131
+          energy_cap_equals: 0.02441171041930935
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0069900000000000006
           storage_cap_equals: 0.0514
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006319823468211543
+          energy_cap_equals: 0.0007015737264079781
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0007529161049007709
+          energy_cap_equals: 0.001117530204348039
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.030155285061316938
+          energy_cap_equals: 0.02219707370547775
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.023630876683279126
+          energy_cap_equals: 0.02359328463494892
   HRV:
     available_area: 1.6010412998721004
     coordinates:
@@ -871,11 +871,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.00585655827461115
-          storage_cap_equals: 0.0251545076131747
+          energy_cap_equals: 0.007110875342716479
+          storage_cap_equals: 0.02842535254585211
       biofuel:
         constraints:
-          energy_cap_equals: 0.0009784651007846597
+          energy_cap_equals: 0.00102262122145781
           storage_cap_equals: 38.1875
       ccgt:
         constraints:
@@ -893,30 +893,30 @@ locations:
           energy_cap_equals: 0.0027866773029167685
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0015378057873433387
-          storage_cap_equals: 0.16323428537334528
+          energy_cap_equals: 0.0017446644660839964
+          storage_cap_equals: 0.17040881810024805
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.01286196739195656
+          energy_cap_equals: 0.013480770874654872
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.005187000000000001
           storage_cap_equals: 0.2781434782608696
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006188092212675809
+          energy_cap_equals: 0.0007298887269389017
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.00040056603477552413
+          energy_cap_equals: 0.000531326739124722
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0035169032756880853
+          energy_cap_equals: 0.0041358853433860155
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.006307084062393109
+          energy_cap_equals: 0.0063538365092843385
   HUN:
     available_area: 5.753391762942076
     coordinates:
@@ -925,11 +925,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.006100965756789214
-          storage_cap_equals: 0.026125762442398226
+          energy_cap_equals: 0.007403232281759216
+          storage_cap_equals: 0.029321115786453564
       biofuel:
         constraints:
-          energy_cap_equals: 0.003986353611786177
+          energy_cap_equals: 0.003981509683389887
           storage_cap_equals: 138.875
       ccgt:
         constraints:
@@ -947,30 +947,30 @@ locations:
           energy_cap_equals: 0.000197
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0017621201032817816
-          storage_cap_equals: 0.18523366437464373
+          energy_cap_equals: 0.0020180501625972624
+          storage_cap_equals: 0.1949771291242076
       nuclear:
         constraints:
-          energy_cap_equals: 0.025073515727551787
+          energy_cap_equals: 0.02523468366500974
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0033251901741990753
+          energy_cap_equals: 0.0035740975787158444
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006432608605087469
+          energy_cap_equals: 0.0006800608922297682
       wind_offshore:
         constraints:
           energy_cap_equals: 0.0
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.1265969245761147
+          energy_cap_equals: 0.10488788270694356
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.05038161315980627
+          energy_cap_equals: 0.09982746624136574
   IRL:
     available_area: 2.867347541740909
     coordinates:
@@ -979,11 +979,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.011861900180517184
-          storage_cap_equals: 0.05109866633783449
+          energy_cap_equals: 0.013049064147416769
+          storage_cap_equals: 0.07099374853974763
       biofuel:
         constraints:
-          energy_cap_equals: 0.0005603610567329113
+          energy_cap_equals: 0.0005464812344497438
           storage_cap_equals: 32.0625
       ccgt:
         constraints:
@@ -1001,30 +1001,30 @@ locations:
           energy_cap_equals: 0.00216
       hydrogen:
         constraints:
-          energy_cap_equals: 0.010400155164409655
-          storage_cap_equals: 0.8524510166888617
+          energy_cap_equals: 0.00700998564564819
+          storage_cap_equals: 0.5214211759476144
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0013291346613979143
+          energy_cap_equals: 0.001275108314477668
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0029200000000000003
           storage_cap_equals: 0.018000000000000002
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.00043649336716095483
+          energy_cap_equals: 0.000526256080821186
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.001316059575138251
+          energy_cap_equals: 0.0016431394244720288
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.5601320003342428
+          energy_cap_equals: 0.528327838568926
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.4414872285990066
+          energy_cap_equals: 0.491774342800558
   ITA:
     available_area: 5.66425175542906
     coordinates:
@@ -1033,11 +1033,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.23026160504698534
-          storage_cap_equals: 0.993240750051102
+          energy_cap_equals: 0.21857226547715575
+          storage_cap_equals: 1.1223055172890404
       biofuel:
         constraints:
-          energy_cap_equals: 0.01689885375294577
+          energy_cap_equals: 0.01672151746733294
           storage_cap_equals: 294.0
       ccgt:
         constraints:
@@ -1055,30 +1055,30 @@ locations:
           energy_cap_equals: 0.059019600000000026
       hydrogen:
         constraints:
-          energy_cap_equals: 0.002299739335725284
-          storage_cap_equals: 0.24580365011126865
+          energy_cap_equals: 0.0024618855756897177
+          storage_cap_equals: 0.2625082701688109
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 1.4092647235012026
+          energy_cap_equals: 1.2587265550667794
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.079626
           storage_cap_equals: 4.136195000000002
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0007086985584752537
+          energy_cap_equals: 0.0007954006023552781
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.000768642478573724
+          energy_cap_equals: 0.0011586119427681426
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.002823250987335148
+          energy_cap_equals: 0.002917297694351041
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.0961608794054678
+          energy_cap_equals: 0.09638053709290872
   LTU:
     available_area: 2.3451003429338337
     coordinates:
@@ -1087,11 +1087,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.004939343015572144
-          storage_cap_equals: 0.02068922104635105
+          energy_cap_equals: 0.006035304917295629
+          storage_cap_equals: 0.017364034666314847
       biofuel:
         constraints:
-          energy_cap_equals: 0.001122856995998077
+          energy_cap_equals: 0.0008903104751351895
           storage_cap_equals: 62.12499999999999
       ccgt:
         constraints:
@@ -1109,30 +1109,30 @@ locations:
           energy_cap_equals: 0.0
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0017405814690585365
-          storage_cap_equals: 0.17801405027986614
+          energy_cap_equals: 0.0018023479771371801
+          storage_cap_equals: 0.17677922050715295
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0013294799575961727
+          energy_cap_equals: 0.001328991950323369
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.009000000000000001
           storage_cap_equals: 0.108
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.00044678270248872117
+          energy_cap_equals: 0.0005249522187101809
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.002998981667677648
+          energy_cap_equals: 0.004151826336104829
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.009291958470053213
+          energy_cap_equals: 0.012387806484848655
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.007510747104167549
+          energy_cap_equals: 0.011556503345367952
   LUX:
     available_area: 0.06750647239461542
     coordinates:
@@ -1141,11 +1141,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.008724401539926992
-          storage_cap_equals: 0.03750703192760902
+          energy_cap_equals: 0.008655607775183075
+          storage_cap_equals: 0.037396251790715915
       biofuel:
         constraints:
-          energy_cap_equals: 0.0038939301487576116
+          energy_cap_equals: 0.003356486345154713
           storage_cap_equals: 5.625000000000001
       ccgt:
         constraints:
@@ -1163,30 +1163,30 @@ locations:
           energy_cap_equals: 0.0
       hydrogen:
         constraints:
-          energy_cap_equals: 0.006583922205087033
-          storage_cap_equals: 0.6860071201278828
+          energy_cap_equals: 0.010444983892281677
+          storage_cap_equals: 0.9412523853293676
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.005600538588131463
+          energy_cap_equals: 0.002470017098921809
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.01291
           storage_cap_equals: 0.04478
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.00041376867713974246
+          energy_cap_equals: 0.00039609622327145804
       wind_offshore:
         constraints:
           energy_cap_equals: 0.0
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0012360902392349836
+          energy_cap_equals: 0.0008082649790284611
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.0012335997375080845
+          energy_cap_equals: 0.0012412182641946409
   LVA:
     available_area: 1.8305700507719072
     coordinates:
@@ -1195,11 +1195,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.004840361593492447
-          storage_cap_equals: 0.018572242606268802
+          energy_cap_equals: 0.006000869948308082
+          storage_cap_equals: 0.016291033857986043
       biofuel:
         constraints:
-          energy_cap_equals: 0.0014261336531120926
+          energy_cap_equals: 0.0014265711206358815
           storage_cap_equals: 89.43749999999999
       ccgt:
         constraints:
@@ -1217,30 +1217,30 @@ locations:
           energy_cap_equals: 0.0064210000000000005
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0016388807338759187
-          storage_cap_equals: 0.16711569117239822
+          energy_cap_equals: 0.0017387826241660785
+          storage_cap_equals: 0.17046192603564178
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.001291283649210658
+          energy_cap_equals: 0.0012376258179100784
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0004232147141720437
+          energy_cap_equals: 0.00045571905098959443
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0007973772302159564
+          energy_cap_equals: 0.0010029831027449788
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.02496788885724442
+          energy_cap_equals: 0.021647317157493042
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.013334296183604266
+          energy_cap_equals: 0.014526958104201347
   MKD:
     available_area: 0.5434803173966706
     coordinates:
@@ -1249,11 +1249,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.010795617361755678
-          storage_cap_equals: 0.045972860025025535
+          energy_cap_equals: 0.008212771759755464
+          storage_cap_equals: 0.035896988678188864
       biofuel:
         constraints:
-          energy_cap_equals: 0.0005700297361914356
+          energy_cap_equals: 0.0005141196267572721
           storage_cap_equals: 13.437500000000002
       ccgt:
         constraints:
@@ -1271,30 +1271,30 @@ locations:
           energy_cap_equals: 0.000416
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0013030413354730313
-          storage_cap_equals: 0.1272093569899895
+          energy_cap_equals: 0.0012264938085373648
+          storage_cap_equals: 0.1199970203199796
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.06169536257241143
+          energy_cap_equals: 0.020002835119624626
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0004696819273430956
+          energy_cap_equals: 0.0004611360828353456
       wind_offshore:
         constraints:
           energy_cap_equals: 0.0
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.001187852887290287
+          energy_cap_equals: 0.0011307849883057113
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.0008397179751500339
+          energy_cap_equals: 0.0013165557385304005
   MNE:
     available_area: 0.13198486836627127
     coordinates:
@@ -1303,11 +1303,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.034020964738649025
-          storage_cap_equals: 0.13752681463629454
+          energy_cap_equals: 0.013443916106470355
+          storage_cap_equals: 0.0556427778219626
       biofuel:
         constraints:
-          energy_cap_equals: 0.0006216732194628973
+          energy_cap_equals: 0.0005936895478263496
           storage_cap_equals: 16.3125
       ccgt:
         constraints:
@@ -1325,30 +1325,30 @@ locations:
           energy_cap_equals: 0.0031236
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0013884698735283493
-          storage_cap_equals: 0.1360411826152386
+          energy_cap_equals: 0.0013111812217884039
+          storage_cap_equals: 0.1289352454609705
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.1714886873188802
+          energy_cap_equals: 0.0885579682789579
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0004452739921051582
+          energy_cap_equals: 0.000369212417900027
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0002875880408101198
+          energy_cap_equals: 0.00032058535158819684
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0014138646051303964
+          energy_cap_equals: 0.0009678418151358193
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.0009479733980857836
+          energy_cap_equals: 0.0013607411196185561
   NLD:
     available_area: 0.7092687114935369
     coordinates:
@@ -1357,11 +1357,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.012209278553948363
-          storage_cap_equals: 0.052492816534427056
+          energy_cap_equals: 0.011690326159710615
+          storage_cap_equals: 0.0648524594414367
       biofuel:
         constraints:
-          energy_cap_equals: 0.013003047247847257
+          energy_cap_equals: 0.012584144334650969
           storage_cap_equals: 68.875
       ccgt:
         constraints:
@@ -1379,30 +1379,30 @@ locations:
           energy_cap_equals: 0.0
       hydrogen:
         constraints:
-          energy_cap_equals: 0.030551651013325305
-          storage_cap_equals: 2.9429477311341135
+          energy_cap_equals: 0.0350633790541028
+          storage_cap_equals: 3.1324207209275774
       nuclear:
         constraints:
-          energy_cap_equals: 0.0054812906101262635
+          energy_cap_equals: 0.00537843150407024
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.03937836657916021
+          energy_cap_equals: 0.039380275630243565
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0005832161404359802
+          energy_cap_equals: 0.0005684023849437405
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.009569154718683135
+          energy_cap_equals: 0.0095743089914766
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.003298100940548003
+          energy_cap_equals: 0.0031350973348516346
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.03668067828343735
+          energy_cap_equals: 0.036695736374621535
   NOR:
     available_area: 10.582019143333287
     coordinates:
@@ -1411,11 +1411,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.00980755450262288
-          storage_cap_equals: 0.04208151855537735
+          energy_cap_equals: 0.009374057720618185
+          storage_cap_equals: 0.036170793904863566
       biofuel:
         constraints:
-          energy_cap_equals: 0.000635332745840195
+          energy_cap_equals: 0.000569248976501688
           storage_cap_equals: 136.56250000000003
       ccgt:
         constraints:
@@ -1433,30 +1433,30 @@ locations:
           energy_cap_equals: 0.0
       hydrogen:
         constraints:
-          energy_cap_equals: 0.001719113389215877
-          storage_cap_equals: 0.14980784794883156
+          energy_cap_equals: 0.0017575551822847733
+          storage_cap_equals: 0.14980013430970146
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0011716717991552903
+          energy_cap_equals: 0.0011399540432256265
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.013443
           storage_cap_equals: 49.529216999999996
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0004196471273223778
+          energy_cap_equals: 0.00048282810378285333
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0007956033225834374
+          energy_cap_equals: 0.0009032706917995887
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.003770497611639135
+          energy_cap_equals: 0.004207477905046037
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.0028228175453228945
+          energy_cap_equals: 0.00342868185884154
   POL:
     available_area: 12.11371752621755
     coordinates:
@@ -1465,11 +1465,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.006168537648345232
-          storage_cap_equals: 0.027172890703361808
+          energy_cap_equals: 0.007344059245435393
+          storage_cap_equals: 0.03082947934725357
       biofuel:
         constraints:
-          energy_cap_equals: 0.007912034658084058
+          energy_cap_equals: 0.007921875628626006
           storage_cap_equals: 393.49999999999994
       ccgt:
         constraints:
@@ -1487,30 +1487,30 @@ locations:
           energy_cap_equals: 0.00014400368779543974
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0024217325396602997
-          storage_cap_equals: 0.24629497052370125
+          energy_cap_equals: 0.002458270549875233
+          storage_cap_equals: 0.23906729978741115
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.004349691106203136
+          energy_cap_equals: 0.004323108868611049
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.017050000000000003
           storage_cap_equals: 0.1569
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0005999019764584803
+          energy_cap_equals: 0.000601455445527113
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.2632557904572537
+          energy_cap_equals: 0.28132749384559225
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.3434695314178193
+          energy_cap_equals: 0.20216816982298974
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.1273966023786235
+          energy_cap_equals: 0.23101609627740505
   PRT:
     available_area: 2.8539923875279727
     coordinates:
@@ -1519,11 +1519,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.054004446373820486
-          storage_cap_equals: 0.2399046093888883
+          energy_cap_equals: 0.051061056738071875
+          storage_cap_equals: 0.2864702930389981
       biofuel:
         constraints:
-          energy_cap_equals: 0.0060481171181900675
+          energy_cap_equals: 0.006052992029950027
           storage_cap_equals: 84.3125
       ccgt:
         constraints:
@@ -1541,30 +1541,30 @@ locations:
           energy_cap_equals: 0.016155000000000003
       hydrogen:
         constraints:
-          energy_cap_equals: 0.00193033806818832
-          storage_cap_equals: 0.17940042684046628
+          energy_cap_equals: 0.0019959927897680307
+          storage_cap_equals: 0.1836661934045042
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0032616372961085205
+          energy_cap_equals: 0.0032451528461930447
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0364
           storage_cap_equals: 5.11576103896104
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.000674945426396512
+          energy_cap_equals: 0.0005992338345035436
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0008561583565058643
+          energy_cap_equals: 0.0010618992127166412
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.2930228058906207
+          energy_cap_equals: 0.2405320610220424
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.16226748201726915
+          energy_cap_equals: 0.26560267500828094
   ROU:
     available_area: 10.40735419030115
     coordinates:
@@ -1573,11 +1573,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.006779998526839779
-          storage_cap_equals: 0.0289037931486567
+          energy_cap_equals: 0.00839479841466335
+          storage_cap_equals: 0.03390186087759347
       biofuel:
         constraints:
-          energy_cap_equals: 0.0011555623115171592
+          energy_cap_equals: 0.0011544191115849033
           storage_cap_equals: 248.49999999999997
       ccgt:
         constraints:
@@ -1595,30 +1595,30 @@ locations:
           energy_cap_equals: 0.0087045
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0014771606427834696
-          storage_cap_equals: 0.14164535531719233
+          energy_cap_equals: 0.0015216009871067669
+          storage_cap_equals: 0.14821603277528395
       nuclear:
         constraints:
-          energy_cap_equals: 0.012857003705687332
+          energy_cap_equals: 0.012768996979469548
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.019048376152681682
+          energy_cap_equals: 0.021999106657682847
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0
           storage_cap_equals: 0.0
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0006987019305304929
+          energy_cap_equals: 0.0006843231397263575
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.001270525106212045
+          energy_cap_equals: 0.0018582703289153168
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.047363691552403685
+          energy_cap_equals: 0.042478848990794266
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.030064259778992405
+          energy_cap_equals: 0.03281450949748699
   SRB:
     available_area: 2.603488827742636
     coordinates:
@@ -1627,11 +1627,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.007706907794090837
-          storage_cap_equals: 0.03311652276279959
+          energy_cap_equals: 0.009189032236376548
+          storage_cap_equals: 0.03647291841697796
       biofuel:
         constraints:
-          energy_cap_equals: 0.0008054907232968095
+          energy_cap_equals: 0.0007785066193453575
           storage_cap_equals: 62.18750000000001
       ccgt:
         constraints:
@@ -1649,30 +1649,30 @@ locations:
           energy_cap_equals: 0.00215
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0014788804131660321
-          storage_cap_equals: 0.14847444587687966
+          energy_cap_equals: 0.0014953047186590678
+          storage_cap_equals: 0.14925688446159047
       nuclear:
         constraints:
           energy_cap_equals: 0.0
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0961047612861075
+          energy_cap_equals: 0.1095834958205348
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0061400000000000005
           storage_cap_equals: 0.06300055463117027
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.000649178829551801
+          energy_cap_equals: 0.0007198029949478016
       wind_offshore:
         constraints:
           energy_cap_equals: 0.0
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.004711603534557027
+          energy_cap_equals: 0.004865854579190704
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.0025455198608011695
+          energy_cap_equals: 0.004791676141154021
   SVK:
     available_area: 1.4347349141113461
     coordinates:
@@ -1681,11 +1681,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.00572823099170547
-          storage_cap_equals: 0.024547491432257245
+          energy_cap_equals: 0.006808403791330613
+          storage_cap_equals: 0.024634138502060737
       biofuel:
         constraints:
-          energy_cap_equals: 0.0016477270274524935
+          energy_cap_equals: 0.0016458064934852625
           storage_cap_equals: 75.75
       ccgt:
         constraints:
@@ -1703,30 +1703,30 @@ locations:
           energy_cap_equals: 0.006413300000000002
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0018852411140324672
-          storage_cap_equals: 0.19145276541505868
+          energy_cap_equals: 0.0020545955824673836
+          storage_cap_equals: 0.19812635936769585
       nuclear:
         constraints:
-          energy_cap_equals: 0.020166211845085085
+          energy_cap_equals: 0.01985972959079503
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0053338755952587824
+          energy_cap_equals: 0.00533010164684828
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0102128
           storage_cap_equals: 0.1047902384914032
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0005348685275957392
+          energy_cap_equals: 0.0006455887198256188
       wind_offshore:
         constraints:
           energy_cap_equals: 0.0
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.023591206190776055
+          energy_cap_equals: 0.023436533989464558
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.013406361064163708
+          energy_cap_equals: 0.020301822734018368
   SVN:
     available_area: 0.13068813824132086
     coordinates:
@@ -1735,11 +1735,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.008006459759942462
-          storage_cap_equals: 0.03442879426760846
+          energy_cap_equals: 0.008348805666475645
+          storage_cap_equals: 0.034187210534556235
       biofuel:
         constraints:
-          energy_cap_equals: 0.001310269854775236
+          energy_cap_equals: 0.0012368386413124366
           storage_cap_equals: 54.18749999999999
       ccgt:
         constraints:
@@ -1757,30 +1757,30 @@ locations:
           energy_cap_equals: 0.004514150000000001
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0017741619467318164
-          storage_cap_equals: 0.18516523972937166
+          energy_cap_equals: 0.0019396419785734293
+          storage_cap_equals: 0.18628531817297425
       nuclear:
         constraints:
-          energy_cap_equals: 0.006135270384523651
+          energy_cap_equals: 0.006002962309375455
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.004177740302191649
+          energy_cap_equals: 0.00317006630335128
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.00185
           storage_cap_equals: 0.018982251802551302
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0004882686496807
+          energy_cap_equals: 0.0005543478782690967
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.0002362415520159823
+          energy_cap_equals: 0.00029160969242638567
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.0015095892859052964
+          energy_cap_equals: 0.0010874355551271546
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.0010493479554718468
+          energy_cap_equals: 0.0016940441054360544
   SWE:
     available_area: 9.022324534700438
     coordinates:
@@ -1789,11 +1789,11 @@ locations:
     techs:
       battery:
         constraints:
-          energy_cap_equals: 0.011910031181284251
-          storage_cap_equals: 0.051236345471063226
+          energy_cap_equals: 0.013321850833247084
+          storage_cap_equals: 0.06345726664635758
       biofuel:
         constraints:
-          energy_cap_equals: 0.0008211647212745308
+          energy_cap_equals: 0.0007297754466180612
           storage_cap_equals: 469.87500000000006
       ccgt:
         constraints:
@@ -1811,30 +1811,30 @@ locations:
           energy_cap_equals: 0.01995
       hydrogen:
         constraints:
-          energy_cap_equals: 0.0021251396463927005
-          storage_cap_equals: 0.19561798887676032
+          energy_cap_equals: 0.0021922425918676977
+          storage_cap_equals: 0.197248734410706
       nuclear:
         constraints:
-          energy_cap_equals: 0.05953475101982269
+          energy_cap_equals: 0.05950585209202844
       open_field_pv:
         constraints:
-          energy_cap_equals: 0.0011397874744078155
+          energy_cap_equals: 0.0011180577678330844
       pumped_hydro:
         constraints:
           energy_cap_equals: 0.0009199999999999999
           storage_cap_equals: 1.8430666666666664
       roof_mounted_pv:
         constraints:
-          energy_cap_equals: 0.0005070982370849334
+          energy_cap_equals: 0.0005580581164027516
       wind_offshore:
         constraints:
-          energy_cap_equals: 0.000708518999918162
+          energy_cap_equals: 0.0005931184323017928
       wind_onshore_competing:
         constraints:
-          energy_cap_equals: 0.002616847003964937
+          energy_cap_equals: 0.0026481234871069768
       wind_onshore_monopoly:
         constraints:
-          energy_cap_equals: 0.07514530282226772
+          energy_cap_equals: 0.07508067366404703
 overrides:
   freeze-hydro-capacities:
     locations:
