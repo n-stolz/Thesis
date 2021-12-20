@@ -67,14 +67,18 @@ def run_models():
     model.ts_year=model_year
 
     #copy data to correct directory so model can execute it
-    copy_year_to_model(model.ts_year)
+    #copy_year_to_model(model.ts_year)
 
     logging.info('running model run no: %s; demand and cf timeseries of year %s', year,model.ts_year)
     print(year)
 
     #
     euro_calliope_specifications.fossil_share=config.energy_prod_model[['coal','ccgt']].sum(axis=1)-year*(1/specs.years)*config.energy_prod_model[['coal','ccgt']].sum(axis=1)
-    model.nuclear_scaling_factor = 1-3*year*(1/specs.years)
+
+    model.nuclear_scaling_factor_2025 = 1-6*year*(1/specs.years)
+    model.nuclear_scaling_factor_2030 = 1-3*year*(1/specs.years)
+    model.nuclear_scaling_factor_2035 = 1-2*year*(1/specs.years)
+
 
 
     model.renewables_share = model.get_wind_pv_shares(config, year)
@@ -100,7 +104,7 @@ if __name__ == '__main__':
     config=configuration()
     specs=model_specifications()
 
-    
+
 
 
     euro_calliope_specs=euro_calliope_specifications()

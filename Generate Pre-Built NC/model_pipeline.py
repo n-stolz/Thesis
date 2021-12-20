@@ -57,11 +57,35 @@ class pipeline:
 
 
             #Add share of nuclear power after step 1
-            if i in ['DEU','BEL','ESP','CHE']:
+            if i in ['BEL']:
 
-                if self.nuclear_scaling_factor<=1 and self.nuclear_scaling_factor>=0:
+                if self.nuclear_scaling_factor_2025<=1 and self.nuclear_scaling_factor_2025>=0:
                     example_model['group_constraints'][i + '_nuclear'] = {
-                        'demand_share_equals': {'electricity': self.nuclear_scaling_factor*float(energy_prod_model['nuclear'][i])}, 'locs': [i],
+                        'demand_share_equals': {'electricity': self.nuclear_scaling_factor_2025*float(energy_prod_model['nuclear'][i])}, 'locs': [i],
+                        'techs': ['nuclear']}
+                else:
+                    example_model['group_constraints'][i + '_nuclear'] = {
+                        'demand_share_equals': {
+                            'electricity': float(0)},
+                        'locs': [i],
+                        'techs': ['nuclear']}
+            elif i in ['DEU']:
+
+                if self.nuclear_scaling_factor_2030<=1 and self.nuclear_scaling_factor_2030>=0:
+                    example_model['group_constraints'][i + '_nuclear'] = {
+                        'demand_share_equals': {'electricity': self.nuclear_scaling_factor_2030*float(energy_prod_model['nuclear'][i])}, 'locs': [i],
+                        'techs': ['nuclear']}
+                else:
+                    example_model['group_constraints'][i + '_nuclear'] = {
+                        'demand_share_equals': {
+                            'electricity': float(0)},
+                        'locs': [i],
+                        'techs': ['nuclear']}
+            elif i in ['ESP','CHE']:
+
+                if self.nuclear_scaling_factor_2035<=1 and self.nuclear_scaling_factor_2035>=0:
+                    example_model['group_constraints'][i + '_nuclear'] = {
+                        'demand_share_equals': {'electricity': self.nuclear_scaling_factor_2035*float(energy_prod_model['nuclear'][i])}, 'locs': [i],
                         'techs': ['nuclear']}
                 else:
                     example_model['group_constraints'][i + '_nuclear'] = {
@@ -128,7 +152,7 @@ class pipeline:
             print(self.ts_year)
 
             ## TODO Bryn+Niklas: agree on naming convention
-            self.energy_model.to_netcdf('build/model/paper_1h.nc')
+            self.energy_model.to_netcdf('build/model/paper_{}.nc'.format(self.ts_year))
             exit()
             #print('Not loading yaml, but using .nc file')
 
