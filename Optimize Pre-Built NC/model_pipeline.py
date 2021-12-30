@@ -526,7 +526,7 @@ class pipeline:
 
         # if it is the first modeling step and we are in the baseline run (no incentives). Energy system with zero fossil fuel share is modelled in one step
         elif self.baseline_run==True:
-            self.energy_model = calliope.read_netcdf('build/model/paper_{}.nc'.format(int(sys.argv[5])))
+            self.energy_model = calliope.read_netcdf('build/model/paper_two_years_{}.nc'.format(int(sys.argv[5])))
             #run model from netcdf to access the backend
             self.energy_model.run(force_rerun=True)
 
@@ -540,7 +540,7 @@ class pipeline:
         # if we model the incentive model we don't need to do any adjustment to the netcdf model in the first step (since we already insert correct values in the building of the netcdf)
         else:
             print('RUNNING')
-            self.energy_model=calliope.read_netcdf('build/model/paper_{}.nc'.format(int(sys.argv[5])))
+            self.energy_model=calliope.read_netcdf('build/model/paper_two_years_{}.nc'.format(int(sys.argv[5])))
             self.energy_model.run(force_rerun=True)
             self.model_dict['year {}'.format(year)] = self.energy_model
         #self.energy_model.to_netcdf('build/model/model_{}.nc'.format(year))
@@ -588,9 +588,9 @@ class pipeline:
         self.national_score_seasonally = {}
 
         self.score_weight = {'hourly': 1, 'daily': 1,
-                   'weekly': 0,
-                   'monthly': 0,
-                   'seasonally': 0}
+                   'weekly': 1,
+                   'monthly': 1,
+                   'seasonally': 1}
 
 
         self.shoreless_countries=[]
