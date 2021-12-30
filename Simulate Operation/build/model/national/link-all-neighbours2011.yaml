@@ -1,0 +1,361 @@
+links:
+  ALB,MKD:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.038575648273845665
+  ALB,MNE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.0015728638333754865
+  AUT,CHE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.01586172395515522
+  AUT,CZE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.035822574629844804
+  AUT,DEU:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.1205966966202287
+  AUT,HUN:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.008915286437375183
+  AUT,ITA:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.011206072214416177
+  AUT,SVK:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.005800361296757378
+  AUT,SVN:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.031222744768977462
+  BEL,DEU:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.011176806912767227
+  BEL,FRA:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.03786047840769243
+  BEL,GBR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.13172660351156792
+  BEL,LUX:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.021681171586854182
+  BEL,NLD:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.013848315213373541
+  BGR,GRC:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.014324927119998504
+  BGR,MKD:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.021025083784662276
+  BGR,ROU:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.014173585672644384
+  BGR,SRB:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.0070175569526358395
+  BIH,MNE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.08422307067387434
+  BIH,SRB:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.002611382040509369
+  CYP,GRC:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.0032454958767717396
+  CZE,DEU:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.02865337108037927
+  CZE,POL:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.030528947305448136
+  CZE,SVK:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.09710032890991573
+  DEU,CHE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.06468360556128906
+  DEU,LUX:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.019636387322694827
+  DEU,NLD:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.24166607032915766
+  DEU,NOR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.0035842514573797327
+  DEU,POL:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.0407138752886919
+  DEU,SWE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.40306951609963093
+  DNK,DEU:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.456894540312519
+  DNK,GBR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.011745200901357031
+  DNK,NLD:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.029243703730828706
+  DNK,NOR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.1056527500698458
+  DNK,SWE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.28324532722046014
+  EST,FIN:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.019752248847687674
+  EST,LVA:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.09787218235676054
+  FIN,NOR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.05020529637225093
+  FIN,SWE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.02036110868153429
+  FRA,CHE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.10119198678634203
+  FRA,DEU:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.010509017729298577
+  FRA,ESP:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.1397066574174671
+  FRA,GBR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.16091967358919676
+  FRA,ITA:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.21275807072226127
+  FRA,LUX:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.4659714636563326
+  GBR,NOR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.8472917482535021
+  GRC,ALB:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.015429440362910132
+  GRC,ITA:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.010007429390992709
+  GRC,MKD:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.023600589170181152
+  HRV,BIH:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.1005156258303407
+  HRV,HUN:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.018612475365955325
+  HRV,SRB:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.015630191335422247
+  HRV,SVN:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.11239662880066503
+  HUN,ROU:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.026307468489740384
+  HUN,SRB:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.02849871306330715
+  HUN,SVK:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.050782917114461694
+  HUN,SVN:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.005375738845836975
+  IRL,GBR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.043030171592964406
+  ITA,CHE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.054256365230764665
+  ITA,SVN:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.0962181328285432
+  LTU,POL:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.08658722095535203
+  LTU,SWE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.004997152143508154
+  LVA,LTU:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.0023817783928059555
+  MKD,SRB:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.0012174538919481614
+  MNE,SRB:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.0019298260598165887
+  NLD,GBR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.3645397330999592
+  NLD,NOR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.03679086608850293
+  POL,SVK:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.021744027847723564
+  POL,SWE:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.058211955513609574
+  PRT,ESP:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.18401443986588184
+  ROU,SRB:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.030102054928544675
+  SWE,NOR:
+    techs:
+      ac_transmission:
+        constraints:
+          energy_cap_equals: 0.07137402792335121

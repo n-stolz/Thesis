@@ -63,7 +63,10 @@ class pipeline:
 
         self.residual_load_country = electricity_net.groupby(['locs', 'timesteps']).sum().reset_index()
         self.residual_load_europe=electricity_net.groupby(['timesteps']).sum().reset_index()
-
+        print('residual load')
+        print(electricity_net['residual'])
+        print('timesteps')
+        print(time_steps)
         return time_steps
 
     # get sd of residual load on multiple temporal horizons if one unit of a technology is added
@@ -96,16 +99,16 @@ class pipeline:
         for key in self.capacity_factors[year-1].keys():
 
             #get capacity factor of specific tech during the timerange of interest and bring to right formate
-            cf = self.capacity_factors[year-1][key][['time', name]]
-            cf = cf[cf['time'].isin(time_range)]
-            cf['time']=cf['time'].astype('datetime64[ns]')
+            cf = self.capacity_factors[year-1][key][['timestep', name]]
+            cf = cf[cf['timestep'].isin(time_range)]
+            cf['timestep']=cf['timestep'].astype('datetime64[ns]')
 
 
             #resample capacity factors on daily, weekly, monthly and quaterly level
-            cf_daily=cf.set_index('time').resample('D').mean()
-            cf_weekly=cf.set_index('time').resample('W').mean()
-            cf_monthly=cf.set_index('time').resample('M').mean()
-            cf_seasonally=cf.set_index('time').resample('Q').mean()
+            cf_daily=cf.set_index('timestep').resample('D').mean()
+            cf_weekly=cf.set_index('timestep').resample('W').mean()
+            cf_monthly=cf.set_index('timestep').resample('M').mean()
+            cf_seasonally=cf.set_index('timestep').resample('Q').mean()
 
             #make a list of shoreless countries to ignore them for offshore wind scores
             if (cf[name] == 0).all() and key=='wind_offshore':
@@ -143,15 +146,15 @@ class pipeline:
         # loop through generation technologies
         for key in self.capacity_factors[year-1].keys():
             # get capacity factor of specific tech during the timerange of interest and bring to right formate
-            cf = self.capacity_factors[year-1][key][['time', name]]
-            cf = cf[cf['time'].isin(time_range)]
-            cf['time'] = cf['time'].astype('datetime64[ns]')
+            cf = self.capacity_factors[year-1][key][['timestep', name]]
+            cf = cf[cf['timestep'].isin(time_range)]
+            cf['timestep'] = cf['timestep'].astype('datetime64[ns]')
 
             # resample capacity factors on daily, weekly, monthly and quaterly level
-            cf_daily=cf.set_index('time').resample('D').mean()
-            cf_weekly=cf.set_index('time').resample('W').mean()
-            cf_monthly=cf.set_index('time').resample('M').mean()
-            cf_seasonally=cf.set_index('time').resample('Q').mean()
+            cf_daily=cf.set_index('timestep').resample('D').mean()
+            cf_weekly=cf.set_index('timestep').resample('W').mean()
+            cf_monthly=cf.set_index('timestep').resample('M').mean()
+            cf_seasonally=cf.set_index('timestep').resample('Q').mean()
 
             # How big is the capacity that is (hypothetically) added to get new residual load. Quite unnessecary.
             capacity=1
@@ -309,13 +312,14 @@ class pipeline:
         # x is composite score of national and european score
         x = (self.european_score[country][tech]+self.national_score[country][tech])
 
+        x=x*(5/sum(self.score_weight.values()))
         #linearly: -10 to 10
         x=2*x-10
 
         #logistic funciton: 0-10
         #x=10/(1+math.exp(-1.65*(x-5)))
 
-        incentive= self.max_incentive[tech]*(5/sum(self.score_weight.values()))*(x/10)
+        incentive= self.max_incentive[tech]*(x/10)
         #incentive= 0.003*(5/sum(self.score_weight.values()))*(x/10)
 
         #if incentive is nan, return original om_prod -> should not happen
@@ -329,62 +333,62 @@ class pipeline:
             return (float(self.VRE_om_prod[tech] - incentive))
 
     # In current version this function is not used, since YAML file is created in Generate Pre-Built NC folder
-#    def create_yaml_plan(self,fossil_share,year,energy_prod_model):
-#        print('create_yaml_plan thinks we are in year:', year)
-#        example_model = open('build/model/national/example-model-template.yaml')
-#        example_model = yaml.load(example_model, Loader=yaml.FullLoader)
-#        example_model['group_constraints'] = {}
-#        example_model['run']['solver']='gurobi'
-#        example_model['run']['solver_io']='python'
-#        example_model['run']['solver_options']={'Threads':int(sys.argv[4])}
-#        start_date=sys.argv[2]
-#        end_date=sys.argv[3]
-#        example_model['model']['subset_time']=['{}-'.format(self.ts_year)+start_date,'{}-'.format(self.ts_year)+end_date]
-#        for i in fossil_share.index:
-#            if year==1:
-#                example_model['group_constraints'][i + '_autarky'] = {'demand_share_min': {'electricity': 0.0},
-#                                                              'locs': [i]}
+    def create_yaml_plan(self,fossil_share,year,energy_prod_model):
+        print('create_yaml_plan thinks we are in year:', year)
+        example_model = open('build/model/national/example-model-template.yaml')
+        example_model = yaml.load(example_model, Loader=yaml.FullLoader)
+        example_model['group_constraints'] = {}
+        example_model['run']['solver']='gurobi'
+        example_model['run']['solver_io']='python'
+        example_model['run']['solver_options']={'Threads':int(sys.argv[4])}
+        start_date=sys.argv[2]
+        end_date=sys.argv[3]
+        example_model['model']['subset_time']=['{}-'.format(self.ts_year)+start_date,'{}-'.format(self.ts_year)+end_date]
+        for i in fossil_share.index:
+            if year==1:
+                example_model['group_constraints'][i + '_autarky'] = {'demand_share_min': {'electricity': 0.0},
+                                                              'locs': [i]}
 
-            #if i in ['DEU','BEL','ESP','CHE']:
+            if i in ['DEU','BEL','ESP','CHE']:
 
-            #    if self.nuclear_scaling_factor<=1 and self.nuclear_scaling_factor>=0:
-            #        example_model['group_constraints'][i + '_nuclear'] = {
-            #            'demand_share_equals': {'electricity': self.nuclear_scaling_factor*float(energy_prod_model['nuclear'][i])}, 'locs': [i],
-            #            'techs': ['nuclear']}
-            #    else:
-            #        example_model['group_constraints'][i + '_nuclear'] = {
-            #            'demand_share_equals': {
-            #                'electricity': float(0)},
-            #            'locs': [i],
-            #            'techs': ['nuclear']}
-            #else:
-            #    example_model['group_constraints'][i + '_nuclear'] = {
-            #        'demand_share_equals': {'electricity': float(energy_prod_model['nuclear'][i])}, 'locs': [i],
-            #        'techs': ['nuclear']}
+                if self.nuclear_scaling_factor_2030<=1 and self.nuclear_scaling_factor_2030>=0:
+                    example_model['group_constraints'][i + '_nuclear'] = {
+                        'demand_share_equals': {'electricity': self.nuclear_scaling_factor_2030*float(energy_prod_model['nuclear'][i])}, 'locs': [i],
+                        'techs': ['nuclear']}
+                else:
+                    example_model['group_constraints'][i + '_nuclear'] = {
+                        'demand_share_equals': {
+                            'electricity': float(0)},
+                        'locs': [i],
+                        'techs': ['nuclear']}
+            else:
+                example_model['group_constraints'][i + '_nuclear'] = {
+                    'demand_share_equals': {'electricity': float(energy_prod_model['nuclear'][i])}, 'locs': [i],
+                    'techs': ['nuclear']}
 
-            #example_model['group_constraints'][i + '_fossil'] = {
-            #    'demand_share_equals': {'electricity': float(fossil_share[i])}, 'locs': [i], 'techs': ['coal', 'ccgt']}
+            example_model['group_constraints'][i + '_fossil'] = {
+                'demand_share_equals': {'electricity': float(fossil_share[i])}, 'locs': [i], 'techs': ['coal', 'ccgt']}
 
-        #for i in self.renewables_share.index:
-        #    example_model['group_constraints'][
-        #        self.renewables_share['country'][i] + '_' + self.renewables_share['tech'][i]] = {
-        #            'energy_cap_min': float(0),
-        #            'locs': [str(self.renewables_share['country'][i])], 'techs': [str(self.renewables_share['tech'][i])]}
-
-
-        #renewable_techs = open('build/model/renewable-techs.yaml')
-        #renewable_techs = yaml.load(renewable_techs, Loader=yaml.FullLoader)
-        #for tech in ['wind_offshore', 'wind_onshore', 'open_field_pv', 'roof_mounted_pv']:
-    #        try:
-    #            self.VRE_om_prod[tech] = renewable_techs['techs'][tech]['costs']['monetary']['om_prod']
-#
-#            except:
-#                self.VRE_om_prod[tech] = renewable_techs['tech_groups'][tech]['costs']['monetary']['om_prod']
+        for i in self.renewables_share.index:
+            example_model['group_constraints'][
+                self.renewables_share['country'][i] + '_' + self.renewables_share['tech'][i]] = {
+                    'energy_cap_min': float(0),
+                    'locs': [str(self.renewables_share['country'][i])], 'techs': [str(self.renewables_share['tech'][i])]}
 
 
-#        with open('build/model/national/example-model-plan-year{}.yaml'.format(year),
-#                  'w') as outfile:
-#            yaml.dump(example_model, outfile)  # , default_flow_style=False)
+        renewable_techs = open('build/model/renewable-techs.yaml')
+        renewable_techs = yaml.load(renewable_techs, Loader=yaml.FullLoader)
+        for tech in ['wind_offshore', 'wind_onshore', 'open_field_pv', 'roof_mounted_pv']:
+            try:
+                self.VRE_om_prod[tech] = renewable_techs['techs'][tech]['costs']['monetary']['om_prod']
+
+            except:
+                self.VRE_om_prod[tech] = renewable_techs['tech_groups'][tech]['costs']['monetary']['om_prod']
+
+
+        with open('build/model/national/example-model-plan-year{}.yaml'.format(year),
+                  'w') as outfile:
+            yaml.dump(example_model, outfile)  # , default_flow_style=False)
 
     def get_LCOE(self):
         technologies=["open_field_pv","wind_onshore_monopoly","wind_offshore","wind_onshore_competing","roof_mounted_pv"]
@@ -522,7 +526,7 @@ class pipeline:
 
         # if it is the first modeling step and we are in the baseline run (no incentives). Energy system with zero fossil fuel share is modelled in one step
         elif self.baseline_run==True:
-            self.energy_model = calliope.read_netcdf('build/model/paper_1h.nc')
+            self.energy_model = calliope.read_netcdf('build/model/paper_{}.nc'.format(int(sys.argv[5])))
             #run model from netcdf to access the backend
             self.energy_model.run(force_rerun=True)
 
@@ -536,7 +540,7 @@ class pipeline:
         # if we model the incentive model we don't need to do any adjustment to the netcdf model in the first step (since we already insert correct values in the building of the netcdf)
         else:
             print('RUNNING')
-            self.energy_model=calliope.read_netcdf('build/model/model_4h_00_autarky_lean_code.nc')
+            self.energy_model=calliope.read_netcdf('build/model/paper_{}.nc'.format(int(sys.argv[5])))
             self.energy_model.run(force_rerun=True)
             self.model_dict['year {}'.format(year)] = self.energy_model
         #self.energy_model.to_netcdf('build/model/model_{}.nc'.format(year))
@@ -554,7 +558,7 @@ class pipeline:
     def __init__(self):
         self.max_incentive={} #max incentive in Cents/kWh
 
-        self.lcoe_percentage=0.3
+        self.lcoe_percentage=0.5
 
         self.capacity_factors={}
         self.model_dict={'plan':{}}
@@ -584,9 +588,9 @@ class pipeline:
         self.national_score_seasonally = {}
 
         self.score_weight = {'hourly': 1, 'daily': 1,
-                   'weekly': 1,
-                   'monthly': 1,
-                   'seasonally': 1}
+                   'weekly': 0,
+                   'monthly': 0,
+                   'seasonally': 0}
 
 
         self.shoreless_countries=[]

@@ -115,7 +115,7 @@ class pipeline:
 
 
 
-        with open('build/model/national/example-model-plan-year{}.yaml'.format(year),
+        with open('build/model/national/example-model-plan-year{}.yaml'.format(self.ts_year),
                   'w') as outfile:
             yaml.dump(example_model, outfile)  # , default_flow_style=False)
 
@@ -147,12 +147,12 @@ class pipeline:
 
         if year <= 1:
             self.energy_model = calliope.Model(
-                'build/model/national/example-model-plan-year{}.yaml'.format(year),scenario='vre_initial,freeze-hydro-capacities')
+                'build/model/national/example-model-plan-year{}.yaml'.format(self.ts_year),scenario='vre_initial,freeze-hydro-capacities')
             #self.energy_model.run()
             print(self.ts_year)
 
             ## TODO Bryn+Niklas: agree on naming convention
-            self.energy_model.to_netcdf('build/model/paper_{}.nc'.format(self.ts_year))
+            self.energy_model.to_netcdf('build/model/one_day_{}.nc'.format(self.ts_year))
             exit()
             #print('Not loading yaml, but using .nc file')
 

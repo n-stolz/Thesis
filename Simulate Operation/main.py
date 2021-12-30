@@ -48,61 +48,63 @@ def run_models():
         scenario_path=('/home/niklas/Operation_Mode/test_scenario')
     else:
         #output_path = ('/cluster/scratch/nstolz/six_scenarios_sd_discrete/output_25per_incentive_00_autarky')
-        scenario_path=('/cluster/scratch/nstolz/Operation_files')
+        scenario_path=('/cluster/scratch/nstolz/paper_50per_hourly_daily_{}'.format(int(sys.argv[5])))
 
     scenario_list=os.listdir(scenario_path)
     print(scenario_list)
-    for scenario in scenario_list:
-
-        model = pipeline()
-        for baseline in [False, True]:
 
 
-
-
-            model.baseline_run=baseline
-            model.model_path=os.path.join(scenario_path,scenario)
-            model.output_path = os.path.join(model.model_path,'Planning_mode_all_years')
+    model = pipeline()
+    for baseline in [False, True]:
 
 
 
-            if baseline == True:
-                specs.years = 1
+
+        model.baseline_run=baseline
+        model.model_path=os.path.join(scenario_path)
+        model.output_path = os.path.join(model.model_path,'Planning_mode_all_years')
+
+
+
+        if baseline == True:
+            specs.years = 1
+        else:
+            specs.years=years
+
+        year_list=[2010,2011,2012,2013,2014,2015,2016,2017,2018]
+        year_list.remove(int(sys.argv[5]))
+        for year in year_list:
+
+            print('run_models thinks we are in year:',year)
+            if baseline==False:
+                path=os.path.join(model.output_path,'adjusted_costs/model_csv_year_{}'.format(year))
             else:
-                specs.years=years
+                path=os.path.join(model.output_path,'baseline/model_csv_year_{}'.format(year))
 
-            for year in [2010,2011,2012,2013,2014,2015,2017,2018]:
+            if os.path.exists(path):
+                print('was already computed')
+            else:
 
-                print('run_models thinks we are in year:',year)
-                if baseline==False:
-                    path=os.path.join(model.output_path,'adjusted_costs/model_csv_year_{}'.format(year))
+                if baseline==True:
+                    model.ts_year=year
+                    year_sequence['baseline']['step {}'.format(year)]=model.ts_year
                 else:
-                    path=os.path.join(model.output_path,'baseline/model_csv_year_{}'.format(year))
+                    #demand_year=get_random_year()
+                    model.ts_year=year
+                    year_sequence['adjusted_costs:']['step {}'.format(year)] = model.ts_year
 
-                if os.path.exists(path):
-                    print('Year: ', year,' Scenario: ',scenario,' was already computed')
-                else:
-
-                    if baseline==True:
-                        model.ts_year=year
-                        year_sequence['baseline']['step {}'.format(year)]=model.ts_year
-                    else:
-                        #demand_year=get_random_year()
-                        model.ts_year=year
-                        year_sequence['adjusted_costs:']['step {}'.format(year)] = model.ts_year
-
-                    logging.info('running model run no: %s; demand and cf timeseries of year %s', year,model.ts_year)
+                logging.info('running model run no: %s; demand and cf timeseries of year %s', year,model.ts_year)
 
 
 
-                    #create the operation YAML file
-                    model.create_yaml_operate(year, config.energy_prod_model)
+                #create the operation YAML file
+                model.create_yaml_operate(year, config.energy_prod_model)
 
 
 
-                    model.run_planning_model(year)
+                model.run_planning_model(year)
 
-                    model.save_model(year)
+                model.save_model(year)
     pd.DataFrame.from_dict(year_sequence).to_csv(
         os.path.join(model.output_path, 'demand_year_sequence.csv'))
 

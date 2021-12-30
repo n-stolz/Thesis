@@ -16,6 +16,10 @@ class pipeline:
         example_model = open('build/model/national/example-model-plan.yaml')
         example_model = yaml.load(example_model, Loader=yaml.FullLoader)
 
+        example_model['import']=['../interest-rate.yaml','../renewable-techs.yaml','../storage-techs.yaml',
+        '../link-techs.yaml','../demand-techs.yaml','locations{}.yaml'.format(sys.argv[5]),'directional-rooftop.yaml','link-all-neighbours{}.yaml'.format(sys.argv[5])]
+
+
         example_model['run']['ensure_feasibility'] = True
         example_model['run']['solver']='gurobi'
         example_model['run']['solver_io']='python'
@@ -25,7 +29,7 @@ class pipeline:
         end_date=sys.argv[3]
         example_model['model']['subset_time']=['{}-'.format(year)+start_date,'{}-'.format(year)+end_date]
 
-        with open('build/model/national/example-model-plan-year{}.yaml'.format(year),
+        with open('build/model/national/example-model-plan-year{}.yaml'.format(sys.argv[5]),
                   'w') as outfile:
             yaml.dump(example_model, outfile)  # , default_flow_style=False)
 
@@ -62,7 +66,7 @@ class pipeline:
             if 'transmission' not in tech:
                 locations['locations'][loc]['techs'][tech]['constraints']['storage_cap_equals'] =  float(storage_cap['storage_cap'][i])
 
-        with open('build/model/national/locations.yaml','w') as outfile:
+        with open('build/model/national/locations{}.yaml'.format(sys.argv[5]),'w') as outfile:
             yaml.dump(locations,outfile)
 
 
@@ -81,7 +85,7 @@ class pipeline:
                 link['links'][AB_key]['techs']['ac_transmission']={'constraints':{'energy_cap_equals':float(energy_cap['energy_cap'][i])}}
             except:
                 pass
-        with open('build/model/national/link-all-neighbours.yaml','w') as outfile:
+        with open('build/model/national/link-all-neighbours{}.yaml'.format(sys.argv[5]),'w') as outfile:
             yaml.dump(link,outfile)
 
 
@@ -95,7 +99,7 @@ class pipeline:
 
 
             self.energy_model = calliope.Model(
-                 'build/model/national/example-model-plan-year{}.yaml'.format(year))
+                 'build/model/national/example-model-plan-year{}.yaml'.format(sys.argv[5]))
             self.energy_model.save_commented_model_yaml('/cluster/scratch/nstolz/model.yaml')
             self.energy_model.run()
             # self.energy_model.to_netcdf('build/model/model_{}.nc'.format(self.ts_year))

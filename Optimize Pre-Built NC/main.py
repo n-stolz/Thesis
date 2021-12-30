@@ -48,7 +48,7 @@ def run_models():
     if os.path.isdir('/home/niklas/European Incentive Model'):
         output_path = ('/home/niklas/European Incentive Model/output_{}'.format(date_time))
     else:
-        output_path = ('/cluster/scratch/nstolz/paper_1h_30per')
+        output_path = ('/cluster/scratch/nstolz/paper_50per_hourly_daily_{}'.format(int(sys.argv[5])))
 
     model = pipeline()
     for baseline in [False, True]:
@@ -64,11 +64,11 @@ def run_models():
         for year in range(1,specs.years+1):
                 print('run_models thinks we are in year:',year)
                 if baseline==True:
-                    model.ts_year=2016
+                    model.ts_year=sys.argv[5]
                     year_sequence['baseline']['step {}'.format(year)]=model.ts_year
                 else:
                     #demand_year=get_random_year()
-                    model.ts_year=2016
+                    model.ts_year=sys.argv[5]
                     year_sequence['adjusted_costs:']['step {}'.format(year)] = model.ts_year
                 #copy_year_to_model(model.ts_year)
                 logging.info('running model run no: %s; demand and cf timeseries of year %s', year,model.ts_year)
@@ -85,8 +85,8 @@ def run_models():
                     #get residual loads on national and european level
                     model.time_steps=model.get_production_timeseries(year)
 
-                #if year==1:
-                #    model.create_yaml_plan(euro_calliope_specifications.fossil_share, year, config.energy_prod_model)
+                if year==1:
+                    model.create_yaml_plan(euro_calliope_specifications.fossil_share, year, config.energy_prod_model)
 
 
 
