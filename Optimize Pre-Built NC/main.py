@@ -48,7 +48,8 @@ def run_models():
     if os.path.isdir('/home/niklas/European Incentive Model'):
         output_path = ('/home/niklas/European Incentive Model/output_{}'.format(date_time))
     else:
-        output_path = ('/cluster/scratch/nstolz/paper_two_years_{}'.format(int(sys.argv[5])))
+        #output_path = ('/cluster/scratch/nstolz/paper_normalized_2h_hourly_european_score_years_{}'.format(int(sys.argv[5])))
+        output_path = ('/cluster/scratch/nstolz/test_capacity_constant_{}'.format(int(sys.argv[5])))
 
     model = pipeline()
     for baseline in [False, True]:

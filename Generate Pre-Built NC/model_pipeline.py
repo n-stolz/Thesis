@@ -152,7 +152,7 @@ class pipeline:
             print(self.ts_year)
 
             ## TODO Bryn+Niklas: agree on naming convention
-            self.energy_model.to_netcdf('build/model/one_day_{}.nc'.format(self.ts_year))
+            self.energy_model.to_netcdf('build/model/test_2days_{}.nc'.format(self.ts_year))
             exit()
             #print('Not loading yaml, but using .nc file')
 

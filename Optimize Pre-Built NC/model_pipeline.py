@@ -150,6 +150,11 @@ class pipeline:
             cf = cf[cf['timestep'].isin(time_range)]
             cf['timestep'] = cf['timestep'].astype('datetime64[ns]')
 
+            mean_cf=cf[name].mean()
+
+            print('CAPACITY FACTORS: ')
+            print(cf)
+            cf[name]=cf[name]/mean_cf
             # resample capacity factors on daily, weekly, monthly and quaterly level
             cf_daily=cf.set_index('timestep').resample('D').mean()
             cf_weekly=cf.set_index('timestep').resample('W').mean()
@@ -310,7 +315,7 @@ class pipeline:
 
     def cost_calculator(self, country, tech):
         # x is composite score of national and european score
-        x = (self.european_score[country][tech]+self.national_score[country][tech])
+        x = (self.european_score[country][tech]+self.european_score[country][tech])
 
         x=x*(5/sum(self.score_weight.values()))
         #linearly: -10 to 10
@@ -502,6 +507,20 @@ class pipeline:
             if self.baseline_run==False:
                 self.adjust_costs(year)
 
+        if self.baseline_run==True:
+            tech_capacities_scenario=self.renewables_share.groupby('tech').sum()
+            print(tech_capacities_scenario)
+            VRE_cap=tech_capacities_scenario[tech_capacities_scenario.index.isin(['wind_onshore_monopoly','wind_onshore_competing','wind_offshore','roof_mounted_pv','open_field_pv'])]['share'].sum()
+            print('VRE capacity: ', VRE_cap)
+
+
+            energy_cap_scenario=pd.read_csv(os.path.join(self.output_path,'adjusted_costs','model_csv_year_{}'.format(int(sys.argv[1])),'results_energy_cap.csv'))
+            print(energy_cap_scenario)
+
+            vre_cap=energy_cap_scenario[energy_cap_scenario['techs'].isin(['wind_onshore_monopoly','wind_onshore_competing','wind_offshore','roof_mounted_pv','open_field_pv'])]['energy_cap'].sum()
+
+            self.energy_model.backend.update_param('group_energy_cap_equals',{'vre_group':float(vre_cap)})
+
 
     def run_planning_model(self,year, fossil_share,energy_prod_model):
 
@@ -526,7 +545,7 @@ class pipeline:
 
         # if it is the first modeling step and we are in the baseline run (no incentives). Energy system with zero fossil fuel share is modelled in one step
         elif self.baseline_run==True:
-            self.energy_model = calliope.read_netcdf('build/model/paper_two_years_{}.nc'.format(int(sys.argv[5])))
+            self.energy_model = calliope.read_netcdf('build/model/test_2days_{}.nc'.format(int(sys.argv[5])))
             #run model from netcdf to access the backend
             self.energy_model.run(force_rerun=True)
 
@@ -540,7 +559,7 @@ class pipeline:
         # if we model the incentive model we don't need to do any adjustment to the netcdf model in the first step (since we already insert correct values in the building of the netcdf)
         else:
             print('RUNNING')
-            self.energy_model=calliope.read_netcdf('build/model/paper_two_years_{}.nc'.format(int(sys.argv[5])))
+            self.energy_model=calliope.read_netcdf('build/model/test_2days_{}.nc'.format(int(sys.argv[5])))
             self.energy_model.run(force_rerun=True)
             self.model_dict['year {}'.format(year)] = self.energy_model
         #self.energy_model.to_netcdf('build/model/model_{}.nc'.format(year))
@@ -587,10 +606,10 @@ class pipeline:
         self.national_score_monthly = {}
         self.national_score_seasonally = {}
 
-        self.score_weight = {'hourly': 1, 'daily': 1,
-                   'weekly': 1,
-                   'monthly': 1,
-                   'seasonally': 1}
+        self.score_weight = {'hourly': 1, 'daily': 0,
+                   'weekly': 0,
+                   'monthly': 0,
+                   'seasonally': 0}
 
 
         self.shoreless_countries=[]
