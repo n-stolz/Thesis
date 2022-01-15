@@ -46,7 +46,7 @@ class pipeline:
 
         #TODO Niklas+Bryn: Discuss if those options make sense
         example_model['run']['solver_options']={'Threads':int(sys.argv[4]),'Method': 2, 'Crossover':0,
-            'FeasibilityTol':1e-3, 'OptimalityTol':1e-4, 'BarConvTol':1e-4}
+            'FeasibilityTol':1e-6, 'OptimalityTol':1e-6, 'BarConvTol':1e-8}
         start_date=sys.argv[2]
         end_date=sys.argv[3]
         example_model['model']['subset_time']=['{}-'.format(self.ts_year)+start_date,'{}-'.format(self.ts_year)+end_date]
@@ -134,6 +134,10 @@ class pipeline:
             for tech in energy_prod:
                 locations['overrides']['vre_initial']['locations']['{}.techs'.format(country)][tech]={'constraints':{'energy_cap_min':float(energy_prod.loc[country, tech])}}
                 #print('country:', country,' tech: ',tech, 'share: ', energy_prod.loc[country, tech])
+        #locations['overrides']['scenario_cap']={'group_constraints':{}}
+        #locations['overrides']['scenario_cap']['group_constraints']['vre_group']={'techs':['wind_onshore_monopoly','wind_onshore_competing','wind_offshore','roof_mounted_pv','open_field_pv'],'energy_cap_equals':6}
+
+
         with open('build/model/national/locations.yaml'.format(year),
                   'w') as outfile:
             yaml.dump(locations, outfile)  # , default_flow_style=False)
@@ -152,7 +156,12 @@ class pipeline:
             print(self.ts_year)
 
             ## TODO Bryn+Niklas: agree on naming convention
-            self.energy_model.to_netcdf('build/model/test_2days_{}.nc'.format(self.ts_year))
+            self.energy_model.to_netcdf('build/model/paper_half_storage_tight_tol_{}.nc'.format(self.ts_year))
+
+            # if fixed capacity is wanted
+            #self.energy_model_baseline = calliope.Model(
+            #    'build/model/national/example-model-plan-year{}.yaml'.format(year),scenario='vre_initial,freeze-hydro-capacities,scenario_cap')
+            #self.energy_model_baseline.to_netcdf('build/model/paper_half_storage_tight_tol_{}.nc'.format(self.ts_year))
             exit()
             #print('Not loading yaml, but using .nc file')
 

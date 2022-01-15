@@ -1,0 +1,337 @@
+Sender: LSF System <lsfadmin@eu-g1-054-3>
+Subject: Job 200270280: <python main.py 6 01-01 12-31 15 2013> in cluster <euler> Done
+
+Job <python main.py 6 01-01 12-31 15 2013> was submitted from host <eu-login-39> by user <nstolz> in cluster <euler> at Thu Jan 13 17:40:14 2022
+Job was executed on host(s) <15*eu-g1-054-3>, in queue <bigmem.24h>, as user <nstolz> in cluster <euler> at Thu Jan 13 17:41:09 2022
+</cluster/home/nstolz> was used as the home directory.
+</cluster/home/nstolz/Thesis/Simulate Operation> was used as the working directory.
+Started at Thu Jan 13 17:41:09 2022
+Terminated at Thu Jan 13 19:24:14 2022
+Results reported at Thu Jan 13 19:24:14 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+python main.py 6 01-01 12-31 15 2013
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   7831.85 sec.
+    Max Memory :                                 75401 MB
+    Average Memory :                             35260.42 MB
+    Total Requested Memory :                     225360.00 MB
+    Delta Memory :                               149959.00 MB
+    Max Swap :                                   8055 MB
+    Max Processes :                              3
+    Max Threads :                                19
+    Run time :                                   6184 sec.
+    Turnaround time :                            6240 sec.
+
+The output (if any) follows:
+
+['incentives_step_4', 'sd_europe_monthly_step_3', 'sd_national_daily_step_6', 'sd_europe_monthly_step_6', 'european_score_year_2', 'sd_national_weekly_step_6', 'sd_europe_weekly_step_4', 'sd_national_weekly_step_4', 'sd_europe_daily_step_2', 'sd_europe_seasonally_step_3', 'sd_national_hourly_step_5', 'sd_europe_weekly_step_2', 'sd_europe_daily_step_5', 'sd_europe_daily_step_4', 'sd_national_weekly_step_3', 'national_score_year_6', 'sd_national_monthly_step_5', 'sd_europe_seasonally_step_6', 'national_score_year_5', 'sd_europe_hourly_step_5', 'sd_europe_monthly_step_5', 'european_score_year_4', 'sd_national_hourly_step_4', 'sd_europe_monthly_step_2', 'sd_europe_hourly_step_4', 'sd_national_seasonally_step_5', 'european_score_year_6', 'national_score_year_2', 'sd_europe_monthly_step_4', 'sd_national_seasonally_step_2', 'sd_national_daily_step_4', 'incentives_step_2', 'sd_national_weekly_step_5', 'sd_national_weekly_step_2', 'sd_national_daily_step_2', 'sd_national_hourly_step_6', 'european_score_year_3', 'sd_europe_hourly_step_6', 'sd_national_monthly_step_2', 'sd_national_monthly_step_3', 'incentives_step_3', 'sd_europe_weekly_step_3', 'sd_europe_daily_step_6', 'adjusted_costs', 'sd_europe_daily_step_3', 'baseline', 'european_score_year_5', 'sd_national_daily_step_3', 'sd_national_hourly_step_3', 'sd_europe_hourly_step_3', 'sd_europe_hourly_step_2', 'sd_national_monthly_step_4', 'sd_national_seasonally_step_6', 'national_score_year_4', 'national_score_year_3', 'incentives_step_5', 'sd_national_hourly_step_2', 'incentives_step_6', 'sd_europe_seasonally_step_2', 'sd_national_seasonally_step_4', 'sd_national_seasonally_step_3', 'sd_europe_weekly_step_6', 'Planning_mode_all_years', 'sd_europe_weekly_step_5', 'demand_year_sequence.csv', 'sd_national_monthly_step_6', 'sd_national_daily_step_5', 'sd_europe_seasonally_step_5', 'sd_europe_seasonally_step_4']
+run_models thinks we are in year: 2010
+[2022-01-13 17:41:22] INFO     Model: initialising
+[2022-01-13 17:41:23] WARNING  /cluster/apps/nss/gcc-6.3.0/python/3.8.5/x86_64/lib64/python3.8/site-packages/calliope/exceptions.py:60: ModelWarning:
+
+Possible issues found during model processing:
+ * Model configuration specifies calliope_version=0.6.5, but you are running 0.6.6-post1. Proceed with caution!
+
+
+[2022-01-13 17:41:26] INFO     `battery` at `ALB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `ALB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `ALB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `ALB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `ALB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `AUT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `AUT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `AUT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `AUT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `AUT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `BEL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `BEL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `BEL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `BEL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `BEL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `BGR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `BGR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `BGR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `BGR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `BGR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `BIH` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `BIH` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `BIH` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `BIH` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `BIH` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `CHE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `CHE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `CHE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `CHE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `CHE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `CYP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `CYP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `CYP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `CYP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `CYP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `CZE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `CZE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `CZE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `CZE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `CZE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `DEU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `DEU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `DEU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `DEU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `DEU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `DNK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `DNK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `DNK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `DNK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `DNK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `ESP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `ESP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `ESP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `ESP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `ESP` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `EST` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `EST` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `EST` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `EST` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `EST` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `FIN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `FIN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `FIN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `FIN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `FIN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `FRA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `FRA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `FRA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `FRA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `FRA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `GBR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `GBR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `GBR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `GBR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `GBR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `GRC` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `GRC` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `GRC` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `GRC` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `GRC` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `HRV` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `HRV` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `HRV` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `HRV` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `HRV` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `HUN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `HUN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `HUN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `HUN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `HUN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `IRL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `IRL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `IRL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `IRL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `IRL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `ITA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `ITA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `ITA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `ITA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `ITA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `LTU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `LTU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `LTU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `LTU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `LTU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `LUX` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `LUX` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `LUX` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `LUX` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `LUX` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `LVA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `LVA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `LVA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `LVA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `LVA` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `MKD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `MKD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `MKD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `MKD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `MKD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `MNE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `MNE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `MNE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `MNE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `MNE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `NLD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `NLD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `NLD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `NLD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `NLD` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `NOR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `NOR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `NOR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `NOR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `NOR` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `POL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `POL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `POL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `POL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `POL` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `PRT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `PRT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `PRT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `PRT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `PRT` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `ROU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `ROU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `ROU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `ROU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `ROU` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `SRB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `SRB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `SRB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `SRB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `SRB` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `SVK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `SVK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `SVK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `SVK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `SVK` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `SVN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `SVN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `SVN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `SVN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `SVN` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `battery` at `SWE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `biofuel` at `SWE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydro_reservoir` at `SWE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `hydrogen` at `SWE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     `pumped_hydro` at `SWE` has no constraint to explicitly connect `energy_cap` to `storage_cap`, consider defining a `energy_cap_per_storage_cap_min/max/equals` constraint
+[2022-01-13 17:41:26] INFO     Model: preprocessing stage 1 (model_run)
+[2022-01-13 17:41:34] INFO     Model: preprocessing stage 2 (model_data)
+[2022-01-13 17:43:09] INFO     Model: preprocessing complete
+[2022-01-13 17:43:29] INFO     Backend: starting model run
+[2022-01-13 17:44:59] INFO     constraints are loaded in the following order: ['capacity', 'costs', 'dispatch', 'energy_balance', 'network', 'policy', 'conversion', 'conversion_plus', 'group', 'export', 'milp']
+[2022-01-13 18:15:59] INFO     Backend: model generated. Time since start of model run: 0:32:29.850895
+[2022-01-13 18:15:59] INFO     Backend: sending model to solver
+[2022-01-13 18:15:59] DEBUG    Using license file /cluster/apps/nss/gurobi/9.1.1/x86_64/gurobi.lic
+[2022-01-13 18:15:59] DEBUG    Set parameter TokenServer to value lic-gurobi.ethz.ch
+[2022-01-13 19:08:28] DEBUG    Parameter OutputFlag unchanged
+[2022-01-13 19:08:28] DEBUG    Value: 1  Min: 0  Max: 1  Default: 1
+[2022-01-13 19:08:28] DEBUG    Changed value of parameter LogFile to /scratch/200270280.tmpdir/tmpi2w96wer.log
+[2022-01-13 19:08:28] DEBUG    Prev:   Default:
+[2022-01-13 19:08:28] DEBUG    Changed value of parameter BarConvTol to 0.0001
+[2022-01-13 19:08:28] DEBUG    Prev: 1e-08  Min: 0.0  Max: 1.0  Default: 1e-08
+[2022-01-13 19:08:28] DEBUG    Changed value of parameter Crossover to 0
+[2022-01-13 19:08:28] DEBUG    Prev: -1  Min: -1  Max: 5  Default: -1
+[2022-01-13 19:08:28] DEBUG    Changed value of parameter FeasibilityTol to 0.001
+[2022-01-13 19:08:28] DEBUG    Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+[2022-01-13 19:08:28] DEBUG    Changed value of parameter Method to 2
+[2022-01-13 19:08:28] DEBUG    Prev: -1  Min: -1  Max: 5  Default: -1
+[2022-01-13 19:08:28] DEBUG    Changed value of parameter OptimalityTol to 0.0001
+[2022-01-13 19:08:28] DEBUG    Prev: 1e-06  Min: 1e-09  Max: 0.01  Default: 1e-06
+[2022-01-13 19:08:28] DEBUG    Changed value of parameter Threads to 15
+[2022-01-13 19:08:28] DEBUG    Prev: 0  Min: 0  Max: 1024  Default: 0
+[2022-01-13 19:08:47] DEBUG    Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (linux64)
+[2022-01-13 19:08:47] DEBUG    Thread count: 128 physical cores, 128 logical processors, using up to 15 threads
+[2022-01-13 19:08:47] DEBUG    Optimize a model with 22024882 rows, 15997960 columns and 58304399 nonzeros
+[2022-01-13 19:08:48] DEBUG    Model fingerprint: 0x1e311980
+[2022-01-13 19:08:48] DEBUG    Coefficient statistics:
+[2022-01-13 19:08:48] DEBUG    Matrix range     [4e-05, 6e+01]
+[2022-01-13 19:08:48] DEBUG    Objective range  [1e+00, 1e+09]
+[2022-01-13 19:08:48] DEBUG    Bounds range     [0e+00, 0e+00]
+[2022-01-13 19:08:48] DEBUG    RHS range        [1e-05, 8e+02]
+[2022-01-13 19:08:54] DEBUG    Presolve removed 19449442 rows and 7979820 columns (presolve time = 6s) ...
+[2022-01-13 19:08:58] DEBUG    Presolve removed 19601821 rows and 9020000 columns (presolve time = 10s) ...
+[2022-01-13 19:09:04] DEBUG    Presolve removed 20970143 rows and 10388322 columns (presolve time = 17s) ...
+[2022-01-13 19:09:08] DEBUG    Presolve removed 20970143 rows and 10428613 columns (presolve time = 21s) ...
+[2022-01-13 19:09:08] DEBUG    Presolve removed 20970143 rows and 10428613 columns
+[2022-01-13 19:09:09] DEBUG    Presolve time: 21.34s
+[2022-01-13 19:09:09] DEBUG    Presolved: 1054739 rows, 5569347 columns, 9392153 nonzeros
+[2022-01-13 19:09:24] DEBUG    Elapsed ordering time = 15s
+[2022-01-13 19:09:25] DEBUG    Elapsed ordering time = 15s
+[2022-01-13 19:09:26] DEBUG    Ordering time: 17.03s
+[2022-01-13 19:09:29] DEBUG    Barrier statistics:
+[2022-01-13 19:09:29] DEBUG    AA' NZ     : 2.421e+06
+[2022-01-13 19:09:29] DEBUG    Factor NZ  : 6.219e+07 (roughly 3.0 GBytes of memory)
+[2022-01-13 19:09:29] DEBUG    Factor Ops : 1.401e+10 (less than 1 second per iteration)
+[2022-01-13 19:09:29] DEBUG    Threads    : 15
+[2022-01-13 19:09:30] DEBUG    Objective                Residual
+[2022-01-13 19:09:30] DEBUG    Iter       Primal          Dual         Primal    Dual     Compl     Time
+[2022-01-13 19:09:30] DEBUG    0   4.06506343e+15 -2.93697442e+14  1.32e+05 3.96e-04  1.48e+09    43s
+[2022-01-13 19:09:32] DEBUG    1   7.53481697e+14 -1.33513393e+14  2.44e+04 4.77e-07  2.76e+08    44s
+[2022-01-13 19:09:34] DEBUG    2   1.45721996e+14 -6.20609118e+13  4.61e+03 1.86e-06  5.50e+07    46s
+[2022-01-13 19:09:36] DEBUG    3   2.59912405e+13 -2.36134505e+13  7.74e+02 3.89e-06  1.03e+07    49s
+[2022-01-13 19:09:38] DEBUG    4   9.86255670e+12 -1.02295462e+13  2.87e+02 1.51e-06  3.67e+06    50s
+[2022-01-13 19:09:39] DEBUG    5   5.85787338e+12 -6.76377788e+12  1.69e+02 1.86e-06  2.15e+06    52s
+[2022-01-13 19:09:40] DEBUG    6   4.37860001e+12 -4.90427415e+12  1.26e+02 4.84e-05  1.55e+06    53s
+[2022-01-13 19:09:42] DEBUG    7   3.23286559e+12 -3.75304607e+12  9.21e+01 2.21e-04  1.14e+06    54s
+[2022-01-13 19:09:43] DEBUG    8   2.59182268e+12 -2.68368553e+12  7.32e+01 2.57e-04  8.66e+05    55s
+[2022-01-13 19:09:45] DEBUG    9   1.78333987e+12 -2.01825576e+12  5.10e+01 2.51e-04  6.11e+05    57s
+[2022-01-13 19:09:47] DEBUG    10   1.67498688e+12 -1.75402479e+12  4.80e+01 2.41e-04  5.59e+05    59s
+[2022-01-13 19:09:49] DEBUG    11   1.18715343e+12 -1.19204770e+12  3.33e+01 3.52e-04  3.87e+05    62s
+[2022-01-13 19:09:52] DEBUG    12   9.03990826e+11 -8.95426586e+11  2.44e+01 4.24e-04  2.88e+05    65s
+[2022-01-13 19:09:54] DEBUG    13   7.85439506e+11 -7.23602614e+11  2.04e+01 5.76e-04  2.42e+05    67s
+[2022-01-13 19:09:57] DEBUG    14   7.09235844e+11 -6.12279935e+11  1.72e+01 6.47e-04  2.09e+05    70s
+[2022-01-13 19:10:00] DEBUG    15   6.64345634e+11 -4.92872765e+11  1.50e+01 5.55e-04  1.83e+05    72s
+[2022-01-13 19:10:02] DEBUG    16   6.13406834e+11 -3.99367476e+11  1.26e+01 5.36e-04  1.57e+05    75s
+[2022-01-13 19:10:05] DEBUG    17   5.78719861e+11 -3.14044471e+11  1.07e+01 5.83e-04  1.37e+05    77s
+[2022-01-13 19:10:07] DEBUG    18   5.49008225e+11 -2.42077309e+11  8.81e+00 5.66e-04  1.18e+05    80s
+[2022-01-13 19:10:10] DEBUG    19   5.24154859e+11 -1.64703048e+11  7.09e+00 8.56e-04  9.95e+04    83s
+[2022-01-13 19:10:13] DEBUG    20   5.21459515e+11 -1.12788449e+11  6.78e+00 7.29e-04  9.25e+04    85s
+[2022-01-13 19:10:15] DEBUG    21   5.11784783e+11  1.31032164e+10  5.62e+00 1.43e-03  7.33e+04    88s
+[2022-01-13 19:10:18] DEBUG    22   5.03021881e+11  8.32540546e+10  4.66e+00 9.68e-04  6.09e+04    90s
+[2022-01-13 19:10:21] DEBUG    23   4.98437270e+11  1.53816034e+11  4.17e+00 1.06e-03  5.11e+04    94s
+[2022-01-13 19:10:24] DEBUG    24   4.92579825e+11  1.93646089e+11  3.38e+00 1.05e-03  4.31e+04    96s
+[2022-01-13 19:10:26] DEBUG    25   4.89475794e+11  2.17379631e+11  2.99e+00 9.14e-04  3.87e+04    99s
+[2022-01-13 19:10:29] DEBUG    26   4.88091644e+11  2.32631647e+11  2.58e+00 1.00e-03  3.53e+04   101s
+[2022-01-13 19:10:31] DEBUG    27   4.87890591e+11  2.50585896e+11  2.46e+00 8.64e-04  3.30e+04   104s
+[2022-01-13 19:10:34] DEBUG    28   4.86317312e+11  2.72349435e+11  1.99e+00 9.17e-04  2.87e+04   107s
+[2022-01-13 19:10:37] DEBUG    29   4.85780732e+11  2.90169921e+11  1.72e+00 9.34e-04  2.57e+04   110s
+[2022-01-13 19:10:39] DEBUG    30   4.85643560e+11  3.01938676e+11  1.54e+00 1.01e-03  2.38e+04   112s
+[2022-01-13 19:10:42] DEBUG    31   4.85458735e+11  3.20487653e+11  1.33e+00 9.28e-04  2.10e+04   115s
+[2022-01-13 19:10:45] DEBUG    32   4.85380285e+11  3.37629432e+11  1.22e+00 7.27e-04  1.89e+04   117s
+[2022-01-13 19:10:47] DEBUG    33   4.85613398e+11  3.55593961e+11  1.06e+00 8.50e-04  1.65e+04   120s
+[2022-01-13 19:10:50] DEBUG    34   4.85842246e+11  3.68553754e+11  9.59e-01 8.08e-04  1.49e+04   123s
+[2022-01-13 19:10:52] DEBUG    35   4.86001649e+11  3.88183270e+11  8.13e-01 7.40e-04  1.24e+04   125s
+[2022-01-13 19:10:55] DEBUG    36   4.86108033e+11  4.04472781e+11  6.99e-01 7.62e-04  1.04e+04   128s
+[2022-01-13 19:10:58] DEBUG    37   4.86458961e+11  4.23334550e+11  5.41e-01 8.24e-04  7.96e+03   130s
+[2022-01-13 19:11:00] DEBUG    38   4.86808148e+11  4.35910538e+11  4.20e-01 7.78e-04  6.33e+03   133s
+[2022-01-13 19:11:03] DEBUG    39   4.87155540e+11  4.44413258e+11  3.15e-01 8.24e-04  5.17e+03   136s
+[2022-01-13 19:11:06] DEBUG    40   4.87491536e+11  4.56549347e+11  2.39e-01 1.11e-03  3.76e+03   138s
+[2022-01-13 19:11:08] DEBUG    41   4.87746512e+11  4.62233531e+11  1.69e-01 1.11e-03  3.00e+03   141s
+[2022-01-13 19:11:11] DEBUG    42   4.87914126e+11  4.67535346e+11  1.27e-01 9.24e-04  2.36e+03   143s
+[2022-01-13 19:11:13] DEBUG    43   4.88001687e+11  4.71557255e+11  1.08e-01 9.38e-04  1.92e+03   146s
+[2022-01-13 19:11:16] DEBUG    44   4.88078407e+11  4.75612536e+11  9.07e-02 9.09e-04  1.48e+03   148s
+[2022-01-13 19:11:18] DEBUG    45   4.88141662e+11  4.79035787e+11  7.24e-02 1.01e-03  1.10e+03   151s
+[2022-01-13 19:11:21] DEBUG    46   4.88216654e+11  4.81430505e+11  4.77e-02 8.37e-04  7.97e+02   154s
+[2022-01-13 19:11:24] DEBUG    47   4.88251699e+11  4.82265565e+11  3.92e-02 8.72e-04  6.94e+02   156s
+[2022-01-13 19:11:26] DEBUG    48   4.88294713e+11  4.83961071e+11  2.75e-02 8.27e-04  4.99e+02   158s
+[2022-01-13 19:11:29] DEBUG    49   4.88318352e+11  4.84802012e+11  2.20e-02 7.84e-04  4.03e+02   161s
+[2022-01-13 19:11:32] DEBUG    50   4.88346614e+11  4.85922932e+11  1.50e-02 8.21e-04  2.77e+02   164s
+[2022-01-13 19:11:34] DEBUG    51   4.88359039e+11  4.86688737e+11  1.08e-02 6.71e-04  1.92e+02   166s
+[2022-01-13 19:11:36] DEBUG    52   4.88370363e+11  4.87248668e+11  6.92e-03 6.94e-04  1.28e+02   169s
+[2022-01-13 19:11:39] DEBUG    53   4.88377743e+11  4.87585499e+11  4.32e-03 5.87e-04  8.87e+01   172s
+[2022-01-13 19:11:41] DEBUG    54   4.88381284e+11  4.87659455e+11  3.03e-03 5.87e-04  7.80e+01   174s
+[2022-01-13 19:11:43] DEBUG    55   4.88383628e+11  4.87980461e+11  2.30e-03 6.84e-04  4.55e+01   175s
+[2022-01-13 19:11:44] DEBUG    56   4.88385785e+11  4.88112842e+11  1.45e-03 7.07e-04  3.04e+01   177s
+[2022-01-13 19:11:46] DEBUG    57   4.88387568e+11  4.88222644e+11  9.80e-04 7.17e-04  1.87e+01   179s
+[2022-01-13 19:11:47] DEBUG    58   4.88388982e+11  4.88278041e+11  5.05e-04 5.82e-04  1.21e+01   180s
+[2022-01-13 19:11:49] DEBUG    59   4.88389051e+11  4.88301046e+11  3.79e-04 4.70e-04  9.53e+00   181s
+[2022-01-13 19:11:50] DEBUG    60   4.88389100e+11  4.88330255e+11  2.90e-04 5.18e-04  6.49e+00   183s
+[2022-01-13 19:11:51] DEBUG    61   4.88389179e+11  4.88348486e+11  2.55e-04 4.11e-04  4.66e+00   184s
+[2022-01-13 19:11:51] DEBUG    Barrier solved model in 61 iterations and 183.87 seconds
+[2022-01-13 19:11:51] DEBUG    Optimal objective 4.88389179e+11
+[2022-01-13 19:11:53] DEBUG    Changed value of parameter LogFile to
+[2022-01-13 19:11:53] DEBUG    Prev: /scratch/200270280.tmpdir/tmpi2w96wer.log  Default:
+[2022-01-13 19:16:22] INFO     Backend: solver finished running. Time since start of model run: 1:32:53.002101
+[2022-01-13 19:16:26] INFO     Backend: loaded results
+[2022-01-13 19:17:50] INFO     Backend: generated solution array. Time since start of model run: 1:34:21.117925
+[2022-01-13 19:17:50] INFO     Postprocessing: started
+[2022-01-13 19:17:51] INFO     Postprocessing: All values < 1e-10 set to 0 in carrier_prod, carrier_con, cost_var, capacity_factor
+[2022-01-13 19:17:51] INFO     Postprocessing: ended. Time since start of model run: 1:34:22.522140

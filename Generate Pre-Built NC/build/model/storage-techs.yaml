@@ -27,7 +27,7 @@ techs:
             storage_cap_max: inf
             energy_eff: 0.8832 # 0.78 round-trip
             lifetime: 55
-            storage_initial: 0
+            storage_initial: 0.5
         costs:
             monetary:
                 storage_cap: 7.357566 # (10,000 EUR2015/MWh), 80 $2015

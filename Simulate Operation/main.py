@@ -48,14 +48,14 @@ def run_models():
         scenario_path=('/home/niklas/Operation_Mode/test_scenario')
     else:
         #output_path = ('/cluster/scratch/nstolz/six_scenarios_sd_discrete/output_25per_incentive_00_autarky')
-        scenario_path=('/cluster/scratch/nstolz/paper_two_years_{}'.format(int(sys.argv[5])))
+        scenario_path=('/cluster/scratch/nstolz/paper_50per_{}'.format(int(sys.argv[5])))
 
     scenario_list=os.listdir(scenario_path)
     print(scenario_list)
 
 
     model = pipeline()
-    for baseline in [False, True]:
+    for baseline in [False]:#, True]:
 
 
 
@@ -71,9 +71,10 @@ def run_models():
         else:
             specs.years=years
 
-        year_list=[2010,2011,2012,2013,2014,2015,2016,2017,2018]
-        year_list.remove(int(sys.argv[5]))
-        year_list.remove((int(sys.argv[5])+1))
+        year_list=[2010]#,2011,2012,2013,2014,2015,2016,2017,2018]
+        #year_list.remove(int(sys.argv[5])-1)
+        #year_list.remove(int(sys.argv[5]))
+        #year_list.remove((int(sys.argv[5])+1))
         for year in year_list:
 
             print('run_models thinks we are in year:',year)
@@ -82,7 +83,8 @@ def run_models():
             else:
                 path=os.path.join(model.output_path,'baseline/model_csv_year_{}'.format(year))
 
-            if os.path.exists(path):
+            #if os.path.exists(path):
+            if False:
                 print('was already computed')
             else:
 

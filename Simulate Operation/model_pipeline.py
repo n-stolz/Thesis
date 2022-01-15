@@ -24,7 +24,7 @@ class pipeline:
         example_model['run']['solver']='gurobi'
         example_model['run']['solver_io']='python'
         example_model['run']['solver_options'] = {'Threads': int(sys.argv[4]), 'Method': 2, 'Crossover': 0,
-                                                  'FeasibilityTol': 1e-3, 'OptimalityTol': 1e-4, 'BarConvTol': 1e-4}
+                                                  'FeasibilityTol': 1e-6, 'OptimalityTol': 1e-6, 'BarConvTol': 1e-8}
         start_date=sys.argv[2]
         end_date=sys.argv[3]
         example_model['model']['subset_time']=['{}-'.format(year)+start_date,'{}-'.format(year)+end_date]
@@ -97,10 +97,11 @@ class pipeline:
     def run_planning_model(self,year):
 
 
-
+            calliope.set_log_verbosity("INFO")
             self.energy_model = calliope.Model(
                  'build/model/national/example-model-plan-year{}.yaml'.format(sys.argv[5]))
             self.energy_model.save_commented_model_yaml('/cluster/scratch/nstolz/model.yaml')
+            self.energy_model.to_netcdf('/cluster/work/cpesm/shared/incentive-scheming/hydrogen_issue/input_model_optimization_2013_tight_tol.nc')
             self.energy_model.run()
             # self.energy_model.to_netcdf('build/model/model_{}.nc'.format(self.ts_year))
             # exit()
@@ -112,10 +113,11 @@ class pipeline:
 
 
     def save_model(self,year):
-        if self.baseline_run==False:
-            self.model_dict['year {}'.format(year)].to_csv(os.path.join(self.output_path,'adjusted_costs/model_csv_year_{}'.format(year)))
-        else:
-            self.model_dict['year {}'.format(year)].to_csv(os.path.join(self.output_path,'baseline/model_csv_year_{}'.format(year)))
+        self.model_dict['year {}'.format(year)].to_netcdf('/cluster/work/cpesm/shared/incentive-scheming/hydrogen_issue/output_model_optimization_2013_2010_operation_tight_tol.nc')
+        #if self.baseline_run==False:
+        #    self.model_dict['year {}'.format(year)].to_csv(os.path.join(self.output_path,'adjusted_costs/model_csv_year_{}'.format(year)))
+        #else:
+        #    self.model_dict['year {}'.format(year)].to_csv(os.path.join(self.output_path,'baseline/model_csv_year_{}'.format(year)))
 
 
     def __init__(self):
