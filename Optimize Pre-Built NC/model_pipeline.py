@@ -37,32 +37,56 @@ class pipeline:
     #returns residual load on national an european level
     def get_production_timeseries(self,year):
         if self.baseline_run==False:
-            carrier_prod = pd.read_csv(os.path.join(self.output_path,'adjusted_costs/model_csv_year_{}/results_carrier_prod.csv'.format(year - 1)))
-            carrier_con = pd.read_csv(os.path.join(self.output_path,'adjusted_costs/model_csv_year_{}/results_carrier_con.csv'.format(year - 1)))
-            time_steps = pd.read_csv(os.path.join(self.output_path,'adjusted_costs/model_csv_year_{}/inputs_timestep_resolution.csv'.format(year - 1)))
+            energy_system = xr.open_dataset(os.path.join(self.output_path,'adjusted_costs/model_step_{}.nc'.format(year - 1)))
+            carrier_prod=energy_system.carrier_prod.to_dataframe()
+            carrier_prod=carrier_prod.reset_index()
+            carrier_prod['locs']=carrier_prod['loc_tech_carriers_prod'].astype(str).str[:3]
+            carrier_prod['techs']=carrier_prod['loc_tech_carriers_prod'].astype(str).str[5:-13]
+            carrier_prod=carrier_prod[carrier_prod['techs'].str.contains('roof_mounted_pv|open_field_pv|wind_onshore_competing|wind_onshore_monopoly|wind_offshore')]
+            carrier_prod=carrier_prod.drop(['loc_tech_carriers_prod'],axis=1)
+
+            carrier_con=energy_system.carrier_con.to_dataframe()
+            carrier_con=carrier_con.reset_index()
+            carrier_con['locs']=carrier_con['loc_tech_carriers_con'].astype(str).str[:3]
+            carrier_con['techs']=carrier_con['loc_tech_carriers_con'].astype(str).str[5:-13]
+            carrier_con=carrier_con[carrier_con['techs'].str.contains('demand_elec')]
+            carrier_con=carrier_con.drop(['loc_tech_carriers_con'],axis=1)
+
+            time_steps=energy_system.timesteps.to_dataframe().reset_index(drop=True)
+            time_steps['timestep_resolution']=1.0
+
         else:
-            carrier_prod = pd.read_csv(os.path.join(self.output_path,'baseline_model/model_csv_year_{}/results_carrier_prod.csv'.format(year - 1)))
-            carrier_con = pd.read_csv(os.path.join(self.output_path,'baseline_model/model_csv_year_{}/results_carrier_con.csv'.format(year - 1)))
-            time_steps = pd.read_csv(os.path.join(self.output_path,'baseline_model/model_csv_year_{}/inputs_timestep_resolution.csv'.format(year - 1)))
-        electricity_net = pd.DataFrame()
+            energy_system = xr.open_dataset(os.path.join(self.output_path,'adjusted_costs/model_step_{}.nc'.format(year - 1)))
+            carrier_prod=energy_system.carrier_prod.to_dataframe()
+            carrier_prod=carrier_prod.reset_index()
+            carrier_prod['locs']=carrier_prod['loc_tech_carriers_prod'].astype(str).str[:3]
+            carrier_prod['techs']=carrier_prod['loc_tech_carriers_prod'].astype(str).str[5:-13]
+            carrier_prod=carrier_prod[carrier_prod['techs'].str.contains('roof_mounted_pv|open_field_pv|wind_onshore_competing|wind_onshore_monopoly|wind_offshore')]
+            carrier_prod=carrier_prod.drop(['loc_tech_carriers_prod'],axis=1)
 
-        #Generation timeseries from wind and solar power
-        carrier_prod=carrier_prod[carrier_prod['techs'].isin(['roof_mounted_pv', 'open_field_pv', 'wind_onshore_competing',
-                                                              'wind_onshore_monopoly','wind_offshore'])]
-        #Demand timeseries without electricity that goes to storage and is transmited
-        carrier_con = carrier_con[carrier_con['techs'].isin(['demand_elec'])]
+            carrier_con=energy_system.carrier_con.to_dataframe()
+            carrier_con=carrier_con.reset_index()
+            carrier_con['locs']=carrier_con['loc_tech_carriers_con'].astype(str).str[:3]
+            carrier_con['techs']=carrier_con['loc_tech_carriers_con'].astype(str).str[5:-13]
+            carrier_con=carrier_con[carrier_con['techs'].str.contains('demand_elec')]
+            carrier_con=carrier_con.drop(['loc_tech_carriers_con'],axis=1)
+            time_steps=energy_system.timesteps.to_dataframe().reset_index(drop=True)
+            time_steps['timestep_resolution']=1.0
 
-        #generation-demand
+       #generation-demand
         electricity_net = carrier_prod.groupby(['locs', 'techs', 'timesteps']).sum().add(
             carrier_con.groupby(['locs', 'techs', 'timesteps']).sum(), fill_value=0).reset_index()
         electricity_net = electricity_net.fillna(0)
 
         electricity_net['residual'] = electricity_net['carrier_prod'] + electricity_net['carrier_con']
-
         electricity_net['timesteps']=electricity_net['timesteps'].astype('datetime64[ns]')
+
+
 
         self.residual_load_country = electricity_net.groupby(['locs', 'timesteps']).sum().reset_index()
         self.residual_load_europe=electricity_net.groupby(['timesteps']).sum().reset_index()
+
+
         print('residual load')
         print(electricity_net['residual'])
         print('timesteps')
@@ -100,6 +124,7 @@ class pipeline:
 
             #get capacity factor of specific tech during the timerange of interest and bring to right formate
             cf = self.capacity_factors[year-1][key][['timestep', name]]
+
             cf = cf[cf['timestep'].isin(time_range)]
             cf['timestep']=cf['timestep'].astype('datetime64[ns]')
 
@@ -149,13 +174,13 @@ class pipeline:
         for key in self.capacity_factors[year-1].keys():
             # get capacity factor of specific tech during the timerange of interest and bring to right formate
             cf = self.capacity_factors[year-1][key][['timestep', name]]
+
             cf = cf[cf['timestep'].isin(time_range)]
             cf['timestep'] = cf['timestep'].astype('datetime64[ns]')
 
             mean_cf=cf[name].mean()
 
-            print('CAPACITY FACTORS: ')
-            print(cf)
+
             #cf[name]=cf[name]/mean_cf
             # resample capacity factors on daily, weekly, monthly and quaterly level
             cf_daily=cf.set_index('timestep').resample('D').mean()
@@ -347,9 +372,9 @@ class pipeline:
         example_model['group_constraints'] = {}
         example_model['run']['solver']='gurobi'
         example_model['run']['solver_io']='python'
-        example_model['run']['solver_options']={'Threads':int(sys.argv[4])}
-        start_date=sys.argv[2]
-        end_date=sys.argv[3]
+        example_model['run']['solver_options']={'Threads':int(15)}
+        start_date='01-01'
+        end_date='12-31'
         example_model['model']['subset_time']=['{}-'.format(self.ts_year)+start_date,'{}-'.format(self.ts_year)+end_date]
         for i in fossil_share.index:
             if year==1:
@@ -399,8 +424,9 @@ class pipeline:
 
     def get_LCOE(self):
         technologies=["open_field_pv","wind_onshore_monopoly","wind_offshore","wind_onshore_competing","roof_mounted_pv"]
-        LCOE=pd.read_csv(os.path.join(self.output_path, "adjusted_costs/model_csv_year_1/results_systemwide_levelised_cost.csv"))
-        LCOE=LCOE.set_index('techs')
+        energy_system = xr.open_dataset(os.path.join(self.output_path,'adjusted_costs/model_step_1.nc'))
+        LCOE=energy_system.systemwide_levelised_cost.to_dataframe()
+        LCOE=LCOE.droplevel([0,1])
         print(LCOE)
         incentive_dict={}
         for tech in technologies:
@@ -469,7 +495,7 @@ class pipeline:
 
 
             grouped = self.residual_load_country[['locs', 'timesteps', 'residual']].groupby('locs')
-            time_range = self.time_steps['timesteps'].to_list()
+            time_range = self.time_steps['timesteps'].astype('str').to_list()
 
             #name is the country name, group is the residual load dataframe of this country
             for name, group in grouped:
@@ -547,7 +573,7 @@ class pipeline:
 
         # if it is the first modeling step and we are in the baseline run (no incentives). Energy system with zero fossil fuel share is modelled in one step
         elif self.baseline_run==True:
-            self.energy_model = calliope.read_netcdf('build/model/paper_tight_tol_{}.nc'.format(int(sys.argv[5])))
+            self.energy_model = calliope.read_netcdf('build/model/'+sys.argv[2]+'_{}.nc'.format(int(sys.argv[1])))
             #run model from netcdf to access the backend
             self.energy_model.run(force_rerun=True)
 
@@ -561,7 +587,7 @@ class pipeline:
         # if we model the incentive model we don't need to do any adjustment to the netcdf model in the first step (since we already insert correct values in the building of the netcdf)
         else:
             print('RUNNING')
-            self.energy_model=calliope.read_netcdf('build/model/paper_tight_tol_{}.nc'.format(int(sys.argv[5])))
+            self.energy_model=calliope.read_netcdf('build/model/'+sys.argv[2]+'_{}.nc'.format(int(sys.argv[1])))
             self.energy_model.run(force_rerun=True)
             self.model_dict['year {}'.format(year)] = self.energy_model
         #self.energy_model.to_netcdf('build/model/model_{}.nc'.format(year))
@@ -571,15 +597,18 @@ class pipeline:
 
     def save_model(self,year):
         if self.baseline_run==False:
-            self.model_dict['year {}'.format(year)].to_netcdf(os.path.join(self.output_path,'adjusted_costs/model_csv_year_{}'.format(year)))
+            if year==1:
+                os.mkdir(os.path.join(self.output_path,'adjusted_costs'))
+            self.model_dict['year {}'.format(year)].results.to_netcdf(os.path.join(self.output_path,'adjusted_costs/model_step_{}.nc'.format(year)))
         else:
-            self.model_dict['year {}'.format(year)].to_netcdf(os.path.join(self.output_path,'baseline/model_csv_year_{}'.format(year)))
+            os.mkdir(os.path.join(self.output_path,'baseline'))
+            self.model_dict['year {}'.format(year)].to_netcdf(os.path.join(self.output_path,'baseline/model_step_{}.nc'.format(year)))
 
 
     def __init__(self):
         self.max_incentive={} #max incentive in Cents/kWh
 
-        self.lcoe_percentage=0.25
+        self.lcoe_percentage=0.5
 
         self.capacity_factors={}
         self.model_dict={'plan':{}}

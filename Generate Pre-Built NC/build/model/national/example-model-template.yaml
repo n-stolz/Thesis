@@ -14,7 +14,7 @@ model:
     subset_time: ['2016-01-01', '2016-12-31']
     time:
       function: resample
-      function_options: {'resolution':'2h'}
+      function_options: {'resolution':'1h'}
 run:
     solver: gurobi
     solver_options:

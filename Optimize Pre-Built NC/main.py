@@ -20,24 +20,6 @@ def get_random_year():
     #selection=2016
     return selection
 
-def copy_year_to_model(demand_year):
-    print('Demand and CF time series from: ', demand_year)
-
-    for file_name in ['capacityfactors-hydro-reservoir-inflow.csv','capacityfactors-hydro-ror.csv','capacityfactors-open-field-pv.csv',
-                      'capacityfactors-rooftop-pv.csv','capacityfactors-wind-offshore.csv','capacityfactors-wind-onshore.csv',
-                      'electricity-demand.csv']:
-        original = os.path.join("build/model/model_{}/national".format(str(demand_year)),file_name)
-        target = os.path.join("build/model/national",file_name)
-
-        shutil.copyfile(original, target)
-    demand_ts_2016=pd.read_csv('build/model/model_2016/national/electricity-demand.csv')
-    demand_ts=pd.read_csv('build/model/national/electricity-demand.csv')
-    for (columnName, columnData) in demand_ts.iteritems():
-        if columnName != "utc_timestamp":
-            print(columnName)
-            demand_ts[columnName] = demand_ts[columnName] * (
-                        demand_ts_2016[columnName].mean() / demand_ts[columnName].mean())
-            demand_ts.to_csv('build/model/national/electricity-demand.csv',index=False)
 
 
 def run_models():
@@ -48,11 +30,13 @@ def run_models():
     if os.path.isdir('/home/niklas/European Incentive Model'):
         output_path = ('/home/niklas/European Incentive Model/output_{}'.format(date_time))
     else:
-        #output_path = ('/cluster/scratch/nstolz/paper_normalized_2h_hourly_european_score_years_{}'.format(int(sys.argv[5])))
-        output_path = ('/cluster/work/cpesm/shared/incentive-scheming/Data/paper_tight_tol_{}'.format(int(sys.argv[5])))
+        #output_path = ('/cluster/scratch/nstolz/'+sys.argv[3]+'_{}'.format(int(sys.argv[1])))
+        output_path = ('/cluster/work/cpesm/shared/incentive-scheming/Data/'+sys.argv[3]+'_{}'.format(int(sys.argv[1])))
+
+    os.mkdir(output_path)
 
     model = pipeline()
-    for baseline in [False]:
+    for baseline in [False,True]:
 
 
 
@@ -65,11 +49,11 @@ def run_models():
         for year in range(1,specs.years+1):
                 print('run_models thinks we are in year:',year)
                 if baseline==True:
-                    model.ts_year=sys.argv[5]
+                    model.ts_year=sys.argv[1]
                     year_sequence['baseline']['step {}'.format(year)]=model.ts_year
                 else:
                     #demand_year=get_random_year()
-                    model.ts_year=sys.argv[5]
+                    model.ts_year=sys.argv[1]
                     year_sequence['adjusted_costs:']['step {}'.format(year)] = model.ts_year
                 #copy_year_to_model(model.ts_year)
                 logging.info('running model run no: %s; demand and cf timeseries of year %s', year,model.ts_year)
@@ -103,7 +87,8 @@ def run_models():
 if __name__ == '__main__':
     config=configuration()
     specs=model_specifications()
-    years=int(sys.argv[1])
+    years=6
+
 
 
     euro_calliope_specs=euro_calliope_specifications()

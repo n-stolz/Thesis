@@ -14,26 +14,6 @@ import time
 
 
 
-def copy_year_to_model(demand_year):
-    print('Demand and CF time series from: ', demand_year)
-
-    for file_name in ['capacityfactors-hydro-reservoir-inflow.csv','capacityfactors-hydro-ror.csv','capacityfactors-open-field-pv.csv',
-                      'capacityfactors-rooftop-pv.csv','capacityfactors-wind-offshore.csv','capacityfactors-wind-onshore.csv',
-                      'electricity-demand.csv']:
-        original = os.path.join("build/model/model_{}/national".format(str(demand_year)),file_name)
-        target = os.path.join("build/model/national",file_name)
-
-        shutil.copyfile(original, target)
-    demand_ts_2016=pd.read_csv('build/model/model_2016/national/electricity-demand.csv')
-    demand_ts=pd.read_csv('build/model/national/electricity-demand.csv')
-    for (columnName, columnData) in demand_ts.iteritems():
-        if columnName != "utc_timestamp":
-            print(columnName)
-            demand_ts[columnName] = demand_ts[columnName] * (
-                        demand_ts_2016[columnName].mean() / demand_ts[columnName].mean())
-            demand_ts.to_csv('build/model/national/electricity-demand.csv',index=False)
-    time.sleep(5)
-
 
 
 def run_models():
@@ -48,14 +28,14 @@ def run_models():
         scenario_path=('/home/niklas/Operation_Mode/test_scenario')
     else:
         #output_path = ('/cluster/scratch/nstolz/six_scenarios_sd_discrete/output_25per_incentive_00_autarky')
-        scenario_path=('/cluster/scratch/nstolz/paper_50per_{}'.format(int(sys.argv[5])))
+        scenario_path=('/cluster/work/cpesm/shared/incentive-scheming/Data/'+sys.argv[3]+'_{}'.format(int(sys.argv[1])))
 
     scenario_list=os.listdir(scenario_path)
     print(scenario_list)
 
 
     model = pipeline()
-    for baseline in [False]:#, True]:
+    for baseline in [True]:
 
 
 
@@ -64,6 +44,13 @@ def run_models():
         model.model_path=os.path.join(scenario_path)
         model.output_path = os.path.join(model.model_path,'Planning_mode_all_years')
 
+        if not os.path.isdir(model.output_path):
+            os.mkdir(model.output_path)
+        if baseline==True:
+            os.mkdir(os.path.join(model.output_path,'baseline'))
+        else:
+            os.mkdir(os.path.join(model.output_path,'adjusted_costs'))
+
 
 
         if baseline == True:
@@ -71,9 +58,9 @@ def run_models():
         else:
             specs.years=years
 
-        year_list=[2010]#,2011,2012,2013,2014,2015,2016,2017,2018]
+        year_list=[2010,2011,2012,2013,2014,2015,2016,2017,2018]
         #year_list.remove(int(sys.argv[5])-1)
-        #year_list.remove(int(sys.argv[5]))
+        year_list.remove(int(sys.argv[1]))
         #year_list.remove((int(sys.argv[5])+1))
         for year in year_list:
 
