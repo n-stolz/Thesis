@@ -1,29 +1,30 @@
-description: This is the metadata of the build process of the euro-calliope model
+description: This is the metadata of the build process of the Euro-Calliope model
   in the same directory.
-euro-calliope-version: 1.1.0.dev
-euro-calliope-lib-version: 0.1.0
-generated-utc: 2021-04-29 11:47:32.894124
+euro-calliope-version: 1.1.0
+euro-calliope-lib-version: 1.1.0
+generated-utc: 2021-12-23 08:30:05.360388
 config:
+  email: tim.troendle@usys.ethz.ch
   data-sources:
-    biofuel-potentials: data/biofuels/potentials/{feedstock}.csv
-    biofuel-costs: data/biofuels/costs/{feedstock}.csv
-    eez: data/World_EEZ_v10_20180221/eez_v10.shp
-    irena-generation: data/irena/hydro-generation-europe.csv
-    national-phs-storage-capacities: data/pumped-hydro/storage-capacities-gwh.csv
+    biofuel-potentials-and-costs: https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/ENSPRESO/ENSPRESO_BIOMASS.xlsx
+    eez: https://geo.vliz.be/geoserver/MarineRegions/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=MarineRegions:eez&outputFormat=SHAPE-ZIP
+    hydro-generation: https://zenodo.org/record/5797549/files/hydro-generation.csv?download=1
+    national-phs-storage-capacities: https://zenodo.org/record/5797549/files/pumped-hydro-storage-capacities-gwh.csv?download=1
     capacity-factors: https://zenodo.org/record/3899687/files/{filename}?download=1
     gadm: https://biogeo.ucdavis.edu/data/gadm3.6/gpkg/gadm36_{country_code}_gpkg.zip
     hydro-basins: https://www.dropbox.com/sh/hmpwobbz9qixxpe/AADeU9iCgMd3ZO1KgrFmfWu6a/HydroBASINS/standard/eu/hybas_eu_lev07_v1c.zip?dl=1
-    hydro-stations: https://zenodo.org/record/4289229/files/energy-modelling-toolkit/hydro-power-database-v7.zip?download=1
+    hydro-stations: https://zenodo.org/record/5119541/files/energy-modelling-toolkit/hydro-power-database-v09.zip?download=1
     load: https://data.open-power-system-data.org/time_series/2019-06-05/time_series_60min_stacked.csv
     nuts: https://ec.europa.eu/eurostat/cache/GISCO/geodatafiles/NUTS_2013_01M_SH.zip
-    potentials: https://zenodo.org/record/3533038/files/possibility-for-electricity-autarky.zip
+    potentials: https://zenodo.org/record/5112963/files/possibility-for-electricity-autarky.zip
+    entsoe-tyndp: https://2020.entsos-tyndp-scenarios.eu/wp-content/uploads/2020/06/TYNDP-2020-Scenario-Datafile.xlsx.zip
   root-directory: .
   cluster-sync:
     url: euler.ethz.ch
     send-ignore: .syncignore-send
     receive-ignore: .syncignore-receive
     cluster-base-dir: ~/Develop/euro-calliope/
-    local-results-dir: build/euler
+    local-results-dir: build/cluster
   scaling-factors:
     power: 1.0e-05
     area: 0.0001
@@ -53,23 +54,102 @@ config:
       flat: 0.302
     jrc-biofuel:
       scenario: medium
-      potential-year: '2020'
-      cost-year: '2030'
+      potential-year: 2020
+      cost-year: 2020
+      feedstocks:
+        bioethanol-sugar-beet:
+          include: false
+          id: MINBIOCRP21
+          proxy: farmland
+        rapeseeds:
+          include: false
+          id: MINBIORPS1
+          proxy: farmland
+        oil-crops:
+          include: false
+          id: MINBIOLIQ1
+          proxy: farmland
+        starchy-crops:
+          include: false
+          id: MINBIOCRP11
+          proxy: farmland
+        grassy-crops:
+          include: false
+          id: MINBIOCRP31
+          proxy: farmland
+        willow:
+          include: false
+          id: MINBIOCRP41
+          proxy: forest
+        poplar:
+          include: false
+          id: MINBIOCRP41a
+          proxy: forest
+        manure:
+          include: true
+          id: MINBIOGAS1
+          proxy: farmland
+        primary-agricultural-residues:
+          include: true
+          id: MINBIOAGRW1
+          proxy: farmland
+        roundwood-fuelwood:
+          include: true
+          id: MINBIOWOO
+          proxy: forest
+        roundwood-chips:
+          include: true
+          id: MINBIOWOOa
+          proxy: forest
+        forestry-energy-residues:
+          include: true
+          id: MINBIOFRSR1
+          proxy: forest
+        secondary-forestry-residues-woodchips:
+          include: true
+          id: MINBIOWOOW1
+          proxy: forest
+        secondary-forestry-residues-sawdust:
+          include: true
+          id: MINBIOWOOW1a
+          proxy: forest
+        landscape-care-residues:
+          include: true
+          id: MINBIOFRSR1a
+          proxy: population
+        municipal-waste:
+          include: true
+          id: MINBIOMUN1
+          proxy: population
+        sludge:
+          include: true
+          id: MINBIOSLU1
+          proxy: population
     biofuel-efficiency: 0.45
+    wind-and-solar-potential-scenario: technical-potential
+    entsoe-tyndp:
+      scenario: National Trends
+      grid: Reference
+      projection-year: 2040
+      ntc_limit: max
+      energy_cap_limit: equals
   quality-control:
     load:
-      acceptable-load-data-gap-hours: 48
       outlier-data-thresholds:
         relative-to-mean-min: 0.25
         relative-to-mean-max: 2
-        percentage-deviation-post-cleaning-max: 1
-      entsoe-data-priority:
+      max-interpolate-timesteps: 3
+      acceptable-year-diff-for-gap-filling: 5
+      fill-29th-feb-from-28th: true
+      data-source-priority-order:
       - actual_entsoe_transparency
       - actual_entsoe_power_statistics
     hydro:
       scale-phs-according-to-geth-et-al: false
+      station-nearest-basin-max-km: 1
+    capacity-factor-gridcell-overlap-threshold: 0.97
   sea-connections:
-    continental: null
+    continental: []
     national:
     - - ITA
       - GRC

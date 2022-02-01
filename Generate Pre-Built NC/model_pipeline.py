@@ -156,7 +156,7 @@ class pipeline:
             print(self.ts_year)
 
             ## TODO Bryn+Niklas: agree on naming convention
-            self.energy_model.to_netcdf('build/model/paper_tight_tol_{}.nc'.format(self.ts_year))
+            self.energy_model.to_netcdf('build/model/paper_{}.nc'.format(self.ts_year))
 
             # if fixed capacity is wanted
             #self.energy_model_baseline = calliope.Model(

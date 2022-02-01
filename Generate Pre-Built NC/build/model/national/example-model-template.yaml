@@ -4,7 +4,9 @@ import:
     - '../storage-techs.yaml'
     - '../link-techs.yaml'
     - '../demand-techs.yaml'
+    - '../tech-costs.yaml'
     - 'locations.yaml'
+    - 'load-shedding.yaml'
     - 'directional-rooftop.yaml'
     - 'link-all-neighbours.yaml'
 model:

@@ -16,15 +16,15 @@ class pipeline:
         example_model = open('build/model/national/example-model-plan.yaml')
         example_model = yaml.load(example_model, Loader=yaml.FullLoader)
 
-        example_model['import']=['../interest-rate.yaml','../renewable-techs.yaml','../storage-techs.yaml',
-        '../link-techs.yaml','../demand-techs.yaml','locations{}.yaml'.format(sys.argv[1]),'directional-rooftop.yaml','link-all-neighbours{}.yaml'.format(sys.argv[1])]
+        example_model['import']=['../interest-rate.yaml','../renewable-techs.yaml','../storage-techs.yaml','../tech-costs.yaml',
+        '../link-techs.yaml','../demand-techs.yaml','locations{}.yaml'.format(sys.argv[1]),'load-shedding.yaml','directional-rooftop.yaml','link-all-neighbours{}.yaml'.format(sys.argv[1])]
 
 
         example_model['run']['ensure_feasibility'] = True
         example_model['run']['solver']='gurobi'
         example_model['run']['solver_io']='python'
         example_model['run']['solver_options'] = {'Threads': int(15), 'Method': 2, 'Crossover': 0,
-                                                  'FeasibilityTol': 1e-6, 'OptimalityTol': 1e-6, 'BarConvTol': 1e-8}
+                                                  'FeasibilityTol': 1e-6, 'OptimalityTol': 1e-6, 'BarConvTol': 1e-8,'bigM':10}
         start_date='01-01'
         end_date='12-31'
         example_model['model']['subset_time']=['{}-'.format(year)+start_date,'{}-'.format(year)+end_date]
@@ -129,7 +129,7 @@ class pipeline:
 
             calliope.set_log_verbosity("INFO")
             self.energy_model = calliope.Model(
-                 'build/model/national/example-model-plan-year{}.yaml'.format(sys.argv[1]))#,scenario='freeze-hydro-capacities')
+                 'build/model/national/example-model-plan-year{}.yaml'.format(sys.argv[1]),scenario='load-shedding')
             self.energy_model.save_commented_model_yaml('/cluster/scratch/nstolz/model.yaml')
             self.energy_model.to_netcdf('/cluster/work/cpesm/shared/incentive-scheming/hydrogen_issue/input_model_optimization_2013_tight_tol.nc')
             self.energy_model.run()
