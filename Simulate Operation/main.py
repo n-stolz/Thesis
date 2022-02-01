@@ -35,7 +35,7 @@ def run_models():
 
 
     model = pipeline()
-    for baseline in [True]:
+    for baseline in [False,True]:
 
 
 
