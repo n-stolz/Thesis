@@ -12,6 +12,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 4.337070976849896e-07
+          resource: 0.0031392694063926943
           storage_cap_equals: 13.750000000000002
       ccgt:
         constraints:
@@ -66,6 +67,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.006164025358340814
+          resource: 0.03886986301369864
           storage_cap_equals: 170.25
       ccgt:
         constraints:
@@ -120,6 +122,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.007830363598025048
+          resource: 0.020419520547945207
           storage_cap_equals: 89.43750000000001
       ccgt:
         constraints:
@@ -174,6 +177,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.0007700013478795037
+          resource: 0.022659817351598173
           storage_cap_equals: 99.25000000000001
       ccgt:
         constraints:
@@ -228,6 +232,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 7.082228002505237e-07
+          resource: 0.006164383561643835
           storage_cap_equals: 26.999999999999996
       ccgt:
         constraints:
@@ -282,6 +287,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 8.281660798208415e-07
+          resource: 0.020662100456621004
           storage_cap_equals: 90.49999999999999
       ccgt:
         constraints:
@@ -336,6 +342,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.00010000088003050385
+          resource: 0.0008418949771689495
           storage_cap_equals: 3.687499999999999
       ccgt:
         constraints:
@@ -390,6 +397,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.022337168647045873
+          resource: 0.03815639269406392
           storage_cap_equals: 167.12499999999997
       ccgt:
         constraints:
@@ -444,6 +452,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.07671563150196577
+          resource: 0.1734303652968036
           storage_cap_equals: 759.6249999999999
       ccgt:
         constraints:
@@ -498,6 +507,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.013559274796380246
+          resource: 0.017537100456621
           storage_cap_equals: 76.81249999999999
       ccgt:
         constraints:
@@ -552,6 +562,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.00160000332779192
+          resource: 0.06779394977168948
           storage_cap_equals: 296.93749999999994
       ccgt:
         constraints:
@@ -606,6 +617,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.001657307046325577
+          resource: 0.01485445205479452
           storage_cap_equals: 65.0625
       ccgt:
         constraints:
@@ -660,6 +672,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.019610003895039543
+          resource: 0.06566780821917809
           storage_cap_equals: 287.625
       ccgt:
         constraints:
@@ -714,6 +727,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.01578000053426096
+          resource: 0.15967465753424656
           storage_cap_equals: 699.3749999999999
       ccgt:
         constraints:
@@ -768,6 +782,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.04061016724984438
+          resource: 0.04753139269406393
           storage_cap_equals: 208.18750000000003
       ccgt:
         constraints:
@@ -822,6 +837,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.0005100003769621485
+          resource: 0.008333333333333335
           storage_cap_equals: 36.5
       ccgt:
         constraints:
@@ -876,6 +892,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.0007600008152809757
+          resource: 0.008718607305936073
           storage_cap_equals: 38.1875
       ccgt:
         constraints:
@@ -930,6 +947,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.0039800145333331255
+          resource: 0.031706621004566206
           storage_cap_equals: 138.875
       ccgt:
         constraints:
@@ -984,6 +1002,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.0005400042584288821
+          resource: 0.007320205479452056
           storage_cap_equals: 32.0625
       ccgt:
         constraints:
@@ -1038,6 +1057,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.016700165920992605
+          resource: 0.06712328767123288
           storage_cap_equals: 294.0
       ccgt:
         constraints:
@@ -1092,6 +1112,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.000640004781957673
+          resource: 0.014183789954337897
           storage_cap_equals: 62.12499999999999
       ccgt:
         constraints:
@@ -1146,6 +1167,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.00023000716884233286
+          resource: 0.0012842465753424657
           storage_cap_equals: 5.625000000000001
       ccgt:
         constraints:
@@ -1200,6 +1222,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.0014200012373452977
+          resource: 0.020419520547945203
           storage_cap_equals: 89.43749999999999
       ccgt:
         constraints:
@@ -1254,6 +1277,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 5.0001952033034877e-05
+          resource: 0.003067922374429224
           storage_cap_equals: 13.437500000000002
       ccgt:
         constraints:
@@ -1308,6 +1332,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 5.364156586599462e-07
+          resource: 0.0037243150684931506
           storage_cap_equals: 16.3125
       ccgt:
         constraints:
@@ -1362,6 +1387,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.012430113615924174
+          resource: 0.015724885844748855
           storage_cap_equals: 68.875
       ccgt:
         constraints:
@@ -1416,6 +1442,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 4.801772214603687e-07
+          resource: 0.031178652968036537
           storage_cap_equals: 136.56250000000003
       ccgt:
         constraints:
@@ -1470,6 +1497,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.04087512256192639
+          resource: 0.08984018264840181
           storage_cap_equals: 393.49999999999994
       ccgt:
         constraints:
@@ -1524,6 +1552,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.006048007071466475
+          resource: 0.019249429223744292
           storage_cap_equals: 84.3125
       ccgt:
         constraints:
@@ -1578,6 +1607,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.0011500008853710727
+          resource: 0.05673515981735159
           storage_cap_equals: 248.49999999999997
       ccgt:
         constraints:
@@ -1632,6 +1662,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.00010000217740668398
+          resource: 0.014198059360730595
           storage_cap_equals: 62.18750000000001
       ccgt:
         constraints:
@@ -1686,6 +1717,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.0016400025175103993
+          resource: 0.017294520547945207
           storage_cap_equals: 75.75
       ccgt:
         constraints:
@@ -1740,6 +1772,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 0.0005700054191679914
+          resource: 0.012371575342465751
           storage_cap_equals: 54.18749999999999
       ccgt:
         constraints:
@@ -1794,6 +1827,7 @@ locations:
       biofuel:
         constraints:
           energy_cap_equals: 6.573272387352931e-07
+          resource: 0.10727739726027398
           storage_cap_equals: 469.87500000000006
       ccgt:
         constraints:

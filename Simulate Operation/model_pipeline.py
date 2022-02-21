@@ -29,9 +29,7 @@ class pipeline:
         end_date='12-31'
         example_model['model']['subset_time']=['{}-'.format(year)+start_date,'{}-'.format(year)+end_date]
 
-        with open('build/model/national/example-model-plan-year{}.yaml'.format(sys.argv[1]),
-                  'w') as outfile:
-            yaml.dump(example_model, outfile)  # , default_flow_style=False)
+          # , default_flow_style=False)
 
         locations = open('build/model/national/locations_template.yaml')
         locations=yaml.load(locations, Loader=yaml.FullLoader)
@@ -61,12 +59,15 @@ class pipeline:
             loc=energy_cap['locs'][i]
             tech=energy_cap['techs'][i]
             if 'transmission' not in tech and 'demand_elec' not in tech:
-                try:
-                    locations['locations'][loc]['techs'][tech]['constraints']={'energy_cap_equals':float(energy_cap['energy_cap'][i])}
-                except:
-                    locations['locations'][loc]['techs'][tech]={'constraints':{}}
-                    locations['locations'][loc]['techs'][tech]['constraints']= {'energy_cap_equals':float(
-                        energy_cap['energy_cap'][i])}
+                if 'biofuel' not in tech:
+                    try:
+                        locations['locations'][loc]['techs'][tech]['constraints']={'energy_cap_equals':float(energy_cap['energy_cap'][i])}
+                    except:
+                        locations['locations'][loc]['techs'][tech]={'constraints':{}}
+                        locations['locations'][loc]['techs'][tech]['constraints']= {'energy_cap_equals':float(
+                            energy_cap['energy_cap'][i])}
+                else:
+                    locations['locations'][loc]['techs'][tech]['constraints']['energy_cap_equals']=float(energy_cap['energy_cap'][i])
 
         #read storage cap from optimized model
         if self.baseline_run == True:
@@ -96,6 +97,16 @@ class pipeline:
             if 'transmission' not in tech:
                 locations['locations'][loc]['techs'][tech]['constraints']['storage_cap_equals'] =  float(storage_cap['storage_cap'][i])
 
+
+
+        nuclear_prod=float(energy_system.carrier_prod[energy_system.carrier_prod.loc_tech_carriers_prod.str.contains('nuclear')].sum())
+        #decrease nuclear production if optimization year was leap year to ensure model feasibility
+        if float(sys.argv[1])==2012 or sys.argv[1]==2016:
+            nuclear_prod=nuclear_prod*(365/366)
+        example_model['group_constraints']['nuclear_constraint']['carrier_prod_equals']['electricity']=nuclear_prod
+        with open('build/model/national/example-model-plan-year{}.yaml'.format(sys.argv[1]),
+                  'w') as outfile:
+            yaml.dump(example_model, outfile)
         with open('build/model/national/locations{}.yaml'.format(sys.argv[1]),'w') as outfile:
             yaml.dump(locations,outfile)
 
@@ -131,7 +142,7 @@ class pipeline:
             self.energy_model = calliope.Model(
                  'build/model/national/example-model-plan-year{}.yaml'.format(sys.argv[1]),scenario='load-shedding')
             self.energy_model.save_commented_model_yaml('/cluster/scratch/nstolz/model.yaml')
-            self.energy_model.to_netcdf('/cluster/work/cpesm/shared/incentive-scheming/hydrogen_issue/input_model_optimization_2013_tight_tol.nc')
+            #self.energy_model.to_netcdf('/cluster/work/cpesm/shared/incentive-scheming/hydrogen_issue/input_model_optimization_2013_tight_tol.nc')
             self.energy_model.run()
             # self.energy_model.to_netcdf('build/model/model_{}.nc'.format(self.ts_year))
             # exit()

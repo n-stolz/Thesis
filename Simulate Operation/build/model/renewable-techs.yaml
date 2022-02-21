@@ -159,8 +159,8 @@ techs:
             monetary:
                 interest_rate: 0.1
                 energy_cap: 375  # 10 000EUR/kW from [@JRC:2014] Table 35
-                om_prod: 0.000539 #2.5 EUR per MWh, added to om_con, because value is very small and causing poor numerical range
+                om_prod: 0.0 #0.00006598 added to om_con converted from UK Model with 0.000539  2016 POUNDS/kWh (exchange rate 1.2242)
                 om_annual: 6  # # 10 000EUR/MW/year 1.6% of 375
-                om_con: 0.00089148 #0.0064148 EUR/kWh  converted from UK Model with 0.00524  2016 POUNDS/kWh, Table 2, {decc2013} + om_prod
+                om_con: 0.00070746 # 0.00064148 converted from UK Model with 0.00524  2016 Pounds/kWh (exchange rate 1.2242)
             #co2:
 #om_prod:  0.012  # kg CO2eq/kWh, {ipcc_ar5_wg3}

@@ -7,7 +7,7 @@ techs:
         constraints:
             energy_cap_max: inf
             storage_cap_max: inf
-            storage_initial: 0.5
+            storage_initial: 0.21
     pumped_hydro:
         essentials:
             name: 'Pumped hydro power storage'
@@ -16,7 +16,7 @@ techs:
         constraints:
             energy_cap_max: inf
             storage_cap_max: inf
-            storage_initial: 0.5
+            storage_initial: 0.54
     hydrogen:
         essentials:
             name: Hydrogen power storage
@@ -25,7 +25,7 @@ techs:
         constraints:
             energy_cap_max: inf
             storage_cap_max: inf
-            storage_initial: 0.5
+            storage_initial: 0.62
 overrides:
     exclusive-energy-to-power-ratios:
         # Ensures exclusive energy to power ratios of battery (≤4h) and hydrogen (≥4h) storage.

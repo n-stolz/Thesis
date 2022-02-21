@@ -31,12 +31,15 @@ def run_models():
         output_path = ('/home/niklas/European Incentive Model/output_{}'.format(date_time))
     else:
         #output_path = ('/cluster/scratch/nstolz/'+sys.argv[3]+'_{}'.format(int(sys.argv[1])))
-        output_path = ('/cluster/work/cpesm/shared/incentive-scheming/Data/'+sys.argv[3]+'_{}'.format(int(sys.argv[1])))
+        output_path = ('/cluster/work/cpesm/shared/incentive-scheming/Data_Europe/'+sys.argv[3]+'_{}'.format(int(sys.argv[1])))
 
-    os.mkdir(output_path)
+    if os.path.isdir(output_path):
+        pass
+    else:
+        os.mkdir(output_path)
 
     model = pipeline()
-    for baseline in [False,True]:
+    for baseline in [True]:
 
 
 
