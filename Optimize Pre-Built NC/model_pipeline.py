@@ -342,7 +342,7 @@ class pipeline:
 
     def cost_calculator(self, country, tech):
         # x is composite score of national and european score
-        x = (self.european_score[country][tech]+self.european_score[country][tech])
+        x = (self.national_score[country][tech]+self.european_score[country][tech])
 
         x=x*(5/sum(self.score_weight.values()))
         #linearly: -10 to 10
@@ -637,10 +637,10 @@ class pipeline:
         self.national_score_monthly = {}
         self.national_score_seasonally = {}
 
-        self.score_weight = {'hourly': 1, 'daily': 0,
+        self.score_weight = {'hourly': 1, 'daily': 1,
                    'weekly': 1,
-                   'monthly': 0,
-                   'seasonally': 0}
+                   'monthly': 1,
+                   'seasonally': 1}
 
 
         self.shoreless_countries=[]
