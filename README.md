@@ -5,6 +5,10 @@ some file paths need some adaptation if one tries to run the code.
 The main branch contains the code that was written before turning in the thesis and is deprecated and will be a nightmare to understand for collaborators. 
 **The currently maintained branch is develop**.
 
+First run: 
+env2lmod
+module load gcc/6.3.0 python/3.8.5 gurobi/9.1.1
+
 The repository consists of four files:
 
 ### Generate Pre-Built NC
